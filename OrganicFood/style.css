@@ -20,6 +20,10 @@ a {
   color: #222222;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 h2 {
   margin: 0;
   font-size: 24px;
@@ -69,6 +73,11 @@ h2 {
   background-image: url(utils/banner-errow.svg);
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.banner-button div:hover {
+  background-color: seagreen;
 }
 
 .banner {
@@ -118,6 +127,7 @@ h2 {
   width: 40px;
   background-position: center center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .header .header-buttons .search {
@@ -140,6 +150,10 @@ h2 {
   height: 20px;
   background-color: #09a66d;
   border-radius: 8px;
+}
+
+.header .header-buttons .header-button:hover {
+  background-color: seagreen;
 }
 
 .section-01 .banner-01 {
@@ -583,6 +597,11 @@ h2 {
   background-image: url(utils/errow-left.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
+}
+
+.section-04 .section-04-content .section-04-info .buttons div .button-left:hover {
+  background-color: seagreen;
 }
 
 .section-04 .section-04-content .section-04-info .buttons div .button-right {
@@ -596,6 +615,11 @@ h2 {
   background-image: url(utils/errow-right.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
+}
+
+.section-04 .section-04-content .section-04-info .buttons div .button-right:hover {
+  background-color: seagreen;
 }
 
 .footer .footer-01 {

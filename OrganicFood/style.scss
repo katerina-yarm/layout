@@ -20,6 +20,9 @@ ul {
 a {
   text-decoration: none;
   color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 h2 {
   margin: 0;
@@ -58,6 +61,10 @@ h2 {
     background-image: url(utils/banner-errow.svg);
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
+    &:hover {
+      background-color: seagreen;
+    }
   }
 }
 .banner {
@@ -90,6 +97,7 @@ h2 {
       width: 40px;
       background-position: center center;
       background-repeat: no-repeat;
+      cursor: pointer;
     }
     .search {
       margin-right: 21px;
@@ -109,6 +117,9 @@ h2 {
       height: 20px;
       background-color: $darkGreen;
       border-radius: 8px;
+      &:hover {
+        background-color: seagreen;
+      }
     }
   }
 }
@@ -415,6 +426,10 @@ h2 {
             background-image: url(utils/errow-left.svg);
             background-repeat: no-repeat;
             background-position: center;
+            cursor: pointer;
+            &:hover {
+              background-color: seagreen;
+            }
           }
           .button-right {
             margin-left: 26px;
@@ -427,6 +442,10 @@ h2 {
             background-image: url(utils/errow-right.svg);
             background-repeat: no-repeat;
             background-position: center;
+            cursor: pointer;
+            &:hover {
+              background-color: seagreen;
+            }
           }
         }
       }
@@ -486,7 +505,7 @@ h2 {
         background-size: 100%;
         margin: 66px 0 30px 0;
       }
-      p{
+      p {
         line-height: 1.6;
       }
     }
