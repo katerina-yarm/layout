@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   color: #222222;
@@ -98,7 +99,7 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 60px 0;
+  margin: 66px 0;
 }
 
 .header .header-menu li {
@@ -109,6 +110,7 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 117px;
 }
 
 .header .header-buttons .icon {
@@ -119,15 +121,17 @@ h2 {
 }
 
 .header .header-buttons .search {
+  margin-right: 21px;
   background-image: url(utils/Search.svg);
 }
 
 .header .header-buttons .buy {
   background-image: url(utils/Buy.svg);
-  margin: 0 40px;
+  margin-right: 32px;
 }
 
 .header .header-buttons .header-button {
+  margin-right: 78px;
   color: #ffffff;
   text-decoration: none;
   text-align: center;
@@ -144,8 +148,8 @@ h2 {
 
 .section-01 .banner-01 .leaves {
   position: absolute;
-  top: -40px;
-  left: -40px;
+  top: -43px;
+  left: 0;
 }
 
 .section-01 .banner-01 .banner-info {
@@ -159,11 +163,11 @@ h2 {
 }
 
 .section-01 .banner-01 .banner-info .banner-01-description {
-  margin-top: 20px;
+  margin-top: 22px;
   text-align: center;
   font-size: 18px;
   line-height: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 41px;
 }
 
 .section-01 .banner-01 .banner-info .banner-button {
@@ -173,7 +177,7 @@ h2 {
 }
 
 .section-01 .banner-01 .banner-info .banner-01-img {
-  margin: 0 100px 0 20px;
+  margin: -49px 104px 0 42px;
 }
 
 .section-01 .banner-01 .banner-info .banner-01-img img {
@@ -192,11 +196,12 @@ h2 {
           justify-content: left;
   width: 250px;
   height: 116px;
-  padding: 15px 30px;
+  padding: 0 0 0 30px;
+  margin-right: 28px;
 }
 
 .section-01 .banner-01 .banner-info .banner-01-item .item-text {
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 .section-01 .banner-01 .banner-info .banner-01-item .item-text .item-title {
@@ -206,7 +211,7 @@ h2 {
 }
 
 .section-01 .banner-01 .banner-info .banner-01-item .item-text .item-description {
-  font-size: 30px;
+  text-align: center;
 }
 
 .section-01 .grid1 {
@@ -270,8 +275,8 @@ h2 {
 .section-02 .line {
   position: absolute;
   z-index: -1;
-  right: 35px;
-  top: -35px;
+  right: 111px;
+  top: -42px;
   width: 945px;
   height: 530px;
   background-image: url(utils/line.svg);
@@ -283,6 +288,7 @@ h2 {
 
 .section-02 .content .section-02-description {
   margin-top: 25px;
+  line-height: 1.5;
 }
 
 .section-02 .content .item {
@@ -302,6 +308,7 @@ h2 {
   width: 80px;
   border-radius: 100%;
   position: relative;
+  margin: 30px 0 0 0;
 }
 
 .section-02 .content .item .icon img {
@@ -313,11 +320,11 @@ h2 {
 }
 
 .section-02 .content .item .item-text {
-  margin-left: 25px;
+  margin: 20px 0 10px 15px;
 }
 
 .section-02 .content .item .item-text .item-title {
-  margin: 0;
+  margin: 10px 0;
   font-weight: 700;
   font-size: 20px;
 }
@@ -337,6 +344,8 @@ h2 {
 
 .section-02 .content .section-02-image {
   position: relative;
+  margin-top: -18px;
+  margin-left: 184px;
   width: 600px;
   height: 600px;
   background-image: url(utils/section1.01.svg);
@@ -360,7 +369,7 @@ h2 {
   position: absolute;
   z-index: 3;
   margin-left: 50%;
-  margin-top: 25%;
+  margin-top: 137px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -460,12 +469,13 @@ h2 {
 
 .section-03 {
   position: relative;
+  margin-top: 145px;
 }
 
 .section-03 .leaves {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 17px;
 }
 
 .section-03 .banner-02 {
@@ -488,7 +498,7 @@ h2 {
 }
 
 .section-03 .banner-02 .banner-02-content .banner-02-info .banner-02-description {
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 30px;
   margin-bottom: 50px;
 }
@@ -509,7 +519,8 @@ h2 {
   height: 500px;
   width: 500px;
   border-radius: 100%;
-  margin-left: 100px;
+  margin-left: 110px;
+  margin-top: 44px;
   background-color: #f3fbf8;
   background-image: url(utils/man.png);
   background-position: center bottom;
@@ -523,18 +534,22 @@ h2 {
   background-image: url(utils/people.png);
   background-position: center center;
   background-repeat: no-repeat;
-  left: -30px;
-  bottom: -25px;
+  left: -48px;
+  bottom: -35px;
+}
+
+.section-04 .section-04-content .section-04-info {
+  margin-top: 5px;
 }
 
 .section-04 .section-04-content .section-04-info .section-04-description {
-  margin-top: 30px;
+  margin-top: 40px;
   line-height: 30px;
   margin-bottom: 40px;
 }
 
 .section-04 .section-04-content .section-04-info .section-04-username {
-  margin: 0 0 20px 0;
+  margin: 0;
   font-size: 30px;
 }
 
@@ -548,6 +563,10 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.section-04 .section-04-content .section-04-info .buttons .raiting img {
+  margin-right: 10px;
 }
 
 .section-04 .section-04-content .section-04-info .buttons div {
@@ -568,7 +587,7 @@ h2 {
 
 .section-04 .section-04-content .section-04-info .buttons div .button-right {
   margin-left: 26px;
-  margin-right: 100px;
+  margin-right: 160px;
   height: 56px;
   width: 56px;
   border-radius: 100%;
@@ -583,10 +602,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 800px;
+  margin-top: 40px;
+  height: 638px;
 }
 
 .footer .footer-01 .footer-01-image {
@@ -607,13 +624,13 @@ h2 {
 }
 
 .footer .footer-01 .download {
-  margin-bottom: 20px;
+  margin: 34px 0 20px 0;
   width: 170px;
   height: 20px;
   background-color: #f3fbf8;
   text-align: center;
   border-radius: 40%;
-  padding: 10px 0;
+  padding: 10px 6px;
 }
 
 .footer .footer-01 .download a {
@@ -621,7 +638,8 @@ h2 {
 }
 
 .footer .footer-01 .footer-description {
-  margin: 20px 0 50px 0;
+  margin: 30px 0 55px 0;
+  line-height: 1.5;
 }
 
 .footer .footer-01 .apps a {
@@ -639,7 +657,14 @@ h2 {
 }
 
 .footer .footer-02 .block-01 .planet-earth {
+  height: 70px;
+  width: 70px;
+  background-size: 100%;
   margin: 66px 0 30px 0;
+}
+
+.footer .footer-02 .block-01 p {
+  line-height: 1.6;
 }
 
 .footer .footer-02 h2 {
@@ -648,6 +673,10 @@ h2 {
 
 .footer .footer-02 li {
   margin-bottom: 24px;
+}
+
+.footer .footer-02 .block-04 {
+  margin-right: 70px;
 }
 
 .footer .footer-02 .block-04 .social-network {
