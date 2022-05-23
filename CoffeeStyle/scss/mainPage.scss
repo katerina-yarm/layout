@@ -1,0 +1,39 @@
+.banner {
+  color: $white;
+  text-align: center;
+  background-color: #050827;
+  &__bg {
+    height: 530px;
+    background-image: url(../img/main-banner.png);
+  }
+  &__small-title {
+    padding-top: 160px;
+  }
+  &__title {
+    font-size: 47px;
+    padding: 10px 0;
+  }
+  &__text {
+    font-size: 17px;
+    padding: 0 0 30px 0;
+    @media (max-width: $md2+px) {
+      margin: 0 30px;
+      line-height: 25px;
+    }
+  }
+  &__button {
+    width: 231px;
+    height: 33px;
+    padding: 10px 0;
+    background-color: $white;
+    margin: 0 auto;
+    cursor: pointer;
+    a {
+      font-weight: 700;
+      color: $black;
+    }
+    &:hover {
+      background-color: $brown;
+    }
+  }
+}

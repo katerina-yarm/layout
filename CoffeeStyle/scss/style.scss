@@ -15,11 +15,13 @@ $md4: 479.98;
 
 @import 'normalize';
 @import 'header';
+@import 'mainPage';
 
 body {
   .wrapper {
-    width: 100%;
+    width: 96%;
     min-height: 100%;
+    margin: 0 2%;
     overflow: hidden;
   }
 }
@@ -27,4 +29,10 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+}
+
+._h6 {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
 }

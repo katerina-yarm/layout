@@ -47,11 +47,8 @@
           }
         }
         &__link {
-          text-transform: uppercase;
-          color: $black;
-          font-size: 12px;
-          letter-spacing: 2px;
           margin-right: 30px;
+          color: $black;
           @media (max-width: $md2+px) {
             font-size: 25px;
           }
