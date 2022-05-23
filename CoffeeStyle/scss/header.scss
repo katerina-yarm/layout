@@ -1,0 +1,141 @@
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header__logo {
+    margin: 28px 0;
+    width: 112px;
+    height: 24px;
+    background-image: url(../img/logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .header__content {
+    display: flex;
+    align-items: center;
+    .header__menu {
+      .menu {
+        &__body {
+          display: flex;
+          @media (max-width: $md2+px) {
+            transform: translate(0px, calc(-100% - 80px));
+            transition: transform 0.8s ease 0s;
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            overflow: auto;
+            padding: 100px 10px 30px 10px;
+            background-color: $white;
+            opacity: 0.8;
+            &._active {
+              transform: translate(0px, 0%);
+            }
+          }
+        }
+        &__list {
+          display: flex;
+          @media (max-width: $md2+px) {
+            display: block;
+            li {
+              text-align: center;
+              margin-bottom: 25px;
+            }
+          }
+        }
+        &__link {
+          text-transform: uppercase;
+          color: $black;
+          font-size: 12px;
+          letter-spacing: 2px;
+          margin-right: 30px;
+          @media (max-width: $md2+px) {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+    .cart__button {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      .cart__image {
+        height: 20px;
+        width: 16px;
+        background-image: url(../img/buy.svg);
+      }
+      .cart__text {
+        margin: 0 9px;
+        a {
+          text-transform: uppercase;
+          font-size: 12px;
+          letter-spacing: 2px;
+          color: $black;
+        }
+      }
+      .cart__count {
+        width: 20px;
+        height: 18px;
+        background-color: $black;
+        border-radius: 100%;
+        text-align: center;
+        a {
+          color: $white;
+          font-size: 11px;
+          line-height: 18px;
+          font-family: $fontFamily;
+        }
+      }
+      @media (max-width: $md2+px) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//Burger
+.icon-menu {
+  display: none;
+  @media (max-width: $md2+px) {
+    position: absolute;
+    display: block;
+    top: 18px;
+    right: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      transition: all 0.3s ease 0s;
+      top: calc(50% - 1px);
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+      &:first-child {
+        top: 0;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    &._active {
+      span {
+        transform: scale(0);
+        &:first-child {
+          transform: rotate(-45deg);
+          top: calc(50% - 1px);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: calc(50% - 1px);
+        }
+      }
+    }
+  }
+}

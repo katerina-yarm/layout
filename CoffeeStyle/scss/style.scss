@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+$fontFamily: 'Karla', sans-serif;
+
+$brown: #a25f4b;
+$black: #1d1f2e;
+$white: #ffffff;
+
+$minWidth: 320px;
+$maxWidth: 1380px;
+$maxWidthContainer: 940;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+
+body {
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+}
