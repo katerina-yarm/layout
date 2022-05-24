@@ -39,6 +39,11 @@ body {
 
 .section__title {
   display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  @media (max-width: $md4+px) {
+    margin-bottom: 50px;
+  }
   &::after {
     content: '';
     width: 30px;

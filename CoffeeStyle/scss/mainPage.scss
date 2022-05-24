@@ -76,14 +76,23 @@
   }
 }
 
-.products {
-  .section__title {
-    justify-content: center;
-    margin-bottom: 100px;
-    @media (max-width: $md4+px) {
-      margin-bottom: 50px;
+.featured-mugs {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 90px;
+    @media (max-width: $md2+px) {
+      justify-content: center;
     }
   }
+  &__item {
+    text-align: center;
+    padding-bottom: 25px;
+  }
+}
+
+.products {
   &__items {
     display: flex;
     flex-wrap: wrap;
