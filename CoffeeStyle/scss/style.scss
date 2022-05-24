@@ -36,3 +36,21 @@ body {
   font-size: 12px;
   letter-spacing: 2px;
 }
+
+.section__title {
+  display: flex;
+  &::after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #ececed;
+    margin: auto 15px;
+  }
+  &:before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #ececed;
+    margin: auto 15px;
+  }
+}

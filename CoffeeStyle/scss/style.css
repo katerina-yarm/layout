@@ -324,6 +324,12 @@ img {
   padding: 123px 0 98px 0;
 }
 
+@media (max-width: 991.98px) {
+  .article {
+    padding: 80px 40px;
+  }
+}
+
 @media (max-width: 479.98px) {
   .article {
     padding: 60px 20px;
@@ -365,6 +371,89 @@ img {
   line-height: 28px;
 }
 
+.products .section__title {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 479.98px) {
+  .products .section__title {
+    margin-bottom: 50px;
+  }
+}
+
+.products__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 991.98px) {
+  .products__items {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.products__item {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+@media (max-width: 479.98px) {
+  .products__item {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .products__item-img {
+    margin: 0 20px;
+  }
+}
+
+.products__item-title {
+  margin: 35px 0 5px 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media (max-width: 479.98px) {
+  .products__item-title {
+    margin: 15px 0 5px 0;
+  }
+}
+
+.products__item-price ._sale {
+  font-size: 19px;
+  color: #a25f4b;
+  margin-right: 10px;
+}
+
+.products__item-price ._active {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.products__item-price ._deactive {
+  font-size: 16px;
+  opacity: 0.4;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.products__item-price *:last-child {
+  margin: 0;
+}
+
 body .wrapper {
   width: 96%;
   min-height: 100%;
@@ -381,5 +470,27 @@ body .wrapper {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
+}
+
+.section__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section__title::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: #ececed;
+  margin: auto 15px;
+}
+
+.section__title:before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: #ececed;
+  margin: auto 15px;
 }
 /*# sourceMappingURL=style.css.map */
