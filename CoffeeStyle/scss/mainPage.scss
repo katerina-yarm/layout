@@ -37,3 +37,38 @@
     }
   }
 }
+
+.article {
+  text-align: center;
+  padding: 123px 0 98px 0;
+  @media (max-width: $md4+px) {
+    padding: 60px 20px;
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 40px;
+    color: $black;
+    @media (max-width: $md4+px) {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+  &__text {
+    padding: 16px 0 21px 0;
+    font-size: 16px;
+    line-height: 28px;
+    opacity: 0.7;
+  }
+  &__button {
+    margin: 0 auto;
+    width: 133px;
+    height: 30px;
+    box-shadow: 0 2px 0 0 rgba(162, 95, 75, 0.2);
+    text-align: center;
+    a {
+      color: $brown;
+      font-size: 15px;
+      line-height: 28px;
+    }
+  }
+}

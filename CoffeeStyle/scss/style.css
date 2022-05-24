@@ -319,6 +319,52 @@ img {
   background-color: #a25f4b;
 }
 
+.article {
+  text-align: center;
+  padding: 123px 0 98px 0;
+}
+
+@media (max-width: 479.98px) {
+  .article {
+    padding: 60px 20px;
+  }
+}
+
+.article__title {
+  font-size: 28px;
+  line-height: 40px;
+  color: #1d1f2e;
+}
+
+@media (max-width: 479.98px) {
+  .article__title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+.article__text {
+  padding: 16px 0 21px 0;
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.article__button {
+  margin: 0 auto;
+  width: 133px;
+  height: 30px;
+  -webkit-box-shadow: 0 2px 0 0 rgba(162, 95, 75, 0.2);
+          box-shadow: 0 2px 0 0 rgba(162, 95, 75, 0.2);
+  text-align: center;
+}
+
+.article__button a {
+  color: #a25f4b;
+  font-size: 15px;
+  line-height: 28px;
+}
+
 body .wrapper {
   width: 96%;
   min-height: 100%;
