@@ -39,12 +39,16 @@
 }
 
 .article {
+  max-width: 580px;
+  margin: 0 auto;
   text-align: center;
   padding: 123px 0 98px 0;
   @media (max-width: $md2+px) {
     padding: 80px 40px;
+    text-align: start;
   }
   @media (max-width: $md4+px) {
+    margin: 0 20px;
     padding: 60px 20px;
   }
   &__title {
