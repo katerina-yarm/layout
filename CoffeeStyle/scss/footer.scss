@@ -1,7 +1,14 @@
 .footer {
+  margin-bottom: 60px;
+  @media (max-width: $md2+px) {
+    margin-bottom: 30px;
+  }
   .subscribe {
     background-color: $black;
     margin-bottom: 100px;
+    @media (max-width: $md2+px) {
+      margin-bottom: 50px;
+    }
     @media (max-width: $md4+px) {
       margin-bottom: 40px;
     }
@@ -33,6 +40,10 @@
       text-align: left;
       padding: 18px 0 18px 18px;
       margin-right: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: #2f303e;
+      }
       @media (max-width: $md4+px) {
         width: 250px;
         text-align: center;
@@ -52,6 +63,10 @@
       background-color: $white;
       text-align: center;
       padding: 18px 0 18px 0;
+      cursor: pointer;
+      &:hover {
+        background-color: #ffffff94;
+      }
       @media (max-width: $md4+px) {
         margin: 0 auto;
         height: 34px;
@@ -62,6 +77,97 @@
         color: $black;
         text-transform: uppercase;
         letter-spacing: 2px;
+      }
+    }
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    position: relative;
+    @media (max-width: $md2+px) {
+      margin: 0 10px 0 0;
+    }
+
+    @media (max-width: $md3+px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: $md4+px) {
+      height: 300px;
+    }
+    &__block-01 {
+      @media (max-width: $md3+px) {
+        width: 25%;
+      }
+      @media (max-width: $md4+px) {
+        width: 100%;
+      }
+    }
+    &__block-01-logo {
+      width: 111px;
+      height: 24px;
+      background-image: url(../img/logo.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &__block-01-text {
+      padding: 22px 0 0 0;
+      @media (max-width: $md4+px) {
+        padding: 5px 0 0 0;
+      }
+    }
+    &__block-01-copy {
+      position: absolute;
+      bottom: 0;
+      opacity: 0.3;
+      @media (max-width: $md4+px) {
+        width: 50%;
+      }
+    }
+    &__title {
+      margin-bottom: 23px;
+    }
+    &__navigation-link {
+      padding-bottom: 10px;
+      :last-child {
+        padding-bottom: 0;
+      }
+      a {
+        color: $black;
+        &:hover {
+          color: $brown;
+        }
+      }
+    }
+
+    &__block-04 {
+      @media (max-width: $md3+px) {
+        width: 25%;
+      }
+      @media (max-width: $md4+px) {
+        width: 35%;
+      }
+      span {
+        opacity: 0.3;
+        position: absolute;
+        bottom: 0;
+        @media (max-width: $md4+px) {
+          left: 60%;
+          width: 50%;
+        }
+      }
+    }
+    &__block-04-email {
+      display: block;
+      margin: 15px 0 0 0;
+      color: rgba(29, 31, 46, 1);
+      font-size: 23px;
+      line-height: 36 / 23 * 100%;
+      &:hover {
+        color: $brown;
+      }
+      @media (max-width: $md3+px) {
+        font-size: 16px;
       }
     }
   }
