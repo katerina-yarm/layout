@@ -1,7 +1,22 @@
+.page {
+  margin-bottom: 180px;
+  @media (max-width: $md2+px) {
+    margin-bottom: 80px;
+  }
+  @media (max-width: $md4+px) {
+    margin-bottom: 40px;
+  }
+}
+
 .banner {
   color: $white;
   text-align: center;
   background-color: #050827;
+  margin-bottom: 100px;
+  @media (max-width: $md4+px) {
+    margin-bottom: 50px;
+  }
+
   &__bg {
     height: 530px;
     background-image: url(../img/main-banner.png);
@@ -42,14 +57,13 @@
   max-width: 580px;
   margin: 0 auto;
   text-align: center;
-  padding: 123px 0 98px 0;
   @media (max-width: $md2+px) {
-    padding: 80px 40px;
-    text-align: start;
+    padding: 0 40px;
+    text-align: center;
   }
   @media (max-width: $md4+px) {
     margin: 0 20px;
-    padding: 60px 20px;
+    padding: 0 20px;
   }
   &__title {
     font-size: 28px;
@@ -85,7 +99,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 90px;
     @media (max-width: $md2+px) {
       justify-content: center;
     }
@@ -104,6 +117,11 @@
     @media (max-width: $md2+px) {
       justify-content: center;
     }
+    @media (max-width: $md4+px) {
+      flex-wrap: nowrap;
+      justify-content: left;
+      overflow: auto;
+    }
   }
   &__item {
     text-align: center;
@@ -111,10 +129,17 @@
     @media (max-width: $md4+px) {
       margin-bottom: 30px;
     }
+    @media (max-width: $md4+px) {
+      flex: 0 0 80%;
+      margin: 0 0 0 0;
+    }
   }
   &__item-img {
     @media (max-width: $md2+px) {
       margin: 0 20px;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 5px;
     }
   }
   &__item-title {
@@ -148,10 +173,6 @@
 }
 
 .promotion {
-  margin: 130px 0;
-  @media (max-width: $md2+px) {
-    margin: 0 0 50px 0;
-  }
   &__content {
     @media (max-width: $md2+px) {
       justify-content: center;
@@ -159,14 +180,20 @@
   }
   &__title {
     font-size: 36px;
-    line-height: 50px;
+    line-height: 50 / 36 * 100%;
     padding: 14px 0 15px 0;
+    @media (max-width: $md4+px) {
+      font-size: 26px;
+    }
   }
   &__text {
     font-size: 16px;
     opacity: 0.7;
-    line-height: 28px;
+    line-height: 28 / 16 * 100%;
     margin-bottom: 25px;
+    @media (max-width: $md4+px) {
+      font-size: 12px;
+    }
   }
   &__button {
     width: 173px;
@@ -190,6 +217,7 @@
       grid-template-columns: 280px 160px;
       grid-template-rows: 3;
       justify-items: center;
+      grid-gap: 20px 10px;
     }
   }
   .grid-item-01 {
@@ -216,5 +244,55 @@
 
 .bottom-banner {
   max-width: 1440px;
-  margin: 0 auto 100px auto;
+  margin: 130px auto 100px auto;
+  @media (max-width: $md4+px) {
+    margin: 50px auto 50px auto;
+  }
+}
+
+.stories {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md2+px) {
+      overflow: auto;
+    }
+  }
+  &__item {
+    max-width: 300px;
+    @media (max-width: $md2+px) {
+      margin: 0 15px 0 15px;
+    }
+    @media (max-width: $md4+px) {
+      flex: 0 0 90%;
+      margin: 0 0 0 15px;
+    }
+  }
+  &__item-title {
+    font-size: 20px;
+    line-height: 32 / 20 * 100%;
+    margin: 30px 0 10px 0;
+    @media (max-width: $md4+px) {
+      font-size: 18px;
+      margin: 20px 0 10px 0;
+    }
+  }
+  &__item-text {
+    font-size: 16px;
+    opacity: 0.7;
+    line-height: 28 / 16 * 100%;
+    padding-bottom: 9px;
+    span {
+      display: block;
+      padding-top: 16px;
+      letter-spacing: 2px;
+    }
+    @media (max-width: $md4+px) {
+      font-size: 14px;
+      span {
+        padding-top: 5px;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
 }

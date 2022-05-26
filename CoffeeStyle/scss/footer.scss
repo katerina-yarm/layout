@@ -1,0 +1,68 @@
+.footer {
+  .subscribe {
+    background-color: $black;
+    margin-bottom: 100px;
+    @media (max-width: $md4+px) {
+      margin-bottom: 40px;
+    }
+    &__content {
+      color: $white;
+      text-align: center;
+      padding: 80px 0 85px 0;
+      @media (max-width: $md4+px) {
+        padding: 60px 10px 65px 10px;
+      }
+    }
+    &__content-title {
+      font-size: 36px;
+      line-height: 50 / 36 * 100%;
+      margin: 15px 0 25px 0;
+    }
+    &__content-info {
+      display: flex;
+      justify-content: center;
+      @media (max-width: $md4+px) {
+        display: block;
+      }
+    }
+    &__content-email {
+      width: 350px;
+      height: 54px;
+      background-color: transparent;
+      border: #2f303e solid 1px;
+      text-align: left;
+      padding: 18px 0 18px 18px;
+      margin-right: 10px;
+      @media (max-width: $md4+px) {
+        width: 250px;
+        text-align: center;
+        padding: 18px 0 18px 0;
+        margin: 0 auto 10px auto;
+      }
+      a {
+        font-size: 12px;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+    &__content-button {
+      width: 130px;
+      height: 54px;
+      background-color: $white;
+      text-align: center;
+      padding: 18px 0 18px 0;
+      @media (max-width: $md4+px) {
+        margin: 0 auto;
+        height: 34px;
+        padding: 10px 0 10px 0;
+      }
+      a {
+        font-size: 12px;
+        color: $black;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
