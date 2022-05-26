@@ -49,6 +49,9 @@
         &__link {
           margin-right: 30px;
           color: $black;
+          &:hover {
+            color: $brown;
+          }
           @media (max-width: $md2+px) {
             font-size: 25px;
           }
@@ -71,6 +74,9 @@
           font-size: 12px;
           letter-spacing: 2px;
           color: $black;
+          &:hover {
+            color: $brown;
+          }
         }
       }
       .cart__count {
