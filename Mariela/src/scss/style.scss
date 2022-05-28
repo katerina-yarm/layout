@@ -10,3 +10,44 @@
 }
 
 @import 'fonts';
+
+$fontFamily1: 'Cormorant Garamond', serif;
+$fontFamily2: 'Roboto', sans-serif;
+
+$superDarkViolet: #a78ba4;
+$darkViolet: #b08ead;
+$lightViolet: #ba9fb7;
+$darkPinc: #c9adc6;
+$lightPinc: #ceb3cb;
+$white: #ffffff;
+$darkText: #5f4d5d;
+$lightText: #b99bb6;
+$grey: #b0b0b0;
+$line: #d7b7d4;
+
+$maxWidthContainer: 1214;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+@import 'mainPage';
+
+body {
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  font-family: $fontFamily1;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30 / 24 * 100%;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+}
