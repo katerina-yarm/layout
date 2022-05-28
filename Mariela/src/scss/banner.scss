@@ -1,0 +1,142 @@
+.banner-01 {
+  width: 100%;
+  height: 825px;
+  background: linear-gradient(to bottom, $darkPinc 460px, $lightPinc 360px);
+  @media (max-width: $md4+px) {
+    height: 725px;
+  }
+}
+.banner-02 {
+  width: 100%;
+  height: 820px;
+  background-color: $lightPinc;
+  @media (max-width: $md4+px) {
+    height: 720px;
+  }
+}
+.banner {
+  padding: 0 20px;
+  &__content {
+    position: relative;
+  }
+  &__foto {
+    position: absolute;
+    top: 70px;
+    @media (max-width: $md4+px) {
+      top: 20px;
+    }
+  }
+  .foto-1 {
+    left: 60px;
+    @media (max-width: $md2+px) {
+      left: 20px;
+    }
+    @media (max-width: $md4+px) {
+      left: 0;
+    }
+  }
+  .foto-2 {
+    right: 200px;
+    @media (max-width: $md2+px) {
+      right: 20px;
+    }
+    @media (max-width: $md4+px) {
+      right: 0;
+    }
+  }
+  .foto-3 {
+    left: 200px;
+    @media (max-width: $md2+px) {
+      left: 20px;
+    }
+    @media (max-width: $md4+px) {
+      left: 0;
+    }
+  }
+  &__text-block {
+    position: absolute;
+    background-color: $darkViolet;
+    height: 450px;
+    width: 440px;
+    top: 185px;
+    @media (max-width: $md4+px) {
+      width: 300px;
+    }
+  }
+  .text-block-01 {
+    right: 0;
+  }
+  .text-block-02 {
+    left: 100px;
+    @media (max-width: $md2+px) {
+      left: 20px;
+    }
+    @media (max-width: $md4+px) {
+      left: 0;
+    }
+  }
+  .text-block-03 {
+    right: 100px;
+    @media (max-width: $md2+px) {
+      right: 20px;
+    }
+    @media (max-width: $md4+px) {
+      right: 0;
+    }
+  }
+  &__text {
+    color: $white;
+    background-color: $darkViolet;
+    height: 325px;
+    width: 386px;
+    z-index: 2;
+    padding: 125px 0 0 40px;
+    @media (max-width: $md4+px) {
+      padding: 100px 0 0 40px;
+      width: 290px;
+    }
+  }
+  &__title-top {
+    text-transform: uppercase;
+    font-family: $fontFamily2;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  &__title {
+    margin: 17px 0 30px 0;
+    font-size: 45px;
+    line-height: 55 / 45 * 100%;
+    @media (max-width: $md4+px) {
+      font-size: 35px;
+    }
+  }
+  &__button {
+    text-transform: uppercase;
+    font-family: $fontFamily2;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin: 5px 0;
+    cursor: pointer;
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 11px;
+      transition: 0.2s ease;
+      &:hover {
+        color: $darkText;
+      }
+    }
+  }
+  .rectangle {
+    position: absolute;
+    right: 0;
+    top: 820px - 50px;
+    height: 50px;
+    width: 100px;
+    background: linear-gradient(to right, $superDarkViolet 50%, $darkViolet 50%);
+    @media (max-width: $md4+px) {
+      top: 725px - 50px;
+    }
+  }
+}

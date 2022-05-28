@@ -179,6 +179,120 @@ img {
   display: none;
 }
 
+.banner-01 {
+  width: 100%;
+  height: 825px;
+  background: -o-linear-gradient(top, #c9adc6 460px, #ceb3cb 360px);
+  background: linear-gradient(to bottom, #c9adc6 460px, #ceb3cb 360px);
+}
+
+.banner-02 {
+  width: 100%;
+  height: 820px;
+  background-color: #ceb3cb;
+}
+
+.banner {
+  padding: 0 20px;
+}
+
+.banner__content {
+  position: relative;
+}
+
+.banner__foto {
+  position: absolute;
+  top: 70px;
+}
+
+.banner .foto-1 {
+  left: 60px;
+}
+
+.banner .foto-2 {
+  right: 200px;
+}
+
+.banner .foto-3 {
+  left: 200px;
+}
+
+.banner__text-block {
+  position: absolute;
+  background-color: #b08ead;
+  height: 450px;
+  width: 440px;
+  top: 185px;
+}
+
+.banner .text-block-01 {
+  right: 0;
+}
+
+.banner .text-block-02 {
+  left: 100px;
+}
+
+.banner .text-block-03 {
+  right: 100px;
+}
+
+.banner__text {
+  color: #ffffff;
+  background-color: #b08ead;
+  height: 325px;
+  width: 386px;
+  z-index: 2;
+  padding: 125px 0 0 40px;
+}
+
+.banner__title-top {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.banner__title {
+  margin: 17px 0 30px 0;
+  font-size: 45px;
+  line-height: 122.2222222222%;
+}
+
+.banner__button {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.banner__button a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 11px;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.banner__button a:hover {
+  color: #5f4d5d;
+}
+
+.banner .rectangle {
+  position: absolute;
+  right: 0;
+  top: 770px;
+  height: 50px;
+  width: 100px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #a78ba4), color-stop(50%, #b08ead));
+  background: -o-linear-gradient(left, #a78ba4 50%, #b08ead 50%);
+  background: linear-gradient(to right, #a78ba4 50%, #b08ead 50%);
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -200,6 +314,26 @@ body .wrapper {
 @media (max-width: 991.98px) {
   .header__logo {
     margin-left: 20px;
+  }
+
+  .banner .foto-1 {
+    left: 20px;
+  }
+
+  .banner .foto-2 {
+    right: 20px;
+  }
+
+  .banner .foto-3 {
+    left: 20px;
+  }
+
+  .banner .text-block-02 {
+    left: 20px;
+  }
+
+  .banner .text-block-03 {
+    right: 20px;
   }
 }
 
@@ -323,6 +457,57 @@ body .wrapper {
 
   .menu__body {
     width: 100%;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .banner-01 {
+    height: 725px;
+  }
+
+  .banner-02 {
+    height: 720px;
+  }
+
+  .banner__foto {
+    top: 20px;
+  }
+
+  .banner .foto-1 {
+    left: 0;
+  }
+
+  .banner .foto-2 {
+    right: 0;
+  }
+
+  .banner .foto-3 {
+    left: 0;
+  }
+
+  .banner__text-block {
+    width: 300px;
+  }
+
+  .banner .text-block-02 {
+    left: 0;
+  }
+
+  .banner .text-block-03 {
+    right: 0;
+  }
+
+  .banner__text {
+    padding: 100px 0 0 40px;
+    width: 290px;
+  }
+
+  .banner__title {
+    font-size: 35px;
+  }
+
+  .banner .rectangle {
+    top: 675px;
   }
 }
 
