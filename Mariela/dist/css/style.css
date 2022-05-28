@@ -431,6 +431,45 @@ img {
           flex-direction: row-reverse;
 }
 
+.products {
+  margin: 75px 0;
+}
+
+.products__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products__item-card {
+  margin: 0 13px 30px 13px;
+}
+
+.products__item-card:last-child {
+  margin-bottom: 0;
+}
+
+.products__item-title {
+  margin: 10px 0 0 0;
+  color: #5f4d5d;
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.products__item-price {
+  margin: 5px 0 0 0;
+  color: #b0b0b0;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -771,6 +810,10 @@ body .wrapper {
 
   .biography__description:nth-child(2) {
     margin-left: 0;
+  }
+
+  .products {
+    margin: 30px 0;
   }
 }
 
