@@ -34,7 +34,7 @@ $md4: 479.98;
 @import 'normalize';
 @import 'header';
 @import 'banner';
-@import 'mainPage';
+@import 'introduction';
 
 body {
   .wrapper {
@@ -51,4 +51,26 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+}
+
+._button {
+  background-color: $white;
+  border-radius: 15px;
+  font-family: $fontFamily2;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid #b99bb6;
+  box-sizing: border-box;
+  border-radius: 25px;
+  color: $lightText;
+  text-align: center;
+  height: 45px;
+  width: 140px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: $lightPinc;
+    color: $white;
+  }
 }

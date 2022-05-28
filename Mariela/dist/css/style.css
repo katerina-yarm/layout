@@ -293,6 +293,76 @@ img {
   background: linear-gradient(to right, #a78ba4 50%, #b08ead 50%);
 }
 
+.introduction__title {
+  margin: 80px 0 20px 0;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  color: #b99bb6;
+}
+
+.introduction__description {
+  color: #5f4d5d;
+  text-align: center;
+  line-height: 142.3076923077%;
+  width: 750px;
+  font-size: 26px;
+  margin: 0 auto;
+}
+
+.introduction__button {
+  margin: 17px 0 50px 0;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.introduction__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0 75px 0;
+}
+
+.introduction__item {
+  overflow: hidden;
+  height: 427px;
+  background-color: #ceb3cb;
+}
+
+.introduction__item-info {
+  height: 113px;
+  padding-top: 23px;
+  margin: 0 0 0 22px;
+  color: #ffffff;
+}
+
+.introduction__item-info-title {
+  font-size: 25px;
+}
+
+.introduction__item-info-link {
+  font-size: 17px;
+  margin: 9px 0 0 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.introduction__item-info-link:hover {
+  letter-spacing: 1px;
+  color: #5f4d5d;
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -309,6 +379,32 @@ body .wrapper {
 ._container {
   max-width: 1214px;
   margin: 0 auto;
+}
+
+._button {
+  background-color: #ffffff;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid #b99bb6;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 25px;
+  color: #b99bb6;
+  text-align: center;
+  height: 45px;
+  width: 140px;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+._button:hover {
+  background-color: #ceb3cb;
+  color: #ffffff;
 }
 
 @media (max-width: 991.98px) {
@@ -334,6 +430,10 @@ body .wrapper {
 
   .banner .text-block-03 {
     right: 20px;
+  }
+
+  .introduction__item-info {
+    text-align: center;
   }
 }
 
@@ -448,6 +548,31 @@ body .wrapper {
             transform: rotate(45deg);
     bottom: calc(50% - 1px);
   }
+
+  .introduction__title {
+    margin: 40px 0 20px 0;
+  }
+
+  .introduction__description {
+    width: 450px;
+    font-size: 20px;
+  }
+
+  .introduction__items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .introduction__item {
+    margin-bottom: 20px;
+  }
+
+  .introduction__item:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 767.98px) and (max-width: 991.98px) {
@@ -508,6 +633,27 @@ body .wrapper {
 
   .banner .rectangle {
     top: 675px;
+  }
+
+  .introduction__description {
+    width: 300px;
+    font-size: 18px;
+  }
+
+  .introduction__button {
+    margin: 17px 0 35px 0;
+  }
+
+  .introduction__item {
+    height: 380px;
+  }
+
+  .introduction__item-info {
+    margin: 0;
+  }
+
+  .introduction__item-foto img {
+    width: 300px;
   }
 }
 
