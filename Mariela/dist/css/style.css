@@ -363,6 +363,74 @@ img {
   color: #5f4d5d;
 }
 
+.biography {
+  padding: 75px 20px;
+}
+
+.biography br {
+  display: block;
+  content: "";
+  margin-top: 10px;
+}
+
+.biography hr {
+  margin: 40px 0;
+  border: none;
+  height: 1px;
+  background-color: #d7b7d4;
+}
+
+.biography__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.biography__description {
+  width: 485px;
+  margin: auto 0;
+}
+
+.biography__description:nth-child(2) {
+  margin-left: 20px;
+}
+
+.biography__description:nth-child(1) {
+  margin-right: 20px;
+}
+
+.biography__description-title {
+  margin: 0;
+  color: #b99bb6;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+.biography__description-text {
+  color: #5f4d5d;
+  font-size: 24px;
+  line-height: 125%;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.biography button {
+  margin-top: 30px;
+}
+
+._rev {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -434,6 +502,23 @@ body .wrapper {
 
   .introduction__item-info {
     text-align: center;
+  }
+
+  .biography {
+    padding: 45px 40px;
+  }
+
+  .biography__description-text {
+    font-size: 20px;
+  }
+
+  .biography__foto {
+    margin: auto;
+  }
+
+  .biography__foto img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -573,6 +658,22 @@ body .wrapper {
   .introduction__item:last-child {
     margin-bottom: 0;
   }
+
+  .biography hr {
+    margin: 20px 0;
+  }
+
+  .biography__description {
+    width: 150%;
+  }
+
+  .biography__description-text {
+    font-size: 16px;
+  }
+
+  .biography button {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 767.98px) and (max-width: 991.98px) {
@@ -654,6 +755,22 @@ body .wrapper {
 
   .introduction__item-foto img {
     width: 300px;
+  }
+
+  .biography__block {
+    display: block;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .biography__description {
+    padding: 20px 0 0 0;
+    width: 100%;
+  }
+
+  .biography__description:nth-child(2) {
+    margin-left: 0;
   }
 }
 

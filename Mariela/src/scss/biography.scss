@@ -1,0 +1,88 @@
+.biography {
+  padding: 75px 20px;
+  @media (max-width: $md2+px) {
+    padding: 45px 40px;
+  }
+  br {
+    display: block;
+    content: '';
+    margin-top: 10px;
+  }
+  hr {
+    margin: 40px 0;
+    border: none;
+    height: 1px;
+    background-color: $line;
+    @media (max-width: $md3+px) {
+      margin: 20px 0;
+    }
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md4+px) {
+      display: block;
+      justify-content: center;
+    }
+  }
+  &__description {
+    width: 485px;
+    margin: auto 0;
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
+    &:nth-child(1) {
+      margin-right: 20px;
+    }
+    @media (max-width: $md3+px) {
+      width: 150%;
+    }
+    @media (max-width: $md4+px) {
+      padding: 20px 0 0 0;
+      width: 100%;
+      &:nth-child(2) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__description-title {
+    margin: 0;
+    color: $lightText;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-family: $fontFamily2;
+    font-weight: normal;
+  }
+  &__description-text {
+    color: $darkText;
+    font-size: 24px;
+    line-height: 30 / 24 * 100%;
+    margin: 0;
+    padding: 10px 0 0 0;
+    @media (max-width: $md2+px) {
+      font-size: 20px;
+    }
+    @media (max-width: $md3+px) {
+      font-size: 16px;
+    }
+  }
+  &__foto {
+    @media (max-width: $md2+px) {
+      margin: auto;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  button {
+    margin-top: 30px;
+    @media (max-width: $md3+px) {
+      margin-top: 20px;
+    }
+  }
+}
+._rev {
+  flex-direction: row-reverse;
+}
