@@ -45,6 +45,9 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    @media (max-width: $md4+px) {
+      margin: 0 0 20px 0;
+    }
   }
   &__item {
     overflow: hidden;
@@ -57,7 +60,8 @@
       }
     }
     @media (max-width: $md4+px) {
-      height: 380px;
+      margin-bottom: 0;
+      height: 400px;
     }
   }
   &__item-info {

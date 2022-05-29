@@ -17,6 +17,9 @@
       max-width: 100%;
       height: auto;
     }
+    @media (max-width: $md4+px) {
+      margin: 0 13px 10px 13px;
+    }
   }
   &__item-title {
     margin: 10px 0 0 0;
@@ -24,6 +27,10 @@
     text-align: center;
     font-size: 24px;
     font-weight: normal;
+    @media (max-width: $md4+px) {
+      font-size: 22px;
+      line-height: 100%;
+    }
   }
   &__item-price {
     margin: 5px 0 0 0;
@@ -31,5 +38,9 @@
     text-align: center;
     font-size: 16px;
     font-family: $fontFamily2;
+    @media (max-width: $md4+px) {
+      font-size: 14px;
+      line-height: 100%;
+    }
   }
 }
