@@ -75,7 +75,8 @@
   &__item-foto {
     @media (max-width: $md4+px) {
       img {
-        width: 300px;
+        max-width: 100%;
+        height: auto;
       }
     }
   }
