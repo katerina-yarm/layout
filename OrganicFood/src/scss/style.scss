@@ -1,12 +1,42 @@
-@mixin font($font_name, $file_name, $weight, $style) {
-  @font-face {
-    font-family: $font_name;
-    font-display: swap;
-    src: url('../fonts/#{$file_name}.woff') format('woff'),
-      url('../fonts/#{$file_name}.woff2') format('woff2');
-    font-weight: #{$weight};
-    font-style: #{$style};
-  }
-}
+@import 'mixins';
+//&display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Rosario:700&display=swap9);
 
 @import 'fonts';
+@import 'icons';
+
+$fontFamily1: 'DM Sans';
+$fontFamily2: 'Rosario';
+
+$lightGreen: #f3fbf8;
+$white: #ffffff;
+$darkGreen: #09a66d;
+$black: #222222;
+
+$maxWidthContainer: 1240;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+
+body {
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  font-family: $fontFamily1;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30 / 18 * 100%;
+  color: $black;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+}
