@@ -22,6 +22,8 @@ $md4: 479.98;
 
 @import 'normalize';
 @import 'header';
+@import 'banner';
+@import 'mainPage';
 
 body {
   .wrapper {
@@ -39,4 +41,50 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+}
+
+._bg-green {
+  background-color: $lightGreen;
+}
+._bg-white {
+  background-color: $white;
+}
+
+._title {
+  font-family: $fontFamily2;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 90 / 70 * 100%;
+  @media (max-width: $md2+px) {
+    font-size: 60px;
+  }
+  @media (max-width: $md3+px) {
+    font-size: 40px;
+  }
+}
+
+.banner {
+  &__button {
+    display: flex;
+    align-items: center;
+    width: 175px;
+  }
+  &__button-text {
+    text-decoration: none;
+    text-align: center;
+    color: $black;
+    margin-right: 20px;
+    &:hover {
+      color: $darkGreen;
+    }
+  }
+  &__button-icon {
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+    background-color: $darkGreen;
+    cursor: pointer;
+    padding-top: 22px;
+    padding-left: 12px;
+  }
 }
