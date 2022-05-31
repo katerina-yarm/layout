@@ -257,6 +257,16 @@ img {
   color: #09a66d;
 }
 
+.header__logo {
+  height: 56px;
+  width: 56px;
+  background-image: url(../img/planet-earth.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
 .header__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,6 +274,10 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 370px;
 }
 
 .header__buttons-icon {
@@ -326,7 +340,28 @@ body .wrapper {
   margin: 0 auto;
 }
 
+@media (max-width: 991.98px) {
+  .header__content {
+    margin: 0 20px;
+  }
+
+  .header .menu__list li {
+    margin-right: 20px;
+  }
+
+  .header__buttons {
+    width: 311px;
+  }
+}
+
 @media (max-width: 767.98px) {
+  .header__content {
+    margin: 0 40px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
   .header .menu__body {
     -webkit-transform: translate(100%, 0px);
         -ms-transform: translate(100%, 0px);
@@ -338,7 +373,7 @@ body .wrapper {
     transition: transform 0.8s ease 0s, -webkit-transform 0.8s ease 0s;
     display: block;
     position: fixed;
-    width: 33%;
+    width: 50%;
     height: 100%;
     top: 0;
     right: 0;
@@ -355,11 +390,29 @@ body .wrapper {
             transform: translate(0px, 0%);
   }
 
+  .header .menu__list {
+    display: block;
+  }
+
+  .header .menu__list li {
+    margin-right: 0;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .header .menu__link {
+    font-size: 25px;
+  }
+
+  .header__buttons {
+    width: 300px;
+  }
+
   .icon-menu {
     position: absolute;
     display: block;
-    top: 60px;
-    left: 20px;
+    top: 68px;
+    right: 40px;
     width: 30px;
     height: 18px;
     cursor: pointer;
@@ -374,7 +427,7 @@ body .wrapper {
     left: 0;
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1.5px;
     background-color: #222222;
   }
 
@@ -412,12 +465,37 @@ body .wrapper {
   }
 }
 
-@media (max-width: 767.98px) and (max-width: 991.98px) {
-  .header .menu__body {
-    width: 50%;
-  }
-
+@media (max-width: 767.98px) and (max-width: 479.98px) {
   .header .menu__body {
     width: 100%;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .header {
+    padding-top: 25px;
+  }
+
+  .header__content {
+    display: block;
+    margin: 0 20px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .header__buttons {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .header__buttons-regestar {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+
+  .icon-menu {
+    top: 48px;
+    right: 20px;
   }
 }
