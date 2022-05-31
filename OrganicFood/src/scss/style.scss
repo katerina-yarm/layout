@@ -23,6 +23,7 @@ $md4: 479.98;
 @import 'normalize';
 @import 'header';
 @import 'banner';
+@import 'introduction';
 @import 'mainPage';
 
 body {
@@ -41,6 +42,7 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 ._bg-green {

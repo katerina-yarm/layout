@@ -2,14 +2,11 @@
   position: relative;
   z-index: 3;
   height: 150px;
-  padding-top: 50px;
-  @media (max-width: $md4+px) {
-    padding-top: 25px;
-  }
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 50px;
     @media (max-width: $md2+px) {
       margin: 0 20px;
     }
@@ -20,6 +17,7 @@
     @media (max-width: $md4+px) {
       display: block;
       margin: 0 20px;
+      padding-top: 25px;
       justify-content: flex-start;
     }
   }
@@ -93,7 +91,7 @@
     justify-content: flex-end;
     width: 370px;
     @media (max-width: $md2+px) {
-      width: 311px;
+      width: 280px;
     }
     @media (max-width: $md3+px) {
       width: 300px;
