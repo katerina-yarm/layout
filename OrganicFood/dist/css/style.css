@@ -727,6 +727,119 @@ img {
   height: auto;
 }
 
+.footer .footer-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 140px;
+}
+
+.footer .footer-download__images {
+  margin: auto 120px auto 100px;
+  height: 485px;
+  width: 250px;
+  position: relative;
+}
+
+.footer .footer-download ._small-phone {
+  position: absolute;
+  top: 30px;
+}
+
+.footer .footer-download ._large-phone {
+  position: absolute;
+  left: 20px;
+}
+
+.footer .footer-download__content {
+  margin-left: 110px;
+}
+
+.footer .footer-download__icon {
+  margin: 34px 0 20px 0;
+  width: 170px;
+  height: 40px;
+  background-color: #f3fbf8;
+  text-align: center;
+  border-radius: 35%;
+  padding: 5px 0;
+}
+
+.footer .footer-download__icon a {
+  color: #222222;
+  font-size: 18px;
+}
+
+.footer .footer-download__description {
+  margin: 30px 0 55px 0;
+  line-height: 1.5;
+  max-width: 575px;
+}
+
+.footer .footer-download__apps a {
+  margin-right: 24px;
+}
+
+.footer .footer-02 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 435px;
+}
+
+.footer .footer-02 .block-01 .planet-earth {
+  height: 70px;
+  width: 70px;
+  background-size: 100%;
+  margin: 66px 0 30px 0;
+}
+
+.footer .footer-02 .block-01 p {
+  line-height: 1.6;
+}
+
+.footer .footer-02 h2 {
+  margin: 105px 0 40px 0;
+}
+
+.footer .footer-02 li {
+  margin-bottom: 24px;
+}
+
+.footer .footer-02 .block-04 {
+  margin-right: 70px;
+}
+
+.footer .footer-02 .block-04 .social-network {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+}
+
+.footer .footer-02 .block-04 .social-network a {
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-right: 50px;
+}
+
+.footer .footer-02 .block-04 .social-network .fb {
+  background-image: url(utils/fb.svg);
+}
+
+.footer .footer-02 .block-04 .social-network .twitter {
+  background-image: url(utils/twit.svg);
+}
+
+.footer .footer-02 .block-04 .social-network .instagram {
+  background-image: url(utils/instagram.svg);
+}
+
 body {
   font-family: "DM Sans";
   font-weight: 400;
@@ -870,8 +983,12 @@ body .wrapper {
     margin-top: -20px;
   }
 
+  .footer .footer-download__images {
+    margin: auto 80px auto 20px;
+  }
+
   ._title {
-    font-size: 60px;
+    font-size: 50px;
   }
 }
 
@@ -1149,6 +1266,30 @@ body .wrapper {
     width: 280px;
   }
 
+  .footer .footer-download__images {
+    width: 200px;
+    height: 385px;
+    margin: auto 60px auto 20px;
+  }
+
+  .footer .footer-download ._small-phone img {
+    width: 170px;
+    height: auto;
+  }
+
+  .footer .footer-download ._large-phone img {
+    width: 200px;
+    height: auto;
+  }
+
+  .footer .footer-download__description {
+    font-size: 16px;
+  }
+
+  .footer .footer-download__apps a {
+    margin-right: 0;
+  }
+
   ._title {
     font-size: 40px;
   }
@@ -1276,6 +1417,33 @@ body .wrapper {
   .customers__title {
     margin: 0 0 20px 20px;
     text-align: center;
+  }
+
+  .footer .footer-download {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-bottom: 40px;
+  }
+
+  .footer .footer-download__images {
+    margin: auto;
+  }
+
+  .footer .footer-download__content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .footer .footer-download__icon {
+    margin: 50px auto 20px auto;
+  }
+
+  .footer .footer-download__description {
+    margin: 20px 0 20px 0;
+  }
+
+  ._title {
+    font-size: 30px;
   }
 }
 

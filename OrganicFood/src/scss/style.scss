@@ -26,6 +26,7 @@ $md4: 479.98;
 @import 'introduction';
 @import 'specialItems';
 @import 'customers';
+@import 'footer';
 
 body {
   .wrapper {
@@ -59,10 +60,13 @@ body {
   font-size: 70px;
   line-height: 90 / 70 * 100%;
   @media (max-width: $md2+px) {
-    font-size: 60px;
+    font-size: 50px;
   }
   @media (max-width: $md3+px) {
     font-size: 40px;
+  }
+  @media (max-width: $md4+px) {
+    font-size: 30px;
   }
 }
 
