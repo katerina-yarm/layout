@@ -1,0 +1,132 @@
+.customers {
+  margin-top: 96px;
+  padding-bottom: 150px;
+  @media (max-width: $md2+px) {
+    margin-top: 60px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: $md3+px) {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md3+px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column-reverse;
+      margin-left: 40px;
+    }
+    @media (max-width: $md4+px) {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  &__info {
+    max-width: 55%;
+    margin: 0 40px 0 0;
+    @media (max-width: $md3+px) {
+      max-width: 100%;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 0 0 0;
+    }
+  }
+  &__title {
+    max-width: 700px;
+    @media (max-width: $md3+px) {
+      margin: 0 0 20px 40px;
+      max-width: 900px;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 0 20px 20px;
+      text-align: center;
+    }
+  }
+  &__description {
+    margin: 30px 0 40px 0;
+    @media (max-width: $md3+px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  &__username {
+    font-size: 30px;
+    @media (max-width: $md3+px) {
+      margin-bottom: 30px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__raiting {
+    display: flex;
+    margin-top: 20px;
+    div {
+      margin-right: 10px;
+      @media (max-width: 280px) {
+        margin-right: 5px;
+      }
+    }
+  }
+  &__direction {
+    display: flex;
+    margin-right: 20%;
+    @media (max-width: $md2+px) {
+      margin-right: 0;
+    }
+  }
+  &__icon {
+    margin-right: 26px;
+    height: 56px;
+    width: 56px;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    @media (max-width: 280px) {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  ._left {
+    border: 1px #cccccc solid;
+    &:hover {
+      background-color: seagreen;
+    }
+  }
+  ._right {
+    background-color: $darkGreen;
+    border: 1px $darkGreen solid;
+    &:hover {
+      background-color: seagreen;
+    }
+  }
+  &__img {
+    margin-top: -100px;
+    @media (max-width: $md2+px) {
+      margin-top: -20px;
+    }
+    @media (max-width: $md3+px) {
+      margin: 0 auto;
+    }
+  }
+  ._customer {
+    position: relative;
+    img {
+      background-color: $lightGreen;
+      border-radius: 100%;
+      width: 100%;
+      height: auto;
+      @media (max-width: $md3+px) {
+        width: 280px;
+      }
+    }
+  }
+}

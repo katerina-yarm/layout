@@ -104,17 +104,6 @@
   color: #09a66d;
 }
 
-._icon-star .path1:before {
-  content: "\e91f";
-  color: rgb(254, 212, 45);
-}
-
-._icon-star .path2:before {
-  content: "\e920";
-  margin-left: -1em;
-  color: rgb(252, 191, 41);
-}
-
 ._icon-twit:before {
   content: "\e921";
 }
@@ -628,6 +617,116 @@ img {
   margin-bottom: 40px;
 }
 
+.customers {
+  margin-top: 96px;
+  padding-bottom: 150px;
+}
+
+.customers__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.customers__info {
+  max-width: 55%;
+  margin: 0 40px 0 0;
+}
+
+.customers__title {
+  max-width: 700px;
+}
+
+.customers__description {
+  margin: 30px 0 40px 0;
+}
+
+.customers__username {
+  font-size: 30px;
+}
+
+.customers__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.customers__raiting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.customers__raiting div {
+  margin-right: 10px;
+}
+
+.customers__direction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20%;
+}
+
+.customers__icon {
+  margin-right: 26px;
+  height: 56px;
+  width: 56px;
+  border-radius: 100%;
+  text-align: center;
+  padding-top: 18px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.customers__icon:last-child {
+  margin-right: 0;
+}
+
+.customers ._left {
+  border: 1px #cccccc solid;
+}
+
+.customers ._left:hover {
+  background-color: seagreen;
+}
+
+.customers ._right {
+  background-color: #09a66d;
+  border: 1px #09a66d solid;
+}
+
+.customers ._right:hover {
+  background-color: seagreen;
+}
+
+.customers__img {
+  margin-top: -100px;
+}
+
+.customers ._customer {
+  position: relative;
+}
+
+.customers ._customer img {
+  background-color: #f3fbf8;
+  border-radius: 100%;
+  width: 100%;
+  height: auto;
+}
+
 body {
   font-family: "DM Sans";
   font-weight: 400;
@@ -756,6 +855,19 @@ body .wrapper {
 
   .special-items__title {
     margin-top: 75px;
+  }
+
+  .customers {
+    margin-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .customers__direction {
+    margin-right: 0;
+  }
+
+  .customers__img {
+    margin-top: -20px;
   }
 
   ._title {
@@ -980,7 +1092,7 @@ body .wrapper {
   }
 
   .special-items__img {
-    margin: 40px 0 40px 0;
+    margin: 40px auto 40px auto;
   }
 
   .special-items__title {
@@ -991,6 +1103,50 @@ body .wrapper {
     font-size: 16px;
     line-height: 150%;
     margin: 20px 0 20px 0;
+  }
+
+  .customers {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .customers__content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin-left: 40px;
+  }
+
+  .customers__info {
+    max-width: 100%;
+  }
+
+  .customers__title {
+    margin: 0 0 20px 40px;
+    max-width: 900px;
+  }
+
+  .customers__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .customers__username {
+    margin-bottom: 30px;
+  }
+
+  .customers__img {
+    margin: 0 auto;
+  }
+
+  .customers ._customer img {
+    width: 280px;
   }
 
   ._title {
@@ -1107,6 +1263,20 @@ body .wrapper {
   .special-items .banner__button {
     margin: 40px auto;
   }
+
+  .customers__content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .customers__info {
+    margin: 0 0 0 0;
+  }
+
+  .customers__title {
+    margin: 0 0 20px 20px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 330px) {
@@ -1133,5 +1303,15 @@ body .wrapper {
 
   .banner__item .item-icon-img {
     width: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .customers__raiting div {
+    margin-right: 5px;
+  }
+
+  .customers__icon {
+    margin-right: 10px;
   }
 }
