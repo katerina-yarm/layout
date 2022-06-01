@@ -24,7 +24,7 @@ $md4: 479.98;
 @import 'header';
 @import 'banner';
 @import 'introduction';
-@import 'mainPage';
+@import 'specialItems';
 
 body {
   .wrapper {
@@ -88,5 +88,8 @@ body {
     cursor: pointer;
     padding-top: 22px;
     padding-left: 12px;
+    &:hover {
+      background-color: seagreen;
+    }
   }
 }
