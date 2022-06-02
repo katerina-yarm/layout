@@ -38,18 +38,18 @@
     justify-content: center;
   }
   &__item-icon {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 100px;
     font-size: 40px;
     border-radius: 100%;
     position: relative;
     margin: 0 0 0 30px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 10px;
     @media (max-width: $md3+px) {
       padding-top: 5px;
       height: 50px;
-      width: 50px;
+      width: 100px;
       font-size: 35px;
       margin: 0 0 0 5px;
     }

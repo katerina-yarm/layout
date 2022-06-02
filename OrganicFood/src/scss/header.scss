@@ -54,7 +54,7 @@
       li {
         margin-right: 40px;
         @media (max-width: $md2+px) {
-          margin-right: 20px;
+          margin-right: 15px;
         }
         @media (max-width: $md3+px) {
           margin-right: 0;
@@ -91,7 +91,7 @@
     justify-content: flex-end;
     width: 370px;
     @media (max-width: $md2+px) {
-      width: 280px;
+      width: 245px;
     }
     @media (max-width: $md3+px) {
       width: 300px;
@@ -104,6 +104,9 @@
   &__buttons-icon {
     margin-right: 20px;
     width: 40px;
+    @media (max-width: $md2+px) {
+      margin-right: 10px;
+    }
   }
   ._icon-search {
     font-size: 22px;
@@ -125,6 +128,9 @@
     font-size: 18px;
     line-height: 20 / 18 * 100%;
     transition: background-color 0.3 ease;
+    @media (max-width: $md2+px) {
+      padding: 10px 15px;
+    }
     @media (max-width: $md4+px) {
       padding: 5px 10px;
       font-size: 16px;
@@ -142,7 +148,7 @@
     position: absolute;
     display: block;
     top: 68px;
-    right: 40px;
+    right: 20px;
     width: 30px;
     height: 18px;
     cursor: pointer;
