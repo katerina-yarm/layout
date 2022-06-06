@@ -1,0 +1,65 @@
+@import 'mixins';
+
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'CeraCompactPro';
+
+$linear-blue: linear-gradient(#1f6de2, #1c77ff);
+$linear-blue-hover: linear-gradient(to right, #0d52b9, #0f5ed4);
+$blue: #1f6de2;
+$black: #181818;
+$dark-grey: #424242;
+$grey: #b3b3b3;
+$dark-white: #f6f6f6;
+$white: #ffffff;
+
+$maxWidthContainer: 1180;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+
+body {
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30 / 20 * 100%;
+  color: $dark-grey;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 65 / 45 * 100%;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50 / 30 * 100%;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28 / 20 * 100%;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25 / 18 * 100%;
+}
