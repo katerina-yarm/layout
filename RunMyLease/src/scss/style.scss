@@ -5,8 +5,8 @@
 
 $fontFamily: 'CeraCompactPro';
 
-$linear-blue: linear-gradient(#1f6de2, #1c77ff);
-$linear-blue-hover: linear-gradient(to right, #0d52b9, #0f5ed4);
+$linear-blue: linear-gradient(to bottom, #1f6de2, #1c77ff);
+$linear-blue-hover: linear-gradient(to bottom, #0d52b9, #0f5ed4);
 $blue: #1f6de2;
 $black: #181818;
 $dark-grey: #424242;
@@ -32,7 +32,7 @@ body {
   font-family: $fontFamily;
   font-weight: 400;
   font-size: 20px;
-  line-height: 30 / 20 * 100%;
+  line-height: calc(30 / 20 * 100%);
   color: $dark-grey;
 }
 
@@ -45,21 +45,45 @@ body {
 h1 {
   font-size: 45px;
   font-weight: 700;
-  line-height: 65 / 45 * 100%;
+  line-height: calc(65 / 45 * 100%);
 }
 
 h2 {
   font-size: 30px;
   font-weight: 700;
-  line-height: 50 / 30 * 100%;
+  line-height: calc(50 / 30 * 100%);
 }
 h3 {
   font-size: 20px;
   font-weight: 700;
-  line-height: 28 / 20 * 100%;
+  line-height: calc(28 / 20 * 100%);
+  @media (max-width: $md4+px) {
+    font-size: 18px;
+  }
 }
-h3 {
+h4 {
   font-size: 18px;
   font-weight: 700;
-  line-height: 25 / 18 * 100%;
+  line-height: calc(25 / 18 * 100%);
+}
+
+._button-menu {
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  background-image: $linear-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $white;
+  &:hover,
+  &:focus {
+    background: $linear-blue-hover;
+  }
+  @media (max-width: $md4+px) {
+    width: 130px;
+  }
 }
