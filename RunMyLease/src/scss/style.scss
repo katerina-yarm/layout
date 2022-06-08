@@ -18,10 +18,11 @@ $maxWidthContainer: 1180;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
-$md4: 479.98;
+$md4: 540.98;
 
 @import 'normalize';
 @import 'header';
+@import 'footer';
 
 body {
   .wrapper {
@@ -39,7 +40,7 @@ body {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 h1 {
@@ -57,7 +58,7 @@ h3 {
   font-size: 20px;
   font-weight: 700;
   line-height: calc(28 / 20 * 100%);
-  @media (max-width: $md4+px) {
+  @media (max-width: $md3+px) {
     font-size: 18px;
   }
 }
@@ -85,5 +86,26 @@ h4 {
   }
   @media (max-width: $md4+px) {
     width: 130px;
+  }
+}
+
+._button-arrow {
+  display: block;
+  width: 170px;
+  height: 50px;
+  border-radius: 30px;
+  background-image: $linear-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $white;
+  img{
+    padding: 19px 0 0 20px;
+  }
+  &:hover,
+  &:focus {
+    background: $linear-blue-hover;
   }
 }

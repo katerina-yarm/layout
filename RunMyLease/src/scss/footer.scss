@@ -1,0 +1,188 @@
+.footer {
+  position: relative;
+  top: 100px;
+  .footer-form {
+    background-color: $dark-white;
+    &__content {
+      padding: 100px 150px;
+      @media (max-width: $md2+px) {
+        padding: 50px 100px;
+      }
+      @media (max-width: $md3+px) {
+        padding: 50px 20px;
+      }
+    }
+    &__title {
+      margin-bottom: 40px;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .floating-label-input {
+      position: relative;
+      height: 60px;
+      width: 100%;
+      border-bottom: 2px solid $blue;
+      margin-bottom: 30px;
+    }
+    input {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      font-size: 16px;
+      padding-bottom: 15px;
+    }
+    label {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 18px;
+      transition: 0.5s;
+      color: $blue;
+      font-size: 16px;
+    }
+    input:focus ~ label {
+      bottom: 40px;
+      font-size: 12px;
+    }
+    input:valid ~ small {
+      display: none;
+    }
+    input:invalid ~ small {
+      display: flex;
+      color: red;
+      font-size: 12px;
+      justify-content: right;
+      padding-top: 7px;
+    }
+    input:invalid ~ label {
+      color: red;
+    }
+    select {
+      font-size: 16px;
+      color: $blue;
+      margin-top: 17px;
+      width: 95%;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 0;
+    }
+    option {
+      color: $black;
+      font-size: 13px;
+    }
+    ._large {
+      width: 100%;
+    }
+    ._small {
+      width: 49%;
+      @media (max-width: $md3+px) {
+        width: 100%;
+      }
+    }
+    &__button {
+      margin: 40px 0 0 auto;
+      @media (max-width: $md3+px) {
+        margin: 40px auto;
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: space-between;
+    @media (max-width: $md2+px) {
+      display: block;
+      margin-bottom: 50px;
+    }
+    @media (max-width: $md3+px) {
+      hr {
+        background-color: #f6f6f6;
+        height: 2px;
+        width: 100%;
+      }
+    }
+
+    .footer-navigation {
+      display: flex;
+      align-items: center;
+      @media (max-width: $md3+px) {
+        flex-direction: column-reverse;
+      }
+      &__social-network {
+        margin: 63px 0;
+        display: flex;
+        @media (max-width: $md2+px) {
+          margin: 50px auto 50px 0;
+        }
+        @media (max-width: $md3+px) {
+          margin: 50px auto;
+        }
+      }
+      &__social-network-link {
+        margin-right: 30px;
+        color: $black;
+        @media (max-width: $md2+px) {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        &:hover {
+          color: $blue;
+        }
+      }
+      &__list {
+        display: flex;
+        @media (max-width: $md3+px) {
+          flex-wrap: wrap;
+        }
+      }
+      &__link {
+        margin-left: 30px;
+        @media (max-width: $md3+px) {
+          margin: 0;
+          width: 50%;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        a {
+          color: $black;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+    ._copy {
+      color: $grey;
+      span {
+        margin-right: 30px;
+        line-height: 21px;
+        @media (max-width: $md2+px) {
+          display: block;
+          text-align: center;
+          margin: 20px auto;
+        }
+        @media (max-width: $md3+px) {
+          max-width: 180px;
+        }
+        &:last-child {
+          margin-right: 0;
+          @media (max-width: $md3+px) {
+            margin: 0 auto;
+            text-decoration: underline;
+            text-underline-offset: 11px;
+          }
+        }
+      }
+    }
+  }
+}

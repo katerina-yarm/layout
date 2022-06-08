@@ -20,6 +20,9 @@
     @media (max-width: $md4+px) {
       margin-left: 53px;
     }
+    @media (max-width: 290px) {
+      margin-left: 35px;
+    }
   }
   ._icon-R {
     font-size: 20px;
@@ -41,9 +44,14 @@
     @media (max-width: $md4+px) {
       margin: 10px 0 10px 10px;
     }
+    @media (max-width: 300px) {
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+    }
   }
   ._products {
-    padding-left: 100px;
+    padding-left: 30px;
     &._active {
       color: $blue;
       ._icon-header-dropdown {
@@ -163,10 +171,15 @@
         }
       }
       h3 {
-        line-height: calc(65 / 20 * 100%);
+        padding-top: 20px;
+        line-height: calc(25 / 20 * 100%);
+        @media (max-width: $md3+px) {
+          font-size: 16px;
+        }
         @media (max-width: $md4+px) {
           flex: 1;
           margin-left: 50px;
+          font-size: 18px;
         }
       }
     }
