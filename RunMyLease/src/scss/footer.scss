@@ -53,13 +53,13 @@
     }
     input:invalid ~ small {
       display: flex;
-      color: red;
+      color: $red;
       font-size: 12px;
       justify-content: right;
       padding-top: 7px;
     }
     input:invalid ~ label {
-      color: red;
+      color: $red;
     }
     select {
       font-size: 16px;
