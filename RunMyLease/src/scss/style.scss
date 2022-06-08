@@ -64,6 +64,9 @@ h2 {
   font-size: 30px;
   font-weight: 700;
   line-height: calc(50 / 30 * 100%);
+  @media (max-width: $md3+px) {
+    font-size: 25px;
+  }
 }
 h3 {
   font-size: 20px;
