@@ -1,15 +1,6 @@
 .footer {
   .footer-form {
     background-color: $dark-white;
-    &__content {
-      padding: 100px 150px;
-      @media (max-width: $md2+px) {
-        padding: 50px 100px;
-      }
-      @media (max-width: $md3+px) {
-        padding: 50px 20px;
-      }
-    }
     &__title {
       margin-bottom: 40px;
     }
