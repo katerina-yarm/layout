@@ -38,8 +38,17 @@ body {
   font-size: 20px;
   line-height: calc(30 / 20 * 100%);
   color: $dark-grey;
+  @media (max-width: $md4+px) {
+    font-family: 18px;
+  }
 }
 
+main {
+  padding-top: 100px;
+  @media (max-width: $md4+px) {
+    padding-top: 60px;
+  }
+}
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
@@ -102,6 +111,7 @@ h4 {
   font-size: 16px;
   line-height: calc(50 / 16 * 100%);
   color: $white;
+  transition: 0.5s;
   &:hover,
   &:focus {
     background: $linear-blue-hover;
@@ -123,11 +133,32 @@ h4 {
   font-size: 16px;
   line-height: calc(50 / 16 * 100%);
   color: $white;
+  transition: 0.5s;
   img {
     padding: 19px 0 0 20px;
   }
   &:hover,
   &:focus {
     background: $linear-blue-hover;
+  }
+}
+
+._button-light {
+  display: block;
+  width: 160px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $blue;
+  transition: all 1s ease;
+  &:hover,
+  &:focus {
+    background: $linear-blue;
+    color: $white;
   }
 }
