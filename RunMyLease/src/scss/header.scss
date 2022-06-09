@@ -3,7 +3,6 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  border-bottom: $white solid 2px;
   &__content {
     display: flex;
     align-items: center;
@@ -52,6 +51,7 @@
   }
   ._products {
     padding-left: 30px;
+    cursor: pointer;
     &._active {
       color: $blue;
       ._icon-header-dropdown {
@@ -86,7 +86,7 @@
       top: -210px;
       left: 0;
       &._active {
-        top: 102px;
+        top: 100px;
         @media (max-width: $md4+px) {
           top: 0;
         }
@@ -120,6 +120,7 @@
         padding: 0;
       }
       li {
+        border-top: $white solid 2px;
         border-right: $white solid 2px;
         padding: 20px 0 0 4.5%;
         width: 25%;
@@ -127,6 +128,7 @@
           width: 100%;
           padding: 0;
           border-right: none;
+          border-top: none;
           border-bottom: $white solid 2px;
         }
         &:last-child,

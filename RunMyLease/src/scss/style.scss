@@ -34,21 +34,19 @@ body {
     overflow: hidden;
   }
   font-family: $fontFamily;
+}
+
+p {
+  font-family: $fontFamily;
   font-weight: 400;
   font-size: 20px;
   line-height: calc(30 / 20 * 100%);
   color: $dark-grey;
-  @media (max-width: $md4+px) {
+  @media (max-width: $md3+px) {
     font-family: 18px;
   }
 }
 
-main {
-  padding-top: 100px;
-  @media (max-width: $md4+px) {
-    padding-top: 60px;
-  }
-}
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
