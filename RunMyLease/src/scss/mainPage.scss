@@ -2,6 +2,76 @@ main {
   padding-top: 100px;
 }
 
+.products {
+  margin: 110px 0 60px 0;
+  @media (max-width: $md3+px) {
+    margin: 88px 0 60px 0;
+  }
+  h1 {
+    margin-left: 100px;
+    @media (max-width: $md3+px) {
+      margin-left: 0;
+    }
+  }
+  &__item {
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $md3+px) {
+      margin-top: 0;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      flex-direction: row-reverse;
+      @media (max-width: $md3+px) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  &__item-content {
+    margin-left: 100px;
+    @media (max-width: $md3+px) {
+      margin-left: 0;
+    }
+    p {
+      max-width: 410px;
+      margin: 4px 0 26px 0;
+    }
+  }
+  &__picture {
+    width: 50%;
+    height: 500px;
+    background-color: $dark-white;
+    position: relative;
+    @media (max-width: $md2+px) {
+      height: 400px;
+    }
+    @media (max-width: $md3+px) {
+      width: 100%;
+      height: 300px;
+      margin: 60px 0 30px 0;
+    }
+    picture {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      img {
+        max-width: 550px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
 .introduction {
   background-color: $dark-white;
   &__content {
