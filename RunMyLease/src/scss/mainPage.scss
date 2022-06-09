@@ -2,6 +2,85 @@ main {
   padding-top: 100px;
 }
 
+.testimonials {
+  hr {
+    height: 2px;
+    color: $white;
+    width: 100%;
+  }
+  &__title {
+    padding: 90px 0 40px 0;
+    @media (max-width: $md3+px) {
+      padding: 60px 0 30px 0;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 74px 7% 65px 0;
+    @media (max-width: $md2+px) {
+      padding: 74px 2% 65px 0;
+    }
+    @media (max-width: $md3+px) {
+      display: block;
+      padding: 38px 0 46px 0;
+    }
+    img {
+      max-width: 100px;
+      width: 100%;
+      height: auto;
+      border-radius: 100%;
+    }
+  }
+  &__item-description {
+    max-width: 580px;
+    @media (max-width: $md2+px) {
+      max-width: 350px;
+    }
+    @media (max-width: $md3+px) {
+      max-width: 700px;
+    }
+  }
+  &__item-info {
+    width: 220px;
+    @media (max-width: $md3+px) {
+      margin-bottom: 43px;
+    }
+    p {
+      color: $grey;
+    }
+    h4 {
+      @media (max-width: $md3+px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__button {
+    padding: 40px 0;
+  }
+  ._button-arrow {
+    margin: 0 7% 0 auto;
+    @media (max-width: $md2+px) {
+      margin: 0 2% 0 auto;
+    }
+    @media (max-width: $md3+px) {
+      margin: 0 auto;
+    }
+  }
+  ._bg-light-grey {
+    background-color: $light-grey;
+    @media (max-width: $md3+px) {
+      background-color: $dark-white;
+    }
+  }
+  ._bg-white {
+    @media (max-width: $md3+px) {
+      background-color: $white;
+    }
+  }
+}
+
 .products {
   margin: 110px 0 60px 0;
   @media (max-width: $md3+px) {

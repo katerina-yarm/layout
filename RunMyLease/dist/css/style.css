@@ -545,6 +545,60 @@ main {
   padding-top: 100px;
 }
 
+.testimonials hr {
+  height: 2px;
+  color: #ffffff;
+  width: 100%;
+}
+
+.testimonials__title {
+  padding: 90px 0 40px 0;
+}
+
+.testimonials__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 74px 7% 65px 0;
+}
+
+.testimonials__item img {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+}
+
+.testimonials__item-description {
+  max-width: 580px;
+}
+
+.testimonials__item-info {
+  width: 220px;
+}
+
+.testimonials__item-info p {
+  color: #b3b3b3;
+}
+
+.testimonials__button {
+  padding: 40px 0;
+}
+
+.testimonials ._button-arrow {
+  margin: 0 7% 0 auto;
+}
+
+.testimonials ._bg-light-grey {
+  background-color: #e5e5e5;
+}
+
 .products {
   margin: 110px 0 60px 0;
 }
@@ -734,6 +788,14 @@ body .wrapper {
   padding: 50px 150px;
 }
 
+._bg-dark-white {
+  background-color: #f6f6f6;
+}
+
+._bg-light-grey {
+  background-color: #e5e5e5;
+}
+
 h1 {
   font-size: 45px;
   font-weight: 700;
@@ -840,6 +902,18 @@ h4 {
     margin: 20px auto;
   }
 
+  .testimonials__item {
+    padding: 74px 2% 65px 0;
+  }
+
+  .testimonials__item-description {
+    max-width: 350px;
+  }
+
+  .testimonials ._button-arrow {
+    margin: 0 2% 0 auto;
+  }
+
   .products__picture {
     height: 400px;
   }
@@ -915,6 +989,39 @@ h4 {
     margin: 0 auto;
     text-decoration: underline;
     text-underline-offset: 11px;
+  }
+
+  .testimonials__title {
+    padding: 60px 0 30px 0;
+  }
+
+  .testimonials__item {
+    display: block;
+    padding: 38px 0 46px 0;
+  }
+
+  .testimonials__item-description {
+    max-width: 700px;
+  }
+
+  .testimonials__item-info {
+    margin-bottom: 43px;
+  }
+
+  .testimonials__item-info h4 {
+    margin-bottom: 20px;
+  }
+
+  .testimonials ._button-arrow {
+    margin: 0 auto;
+  }
+
+  .testimonials ._bg-light-grey {
+    background-color: #f6f6f6;
+  }
+
+  .testimonials ._bg-white {
+    background-color: #ffffff;
   }
 
   .products {

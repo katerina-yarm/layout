@@ -11,6 +11,7 @@ $blue: #1f6de2;
 $black: #181818;
 $dark-grey: #424242;
 $grey: #b3b3b3;
+$light-grey: #e5e5e5;
 $dark-white: #f6f6f6;
 $white: #ffffff;
 $red: #db0000;
@@ -52,6 +53,13 @@ body {
   @media (max-width: $md3+px) {
     padding: 25px 20px;
   }
+}
+
+._bg-dark-white {
+  background-color: $dark-white;
+}
+._bg-light-grey {
+  background-color: $light-grey;
 }
 
 h1 {
