@@ -114,6 +114,7 @@
 
 ._icon-search-icon-02:before {
   content: "\e90e";
+  font-size: 30px;
 }
 
 ._icon-stand-out:before {
@@ -832,6 +833,10 @@ img {
   height: auto;
 }
 
+.extra-page__introduction_galary-item picture ._pricing-export-picture {
+  max-width: 300px;
+}
+
 .extra-page__introduction_galary-item ._bg-dark-white {
   position: relative;
   width: 100%;
@@ -911,7 +916,44 @@ img {
 }
 
 .extra-page__statistics_content-title {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+}
+
+.extra-page__statistics_content-list {
+  padding-bottom: 85px;
+}
+
+.extra-page__statistics_content-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.extra-page__statistics_content-link-number {
+  margin: 30px 5% 35px 50px;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #181818;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.extra-page__statistics_content-link-text {
+  width: 80%;
+}
+
+.extra-page__statistics_content-description {
+  max-width: 730px;
 }
 
 .extra-page__statistics_content-items {
@@ -921,6 +963,7 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 
@@ -1348,12 +1391,16 @@ h4 {
     margin: 80px 0 10px 0;
   }
 
+  .extra-page__introduction_galary-item picture ._pricing-export-picture {
+    max-width: 150px;
+  }
+
   .extra-page__introduction_galary-item ._bg-dark-white {
     height: 200px;
   }
 
   .extra-page__introduction_galary-item ._bg-dark-white picture {
-    top: 15%;
+    top: 25%;
   }
 
   .extra-page ._grid {
@@ -1387,12 +1434,18 @@ h4 {
     padding: 60px 0 0 0;
   }
 
-  .extra-page__statistics_content-title {
-    margin-bottom: 40px;
+  .extra-page__statistics_content-link {
+    display: block;
+    padding: 30px 0 30px 10px;
+  }
+
+  .extra-page__statistics_content-link-number {
+    margin: 0 0 20px 0;
   }
 
   .extra-page__statistics_content-items {
     display: block;
+    margin-top: 40px;
     margin-bottom: 0;
     font-size: 18px;
   }
