@@ -26,6 +26,7 @@ $md4: 540.98;
 @import 'header';
 @import 'footer';
 @import 'mainPage';
+@import 'additionalPage';
 
 body {
   .wrapper {
@@ -43,7 +44,7 @@ p {
   line-height: calc(30 / 20 * 100%);
   color: $dark-grey;
   @media (max-width: $md3+px) {
-    font-family: 18px;
+    font-size: 18px;
   }
 }
 

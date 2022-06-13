@@ -130,6 +130,7 @@
 
 ._icon-unlock-price-icon-02:before {
   content: "\e912";
+  font-size: 30px;
 }
 
 ._icon-unlock-price-icon-03:before {
@@ -807,6 +808,161 @@ img {
   height: auto;
 }
 
+._extra-page-wrapper {
+  margin: 0 130px;
+}
+
+.extra-page__introduction {
+  padding-top: 100px;
+}
+
+.extra-page__introduction_title {
+  margin: 130px 0 10px 0;
+  text-align: center;
+}
+
+.extra-page__introduction_description {
+  text-align: center;
+  margin-bottom: 195px;
+}
+
+.extra-page__introduction_galary-item picture img {
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+}
+
+.extra-page__introduction_galary-item ._bg-dark-white {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.extra-page__introduction_galary-item ._bg-dark-white picture {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.extra-page ._grid {
+  display: grid;
+  grid-template-rows: 2;
+  grid-template-columns: 2;
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.extra-page ._grid ._grid-item-01 {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+
+.extra-page ._grid ._grid-item-02 {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.extra-page ._grid ._grid-item-03 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.extra-page__description hr {
+  height: 2px;
+  background-color: #f6f6f6;
+  width: 100%;
+}
+
+.extra-page__description_items {
+  margin-top: 30px;
+}
+
+.extra-page__description_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra-page__description_item-icon {
+  color: #1f6de2;
+  font-size: 25px;
+  padding-top: 7px;
+  margin: 60px 150px 90px 0;
+}
+
+.extra-page__description_item-text p {
+  padding-top: 5px;
+}
+
+.extra-page__statistics_content {
+  padding: 115px 0 0 0;
+}
+
+.extra-page__statistics_content-title {
+  margin-bottom: 60px;
+}
+
+.extra-page__statistics_content-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.extra-page__statistics_content-item {
+  width: 30%;
+}
+
+.extra-page__statistics_content-item h3 {
+  margin-bottom: 10px;
+}
+
+.extra-page__statistics_content-picture img {
+  width: 100%;
+  height: auto;
+}
+
+.extra-page__responsible {
+  padding: 185px 0 190px 0;
+}
+
+.extra-page__responsible_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra-page__responsible_content-description {
+  max-width: 580px;
+}
+
+.extra-page__responsible_content-info {
+  min-width: 220px;
+  margin-right: 115px;
+}
+
+.extra-page__responsible_content-info p {
+  color: #b3b3b3;
+}
+
 body {
   font-family: "CeraCompactPro";
 }
@@ -1018,6 +1174,26 @@ h4 {
     padding: 115px 20px 65px 20px;
   }
 
+  ._extra-page-wrapper {
+    margin: 0 50px;
+  }
+
+  .extra-page__responsible {
+    padding: 80px 0;
+  }
+
+  .extra-page__responsible_content {
+    padding: 74px 2% 65px 0;
+  }
+
+  .extra-page__responsible_content-description {
+    max-width: 450px;
+  }
+
+  .extra-page__responsible_content-info {
+    margin-right: 50px;
+  }
+
   ._wrapper {
     padding: 25px 100px;
   }
@@ -1160,8 +1336,121 @@ h4 {
     margin: 60px 0 30px 0;
   }
 
+  ._extra-page-wrapper {
+    margin: 0;
+  }
+
+  .extra-page__introduction {
+    padding-top: 60px;
+  }
+
+  .extra-page__introduction_title {
+    margin: 80px 0 10px 0;
+  }
+
+  .extra-page__introduction_galary-item ._bg-dark-white {
+    height: 200px;
+  }
+
+  .extra-page__introduction_galary-item ._bg-dark-white picture {
+    top: 15%;
+  }
+
+  .extra-page ._grid {
+    grid-template-rows: 3;
+    grid-template-columns: 1;
+  }
+
+  .extra-page ._grid ._grid-item-01 {
+    grid-column: 1/2;
+  }
+
+  .extra-page ._grid ._grid-item-03 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .extra-page__description_items {
+    margin-top: 0;
+  }
+
+  .extra-page__description_item {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .extra-page__description_item-icon {
+    margin: 35px 0;
+  }
+
+  .extra-page__statistics_content {
+    padding: 60px 0 0 0;
+  }
+
+  .extra-page__statistics_content-title {
+    margin-bottom: 40px;
+  }
+
+  .extra-page__statistics_content-items {
+    display: block;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  .extra-page__statistics_content-item {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .extra-page__statistics_content-item h3 {
+    width: 30%;
+  }
+
+  .extra-page__statistics_content-item p {
+    width: 65%;
+  }
+
+  .extra-page__statistics_content-picture {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .extra-page__statistics_content-picture img {
+    width: 450px;
+    margin: 0 -100px;
+  }
+
+  .extra-page__responsible {
+    padding: 50px 0;
+  }
+
+  .extra-page__responsible_content {
+    display: block;
+    padding: 38px 0 46px 0;
+  }
+
+  .extra-page__responsible_content-description {
+    max-width: 700px;
+  }
+
+  .extra-page__responsible_content-info {
+    margin-bottom: 33px;
+    margin-right: 0;
+  }
+
+  .extra-page__responsible_content-info h4 {
+    margin-bottom: 20px;
+  }
+
   p {
-    font-family: 18px;
+    font-size: 18px;
   }
 
   ._wrapper {
@@ -1401,6 +1690,10 @@ h4 {
   .vendors__item {
     width: 100%;
     height: 90px;
+  }
+
+  .extra-page__introduction_description {
+    margin-bottom: 95px;
   }
 
   ._button-menu {
