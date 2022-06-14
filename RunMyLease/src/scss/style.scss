@@ -27,7 +27,7 @@ $md4: 540.98;
 @import 'footer';
 @import 'mainPage';
 @import 'extraPages';
-@import 'privacyPolicy';
+@import 'policyAndTerms';
 
 body {
   .wrapper {
@@ -75,6 +75,12 @@ h1 {
   font-size: 45px;
   font-weight: 700;
   line-height: calc(65 / 45 * 100%);
+  @media (max-width: $md3+px) {
+    font-size: 35px;
+  }
+  @media (max-width: $md4+px) {
+    font-size: 30px;
+  }
 }
 
 h2 {

@@ -1006,31 +1006,85 @@ img {
   color: #b3b3b3;
 }
 
-.privacyPolicy {
+.policyAndTerms {
   padding-top: 100px;
+  border-bottom: #f6f6f6 2px solid;
 }
 
-.privacyPolicy__content {
-  margin: 130px 200px 160px 200px;
+.policyAndTerms__content {
+  margin: 180px 200px 160px 200px;
 }
 
-.privacyPolicy h1 {
+.policyAndTerms h1 {
   margin-bottom: 70px;
   text-align: center;
 }
 
-.privacyPolicy a {
+.policyAndTerms a {
   color: #1f6de2;
 }
 
-.privacyPolicy br {
+.policyAndTerms br {
   display: block;
   content: "";
   margin: 15px 0;
 }
 
-.privacyPolicy span {
+.policyAndTerms p {
+  font-size: 16px;
+  line-height: 175%;
+}
+
+.policyAndTerms span {
   color: #b3b3b3;
+}
+
+.policyAndTerms ol ol ol {
+  list-style-type: lower-alpha;
+  padding-left: 35px;
+}
+
+.policyAndTerms ol ol ol li {
+  counter-increment: item3;
+}
+
+.policyAndTerms ol ol ol li::before {
+  content: none;
+  padding-right: 0;
+}
+
+.policyAndTerms ol ol {
+  font-weight: 400;
+}
+
+.policyAndTerms ol ol li {
+  margin-left: 33px;
+  counter-increment: item2;
+  padding-left: 15px;
+}
+
+.policyAndTerms ol ol li::before {
+  content: counter(item) "." counter(item2) " ";
+  font-weight: 400;
+  padding-right: 30px;
+}
+
+.policyAndTerms ol {
+  font-size: 16px;
+  line-height: 175%;
+  color: #181818;
+  list-style-type: none;
+}
+
+.policyAndTerms ol li {
+  margin: 15px 0 0 0;
+  counter-increment: item;
+}
+
+.policyAndTerms ol li::before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  padding-right: 30px;
 }
 
 body {
@@ -1262,6 +1316,10 @@ h4 {
 
   .extra-page__responsible_content-info {
     margin-right: 50px;
+  }
+
+  .policyAndTerms__content {
+    margin: 180px 40px 120px 40px;
   }
 
   ._wrapper {
@@ -1529,8 +1587,20 @@ h4 {
     margin-bottom: 20px;
   }
 
-  .privacyPolicy {
+  .policyAndTerms {
     padding-top: 60px;
+  }
+
+  .policyAndTerms__content {
+    margin: 130px 40px 120px 40px;
+  }
+
+  .policyAndTerms p {
+    font-size: 14px;
+  }
+
+  .policyAndTerms ol {
+    font-size: 14px;
   }
 
   p {
@@ -1539,6 +1609,10 @@ h4 {
 
   ._wrapper {
     padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 35px;
   }
 
   h2 {
@@ -1778,6 +1852,35 @@ h4 {
 
   .extra-page__introduction_description {
     margin-bottom: 95px;
+  }
+
+  .policyAndTerms__content {
+    margin: 70px 0 90px 0;
+  }
+
+  .policyAndTerms h1 {
+    text-align: left;
+  }
+
+  .policyAndTerms ol ol ol {
+    padding-left: 10px;
+  }
+
+  .policyAndTerms ol ol li {
+    padding-left: 0;
+    margin-left: 25px;
+  }
+
+  .policyAndTerms ol ol li::before {
+    padding-right: 10px;
+  }
+
+  .policyAndTerms ol li::before {
+    padding-right: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
   }
 
   ._button-menu {
