@@ -1,0 +1,118 @@
+.extra-page {
+  br {
+    display: block;
+    content: '';
+    margin: 10px 0;
+  }
+  hr {
+    width: 100%;
+    height: 2px;
+    background-color: $dark-white;
+  }
+  ._testimonials-container {
+    margin: 0 150px;
+    @media (max-width: $md2+px) {
+      margin: 0;
+    }
+  }
+  &__button-block {
+    display: flex;
+    justify-content: center;
+    margin: 30px 20px;
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+    }
+    ._button-menu {
+      max-width: 133px;
+      margin-right: 10px;
+      @media (max-width: $md4+px) {
+        margin-bottom: 10px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &._not-active {
+        pointer-events: none;
+        color: $black;
+        background-image: none;
+        background-color: $dark-white;
+      }
+      &:hover {
+        color: $blue;
+        background-image: none;
+        background-color: $dark-white;
+      }
+    }
+  }
+  &__testimonials {
+  }
+  &__testimonials_items {
+    margin-bottom: 25px;
+  }
+  &__testimonials_item {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @media (max-width: $md4+px) {
+      display: block;
+    }
+  }
+  &__testimonials_item-info {
+    width: 35%;
+    @media (max-width: $md4+px) {
+      width: 100%;
+    }
+    picture {
+      img {
+        max-width: 118px;
+        width: 100%;
+        height: auto;
+        border-radius: 100%;
+      }
+    }
+    h3 {
+      margin-top: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: $grey;
+      padding-bottom: 25px;
+      border-bottom: $dark-white 2px solid;
+      @media (max-width: $md4+px) {
+        padding-bottom: 15px;
+      }
+    }
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+      color: $black;
+      @media (max-width: $md4+px) {
+        margin-top: 15px;
+        margin-bottom: 35px;
+      }
+      &:hover {
+        color: $blue;
+      }
+      ._icon-right-dropdown {
+        color: $blue;
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        @media (max-width: $md4+px) {
+          width: 20%;
+        }
+      }
+    }
+  }
+  &__testimonials_item-quote {
+    font-size: 18px;
+    line-height: calc(25 / 18 * 100%);
+    width: 55%;
+    @media (max-width: $md4+px) {
+      width: 100%;
+    }
+  }
+}

@@ -28,6 +28,7 @@ $md4: 540.98;
 @import 'mainPage';
 @import 'extraPages';
 @import 'policyAndTerms';
+@import 'testimonials';
 
 body {
   .wrapper {
@@ -117,7 +118,7 @@ h4 {
   font-size: 16px;
   line-height: calc(50 / 16 * 100%);
   color: $white;
-  transition: 0.5s;
+  transition: all 1s ease;
   &:hover,
   &:focus {
     background: $linear-blue-hover;
