@@ -8,6 +8,17 @@
   }
 }
 .extra-page {
+  br {
+    display: block;
+    content: '';
+    margin: 10px 0;
+  }
+  hr {
+    width: 100%;
+    height: 2px;
+    background-color: $dark-white;
+  }
+
   &__introduction {
     padding-top: 100px;
     @media (max-width: $md3+px) {

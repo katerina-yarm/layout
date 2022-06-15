@@ -817,6 +817,18 @@ img {
   margin: 0 130px;
 }
 
+.extra-page br {
+  display: block;
+  content: "";
+  margin: 10px 0;
+}
+
+.extra-page hr {
+  width: 100%;
+  height: 2px;
+  background-color: #f6f6f6;
+}
+
 .extra-page__introduction {
   padding-top: 100px;
 }
@@ -1091,18 +1103,6 @@ img {
   padding-right: 30px;
 }
 
-.extra-page br {
-  display: block;
-  content: "";
-  margin: 10px 0;
-}
-
-.extra-page hr {
-  width: 100%;
-  height: 2px;
-  background-color: #f6f6f6;
-}
-
 .extra-page ._testimonials-container {
   margin: 0 150px;
 }
@@ -1205,6 +1205,178 @@ img {
   font-size: 18px;
   line-height: 138.8888888889%;
   width: 55%;
+}
+
+.extra-page ._padding-top {
+  padding-top: 100px;
+}
+
+.extra-page__careers {
+  position: relative;
+  min-height: 700px;
+}
+
+.extra-page__careers_picture {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #f6f6f6;
+  position: absolute;
+  height: 590px;
+  width: 50%;
+  top: 80px;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.extra-page__careers_picture._bottom_foto {
+  top: 20px;
+}
+
+.no-webp .extra-page__careers ._foto1 {
+  background-image: url(../img/career.jpg); }
+
+.no-webp .extra-page__careers ._foto2 {
+  background-image: url(../img/career-02.png); }
+
+.extra-page__careers ._icon-pricing-icon-02 {
+  color: #1f6de2;
+}
+
+.extra-page__careers_title {
+  padding-top: 150px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.extra-page__careers_text {
+  font-size: 26px;
+  line-height: 138.4615384615%;
+  max-width: 580px;
+  margin: 55px 130px 0 130px;
+}
+
+.extra-page__careers_text span {
+  display: block;
+  padding-top: 40px;
+  font-size: 18px;
+  line-height: 166.6666666667%;
+}
+
+.extra-page__careers_text small {
+  display: block;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  font-size: 25px;
+}
+
+.extra-page__careers_text._small {
+  font-size: 18px;
+  max-width: 511px;
+  line-height: 166.6666666667%;
+}
+
+.extra-page__positions_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 65px 0;
+}
+
+.extra-page__positions_item-counter {
+  width: 150px;
+}
+
+.extra-page__positions_item-description {
+  position: relative;
+  width: 40px;
+  margin: 0 0 0 auto;
+}
+
+.extra-page__positions_item-description_body {
+  display: none;
+}
+
+.extra-page__positions_item-description_body._active {
+  -webkit-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  display: block;
+  max-width: 580px;
+  margin: 0 auto 65px auto;
+  font-size: 18px;
+  line-height: 222.2222222222%;
+}
+
+.extra-page__positions_item-description_body._active h4 {
+  margin: 40px 0;
+}
+
+.extra-page__positions_item-description_body._active ul {
+  list-style-position: outside;
+}
+
+.extra-page__positions_item-description_body._active ul li {
+  margin-left: 15px;
+  list-style-type: disc;
+}
+
+.extra-page__positions_item-description_body._active a {
+  margin-top: 30px;
+}
+
+.extra-page .icon-description {
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.extra-page .icon-description span {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  top: calc(50% - 1px);
+  position: absolute;
+  width: 100%;
+  background-color: #1f6de2;
+  height: 2px;
+}
+
+.extra-page .icon-description span:first-child {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.extra-page .icon-description span:last-child {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.extra-page .icon-description._active {
+  height: 12px;
+  width: 12px;
+}
+
+.extra-page .icon-description._active span:first-child {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.extra-page .icon-description._active span:last-child {
+  top: calc(50% - 1px);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1444,6 +1616,34 @@ h4 {
 
   .extra-page ._testimonials-container {
     margin: 0;
+  }
+
+  .extra-page__careers_picture {
+    top: 50px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+
+  .extra-page__careers_title {
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .extra-page__careers_text {
+    margin: 65px 0 0 0;
+    max-width: 100%;
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
+
+  .extra-page__careers_text span {
+    padding-top: 30px;
+    font-size: 16px;
+  }
+
+  .extra-page__careers_text._small {
+    max-width: 100%;
   }
 
   ._wrapper {
@@ -1725,6 +1925,26 @@ h4 {
 
   .policyAndTerms ol {
     font-size: 14px;
+  }
+
+  .extra-page ._padding-top {
+    padding-top: 60px;
+  }
+
+  .extra-page__positions_item {
+    padding: 35px 0;
+  }
+
+  .extra-page__positions_item-counter {
+    width: 50px;
+  }
+
+  .extra-page__positions_item-description_body._active {
+    line-height: 166.6666666667%;
+  }
+
+  .extra-page__positions_item-description_body._active h4 {
+    margin: 20px 0;
   }
 
   p {
@@ -2059,3 +2279,7 @@ h4 {
     margin-left: 35px;
   }
 }
+
+.webp .extra-page__careers ._foto1 { background-image: url(../img/career.webp); }
+
+.webp .extra-page__careers ._foto2 { background-image: url(../img/career-02.webp); }

@@ -29,7 +29,11 @@ $md4: 540.98;
 @import 'extraPages';
 @import 'policyAndTerms';
 @import 'testimonials';
+@import 'careers';
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   .wrapper {
     width: 100%;
