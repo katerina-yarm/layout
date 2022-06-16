@@ -1295,16 +1295,22 @@ img {
 }
 
 .extra-page__positions_item-description_body {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0 auto 0 auto;
+  max-width: 580px;
+  max-height: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  -o-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
 }
 
 .extra-page__positions_item-description_body._active {
-  -webkit-transition: 3s;
-  -o-transition: 3s;
-  transition: 3s;
-  display: block;
-  max-width: 580px;
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
   margin: 0 auto 65px auto;
+  max-width: 580px;
   font-size: 18px;
   line-height: 222.2222222222%;
 }
@@ -1373,6 +1379,75 @@ img {
 
 .extra-page .icon-description._active span:last-child {
   top: calc(50% - 1px);
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.7);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup__content {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__content {
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  color: #000;
+  max-width: 840px;
+  padding: 50px 130px;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  -webkit-transform: translate(0px, -100%);
+      -ms-transform: translate(0px, -100%);
+          transform: translate(0px, -100%);
+}
+
+.popup__close {
+  position: absolute;
+  right: 45px;
+  top: 45px;
+  color: #b3b3b3;
 }
 
 html {
