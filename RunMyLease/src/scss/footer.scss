@@ -52,7 +52,9 @@
     input:invalid ~ label {
       color: $red;
     }
-    select {
+
+
+    .select {
       font-size: 16px;
       color: $blue;
       margin-top: 17px;
