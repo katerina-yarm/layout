@@ -24,77 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
   async function formSend(e) {
     e.preventDefault()
 
-    let error = formValidate(form)
+    let error = formValidate()
+
     let formData = new FormData(form)
     formData.append('image', formImage.files[0])
 
     if (error === 0) {
       form.parentNode.classList.add('_sending')
-      let response = await fetch('', {
-        method: 'POST',
-        body: formData
-      })
-      if (response.ok) {
-        let result = await response.json()
-        alert(result.message)
-        imagePreview.innerHTML('')
-        form.reset()
-        form.parentNode.classList.remove('_sending')
-      } else {
-        alert('ошибка')
-        form.parentNode.classList.remove('_sending')
-      }
+      createRequest(formData)
     } else {
-      alert('заполните обязательные поля')
+      document.getElementsByClassName('error-message')[0].classList.add('_active')
+      setTimeout(function () {
+        document.getElementsByClassName('error-message')[0].classList.remove('_active')
+      }, 5000)
     }
   }
 
-  function formValidate(form) {
-    let error = 0
-    let formRequired = document.querySelectorAll('._required')
-
-    for (let i = 0; i < formRequired.length; i++) {
-      const input = formRequired[i]
-      formRemoveError(input)
-
-      if (input.classList.contains('_email')) {
-        if (emailTest(input)) {
-          formAddError(input)
-          error++
-        }
-      } else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-        formAddError(input)
-        error++
-      } else {
-        if (input.value === '') {
-          formAddError(input)
-          error++
-        }
-      }
-    }
-    return error
-  }
-
-  function formAddError(input) {
-    let inputs = input.parentElement.children
-    for (let i = 0; i < inputs.length; i++) {
-      const input = inputs[i]
-      input.classList.add('_error')
-    }
-  }
-
-  function formRemoveError(input) {
-    let inputs = input.parentElement.children
-    for (let i = 0; i < inputs.length; i++) {
-      const input = inputs[i]
-      input.classList.remove('_error')
-    }
-  }
-
-  function emailTest(input) {
-    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
-  }
-
+  //file-image upload function
   const formImage = document.getElementById('form-image')
   const imagePreview = document.getElementById('image-preview')
   formImage.addEventListener('change', () => {
@@ -133,6 +79,74 @@ function formatPhoneNumber(e) {
     phone.value += ' '
   }
 }*/
+
+const baseURL = 'http://localhost:5000/api' //process.env.BASE_URL
+
+async function createRequest(data) {
+  let response = await fetch(`${baseURL}/request/create`, {
+    method: 'POST',
+    body: data
+  })
+
+  if (response.ok) {
+    let result = await response.json()
+    alert(result.message)
+    imagePreview.innerHTML('')
+    form.reset()
+    form.parentNode.classList.remove('_sending')
+    return result
+  } else {
+    form.parentNode.classList.remove('_sending')
+    throw new Error(`${response.status}`)
+  }
+}
+
+function formValidate() {
+  let error = 0
+  let formRequired = document.querySelectorAll('._required')
+
+  for (let i = 0; i < formRequired.length; i++) {
+    const input = formRequired[i]
+    formRemoveError(input)
+
+    if (input.classList.contains('_email')) {
+      if (emailTest(input)) {
+        formAddError(input)
+        error++
+      }
+    } else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+      formAddError(input)
+      error++
+    } else {
+      if (input.value === '') {
+        formAddError(input)
+        error++
+      }
+    }
+  }
+  return error
+}
+
+function formAddError(input) {
+  let inputs = input.parentElement.children
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i]
+    input.classList.add('_error')
+  }
+}
+
+function formRemoveError(input) {
+  let inputs = input.parentElement.children
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i]
+    input.classList.remove('_error')
+  }
+}
+
+function emailTest(input) {
+  const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/
+  return !emailReg.test(input.value)
+}
 
 const popupLinks = document.querySelectorAll('.popup-link')
 const body = document.querySelector('body')

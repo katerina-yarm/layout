@@ -31,11 +31,13 @@ $md4: 540.98;
 @import 'testimonials';
 @import 'careers';
 @import 'requestForm';
+@import 'errorWindow';
 
 html {
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   .wrapper {
     width: 100%;
     min-height: 100%;

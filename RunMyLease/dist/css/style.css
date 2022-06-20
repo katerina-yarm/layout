@@ -1686,6 +1686,7 @@ body.lock {
 
 .popup-form .checkbox {
   margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .popup-form .checkbox__error {
@@ -1750,11 +1751,38 @@ body.lock {
           transform: scale(0);
 }
 
+.error-message {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.error-message._active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.error-message p {
+  color: #db0000;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  position: relative;
   font-family: "CeraCompactPro";
 }
 
