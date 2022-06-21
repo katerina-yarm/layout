@@ -21,7 +21,7 @@
       }
       .form__label {
         position: absolute;
-        left: 0;
+        left: 15px;
         bottom: 18px;
         transition: 0.5s;
         color: $blue;
@@ -69,20 +69,43 @@
         }
       }
     }
-    /*
     .select {
-      font-size: 16px;
-      color: $blue;
-      margin-top: 17px;
-      width: 95%;
-      background: transparent;
-      cursor: pointer;
-      border-radius: 0;
+      position: relative;
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        content: '';
+        display: block;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: $blue transparent;
+      }
+      select {
+        display: block;
+        width: 100%;
+        padding: 0 15px;
+        background: none;
+        border: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 16px;
+        color: $blue;
+        position: absolute;
+        z-index: 1;
+        cursor: pointer;
+        bottom: 15px;
+      }
+      option {
+        color: $black;
+        font-size: 14px;
+        &:first-child {
+          color: $blue;
+          font-size: 16px;
+        }
+      }
     }
-    option {
-      color: $black;
-      font-size: 13px;
-    }*/
     ._large {
       width: 100%;
     }
