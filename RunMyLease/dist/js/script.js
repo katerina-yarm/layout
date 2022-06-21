@@ -33,11 +33,36 @@ document.addEventListener('DOMContentLoaded', function () {
       form.parentNode.classList.add('_sending')
       createRequest(formData)
     } else {
-      document.getElementsByClassName('error-message')[0].classList.add('_active')
-      setTimeout(function () {
-        document.getElementsByClassName('error-message')[0].classList.remove('_active')
-      }, 5000)
+      const message = document.getElementsByClassName('messages-02')[0].children[0]
+      addMessage(message)
     }
+  }
+
+  const baseURL = 'https://jsonplaceholder.typicode.com'
+  async function createRequest(data) {
+    let response = await fetch(`${baseURL}/posts`, {
+      method: 'POST',
+      body: data
+    })
+
+    if (response.ok) {
+      let result = await response.json()
+      alert(`Request was succesfully created with status code ${response.status}`)
+      imagePreview.innerHTML = ''
+      form.reset()
+      form.parentNode.classList.remove('_sending')
+      return result
+    } else {
+      form.parentNode.classList.remove('_sending')
+      throw new Error(`${response.status}`)
+    }
+  }
+
+  function addMessage(message) {
+    message.classList.add('_active')
+    setTimeout(function () {
+      message.classList.remove('_active')
+    }, 5000)
   }
 
   //file-image upload function
@@ -48,12 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
   })
   function uploadFile(file) {
     if (!['image/jpg', 'image/png', 'image/gif'].includes(file.type)) {
-      alert('разрешены только изображения')
-      formImage.value = ''
-      return
-    }
-    if (file.size > 2 * 1024 * 1024) {
-      alert('файл должен быть меньше 2мб')
+      const message = document.getElementsByClassName('messages-01')[0].children[0]
+      addMessage(message)
       formImage.value = ''
       return
     }
@@ -62,48 +83,72 @@ document.addEventListener('DOMContentLoaded', function () {
       imagePreview.innerHTML = `<img src="${e.target.result}" alt="preview-image">`
     }
     reader.onerror = function (e) {
-      alert('ошибка')
+      alert('Error')
     }
     reader.readAsDataURL(file)
   }
 })
 
-/*const phone = document.getElementsByName('phone')[0]
-phone.addEventListener('input', formatPhoneNumber)
+'use strict'
 
-function formatPhoneNumber(e) {
-  if (phone.value.length == 3) {
-    phone.value += ' '
-  }
-  if (phone.value.length == 6) {
-    phone.value += ' '
-  }
-}*/
-
-const baseURL = 'http://localhost:5000/api' //process.env.BASE_URL
-
-async function createRequest(data) {
-  let response = await fetch(`${baseURL}/request/create`, {
-    method: 'POST',
-    body: data
+document.addEventListener('DOMContentLoaded', function () {
+  const contactUsForm = document.getElementById('form')
+  contactUsForm.addEventListener('submit', formSend)
+  const inputs = contactUsForm.getElementsByTagName('input')
+  Array.from(inputs).forEach((input) => {
+    input.addEventListener('input', function () {
+      if (input.value != '') {
+        input.classList.add('_active')
+      } else input.classList.remove('_active')
+    })
   })
 
-  if (response.ok) {
-    let result = await response.json()
-    alert(result.message)
-    imagePreview.innerHTML('')
-    form.reset()
-    form.parentNode.classList.remove('_sending')
-    return result
-  } else {
-    form.parentNode.classList.remove('_sending')
-    throw new Error(`${response.status}`)
-  }
-}
+  async function formSend(e) {
+    e.preventDefault()
 
-function formValidate() {
+    let error = formValidate(contactUsForm)
+
+    let formData = new FormData(contactUsForm)
+
+    if (error === 0) {
+      form.parentNode.classList.add('_sending')
+      createRequest(formData)
+    } else {
+      const message = document.getElementsByClassName('messages-02')[0].children[0]
+      addMessage(message)
+    }
+  }
+
+  const baseURL = 'https://jsonplaceholder.typicode.com'
+  async function createRequest(data) {
+    let response = await fetch(`${baseURL}/posts`, {
+      method: 'POST',
+      body: data
+    })
+
+    if (response.ok) {
+      let result = await response.json()
+      alert(`Request was succesfully created with status code ${response.status}`)
+      form.reset()
+      form.parentNode.classList.remove('_sending')
+      return result
+    } else {
+      form.parentNode.classList.remove('_sending')
+      throw new Error(`${response.status}`)
+    }
+  }
+
+  function addMessage(message) {
+    message.classList.add('_active')
+    setTimeout(function () {
+      message.classList.remove('_active')
+    }, 5000)
+  }
+})
+
+function formValidate(form) {
   let error = 0
-  let formRequired = document.querySelectorAll('._required')
+  let formRequired = form.querySelectorAll('._required')
 
   for (let i = 0; i < formRequired.length; i++) {
     const input = formRequired[i]
@@ -111,6 +156,12 @@ function formValidate() {
 
     if (input.classList.contains('_email')) {
       if (emailTest(input)) {
+        formAddError(input)
+        error++
+      }
+    } else if (input.classList.contains('_phone')) {
+      formatPhoneNumber(input)
+      if (phoneTest(input)) {
         formAddError(input)
         error++
       }
@@ -131,6 +182,7 @@ function formAddError(input) {
   let inputs = input.parentElement.children
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i]
+    input.parentNode.classList.add('_error')
     input.classList.add('_error')
   }
 }
@@ -140,12 +192,34 @@ function formRemoveError(input) {
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i]
     input.classList.remove('_error')
+    input.parentNode.classList.remove('_error')
   }
 }
 
 function emailTest(input) {
   const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/
   return !emailReg.test(input.value)
+}
+
+function phoneTest(input) {
+  const phoneReg = /^[+]{1}[0-9]{3} [0-9]{9}/
+  return !phoneReg.test(input.value)
+}
+
+function formatPhoneNumber(input) {
+  if (input.value.length > 1) {
+    let value
+    let array = input.value.toString().trim().split('')
+    for (let i = 0; i < array.length; i++) {
+      if (array[0] != '+') {
+        array.unshift('+')
+      } else if (array[4] != ' ') {
+        array.splice(4, 0, ' ')
+      }
+      value = array.join('')
+    }
+    input.value = value
+  }
 }
 
 const popupLinks = document.querySelectorAll('.popup-link')
@@ -240,67 +314,82 @@ function bodyUnlock() {
   }, timeout)
 }
 
-let elements = Array.from(document.getElementsByClassName('icon-description'))
+const icon = document.getElementsByClassName('icon-description')
+const elements = Array.from(icon)
+const descriptionBody = document.getElementsByClassName('description_body')
 
 for (let i = 0; i < elements.length; i++) {
-  document.getElementsByClassName('icon-description')[i].addEventListener('click', function () {
-    if (document.getElementsByClassName('icon-description')[i].classList.contains('_active')) {
-      document.getElementsByClassName('icon-description')[i].classList.remove('_active')
-      document.getElementsByClassName('description_body')[i].classList.remove('_active')
+  icon[i].addEventListener('click', function () {
+    if (icon[i].classList.contains('_active')) {
+      icon[i].classList.remove('_active')
+      descriptionBody[i].classList.remove('_active')
     } else {
-      document.getElementsByClassName('icon-description')[i].classList.add('_active')
-      document.getElementsByClassName('description_body')[i].classList.add('_active')
+      icon[i].classList.add('_active')
+      descriptionBody[i].classList.add('_active')
     }
   })
 }
 
-document.getElementsByClassName('icon-menu')[0].addEventListener('click', addClass)
-document.getElementsByClassName('_products')[0].addEventListener('mousedown', addClass)
+const iconMenu = document.getElementsByClassName('icon-menu')[0]
+const products = document.getElementsByClassName('_products')[0]
+const menuBody = document.getElementsByClassName('menu__body')[0]
+
+iconMenu.addEventListener('click', addClass)
+products.addEventListener('mousedown', addClass)
 
 function addClass() {
-  if (document.getElementsByClassName('icon-menu')[0].classList.contains('_active')) {
-    document.getElementsByClassName('icon-menu')[0].classList.remove('_active')
-    document.getElementsByClassName('_products')[0].classList.remove('_active')
-    document.getElementsByClassName('menu__body')[0].classList.remove('_active')
+  if (iconMenu.classList.contains('_active')) {
+    iconMenu.classList.remove('_active')
+    products.classList.remove('_active')
+    menuBody.classList.remove('_active')
   } else {
-    document.getElementsByClassName('icon-menu')[0].classList.add('_active')
-    document.getElementsByClassName('menu__body')[0].classList.add('_active')
-    document.getElementsByClassName('_products')[0].classList.add('_active')
+    iconMenu.classList.add('_active')
+    menuBody.classList.add('_active')
+    products.classList.add('_active')
   }
 }
+
+const headerLinks = document.getElementsByClassName('header__links')
+const burger = document.getElementsByClassName('icon-menu')[0].children
+const header = document.getElementById('header')
+const headerLogo = document.getElementsByClassName('header__logo')[0]
+const productsLink = document.getElementsByClassName('_products')[0]
 
 document.addEventListener(
   'scroll',
   setInterval(function () {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
-    let active = document.getElementsByClassName('_products')[0].classList.contains('_active')
     let main = document.getElementsByTagName('main')[0].classList.contains('main')
+    let active = productsLink.classList.contains('_active')
     if (scrolled >= 100) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (100 > scrolled && active) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (100 > scrolled && !active && main) {
-      document.getElementById('header').style.background = '#181818'
-      document.getElementsByClassName('header__logo')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[1].style.color = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#FFFFFF'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#FFFFFF'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#FFFFFF'
+      })
+      header.style.background = '#181818'
+      headerLogo.style.color = '#FFFFFF'
     }
   }),
   1000
@@ -309,18 +398,20 @@ document.addEventListener(
 document.addEventListener(
   'click',
   setInterval(function () {
-    let active = document.getElementsByClassName('_products')[0].classList.contains('_active')
+    let active = productsLink.classList.contains('_active')
     if (active) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (!active) {
-      document.getElementById('header').style.background = '#181818'
-      document.getElementsByClassName('header__logo')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[1].style.color = '#FFFFFF'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#FFFFFF'
+      })
+      header.style.background = '#181818'
+      headerLogo.style.color = '#FFFFFF'
     }
   }),
   1000

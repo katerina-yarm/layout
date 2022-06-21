@@ -1,35 +1,44 @@
+const headerLinks = document.getElementsByClassName('header__links')
+const burger = document.getElementsByClassName('icon-menu')[0].children
+const header = document.getElementById('header')
+const headerLogo = document.getElementsByClassName('header__logo')[0]
+const productsLink = document.getElementsByClassName('_products')[0]
+
 document.addEventListener(
   'scroll',
   setInterval(function () {
     let scrolled = window.pageYOffset || document.documentElement.scrollTop
-    let active = document.getElementsByClassName('_products')[0].classList.contains('_active')
     let main = document.getElementsByTagName('main')[0].classList.contains('main')
+    let active = productsLink.classList.contains('_active')
     if (scrolled >= 100) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (100 > scrolled && active) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#181818'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (100 > scrolled && !active && main) {
-      document.getElementById('header').style.background = '#181818'
-      document.getElementsByClassName('header__logo')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[1].style.color = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[0].style.background = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[1].style.background = '#FFFFFF'
-      document.getElementsByClassName('icon-menu')[0].children[2].style.background = '#FFFFFF'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#FFFFFF'
+      })
+      Array.from(burger).forEach((line) => {
+        line.style.background = '#FFFFFF'
+      })
+      header.style.background = '#181818'
+      headerLogo.style.color = '#FFFFFF'
     }
   }),
   1000
@@ -38,18 +47,20 @@ document.addEventListener(
 document.addEventListener(
   'click',
   setInterval(function () {
-    let active = document.getElementsByClassName('_products')[0].classList.contains('_active')
+    let active = productsLink.classList.contains('_active')
     if (active) {
-      document.getElementById('header').style.background = '#F6F6F6'
-      document.getElementsByClassName('header__logo')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[0].style.color = '#181818'
-      document.getElementsByClassName('header__links')[1].style.color = '#181818'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#181818'
+      })
+      header.style.background = '#F6F6F6'
+      headerLogo.style.color = '#181818'
     }
     if (!active) {
-      document.getElementById('header').style.background = '#181818'
-      document.getElementsByClassName('header__logo')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[0].style.color = '#FFFFFF'
-      document.getElementsByClassName('header__links')[1].style.color = '#FFFFFF'
+      Array.from(headerLinks).forEach((link) => {
+        link.style.color = '#FFFFFF'
+      })
+      header.style.background = '#181818'
+      headerLogo.style.color = '#FFFFFF'
     }
   }),
   1000

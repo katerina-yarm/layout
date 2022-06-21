@@ -17,6 +17,9 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.8s ease 0s;
+  @media (max-width: $md4+px) {
+    padding-top: 60px;
+  }
   &.open {
     opacity: 1;
     visibility: visible;
@@ -46,15 +49,26 @@ body {
 .popup__close {
   &::after {
     position: absolute;
+    z-index: 3;
     content: url(../img/x.svg);
     right: 45px;
     top: 45px;
+    @media (max-width: $md4+px) {
+      right: 20px;
+      top: 20px;
+    }
   }
 }
 
 .popup-form {
   padding: 50px 130px;
   position: relative;
+  @media (max-width: $md3+px) {
+    padding: 50px 50px;
+  }
+  @media (max-width: $md4+px) {
+    padding: 40px 20px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -75,14 +89,20 @@ body {
   }
   &__title {
     margin-bottom: 40px;
+    @media (max-width: $md4+px) {
+      margin-bottom: 20px;
+    }
   }
   &__body {
     display: block;
-    width: 580px;
+    max-width: 580px;
   }
   &__container {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $md4+px) {
+      display: block;
+    }
     &.popup-form__input-wrapper:last-child {
       margin-left: 20px;
     }
@@ -92,6 +112,9 @@ body {
     display: block;
     width: 49%;
     margin-bottom: 25px;
+    @media (max-width: $md4+px) {
+      width: 100%;
+    }
     &._large {
       width: 100%;
     }
@@ -225,7 +248,6 @@ body {
 
   .checkbox {
     margin-top: 40px;
-    margin-bottom: 10px;
     &__error {
       top: -20px;
     }

@@ -24,7 +24,6 @@
                 id="lastname"
                 type="text"
                 name="lastname"
-                placeholder="First Name"
                 class="popup-form__input _required"
                 placeholder="Last Name"
                 minlength="3"
@@ -41,9 +40,8 @@
                 type="tel"
                 name="phone"
                 placeholder="Phone"
-                pattern="[0-9]{3} [0-9]{2} [0-9]{7}"
                 maxlength="15"
-                class="popup-form__input _required"
+                class="popup-form__input _required _phone"
               />
               <small class="error-text">Please enter your phone number</small>
               <span class="error-icon"></span>
@@ -86,6 +84,9 @@
 
           <div class="popup-form__item _large">
             <div class="popup-form__label"><h4>Add foto</h4></div>
+            <div class="messages-01">
+              @@include('_errorMessage.html', {"error":"Only .gif .jpg .png files are available for adding"})
+            </div>
             <div class="file">
               <div class="file__item">
                 <input
@@ -144,9 +145,8 @@
               </label>
             </div>
           </div>
-          <div class="error-message">
-            <img src="./img/error-icon.svg" />
-            <p>Required fields must be filled</p>
+          <div class="messages-02">
+            @@include('_errorMessage.html', {"error":"Required fields must be filled"})
           </div>
           <button id="submit" type="submit" class="_button-menu">Request support</button>
         </form>

@@ -172,9 +172,6 @@
         &:first-child {
           transform: rotate(0deg);
         }
-        &:last-child {
-          top: calc(50% - 1px);
-        }
       }
     }
   }

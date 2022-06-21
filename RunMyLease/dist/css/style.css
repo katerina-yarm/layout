@@ -376,6 +376,20 @@ img {
 
 .footer .footer-form {
   background-color: #f6f6f6;
+  /*
+  .select {
+    font-size: 16px;
+    color: $blue;
+    margin-top: 17px;
+    width: 95%;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  option {
+    color: $black;
+    font-size: 13px;
+  }*/
 }
 
 .footer .footer-form__title {
@@ -401,66 +415,69 @@ img {
   margin-bottom: 30px;
 }
 
-.footer .footer-form input {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  font-size: 16px;
-  padding-bottom: 15px;
+.footer .footer-form .floating-label-input._error {
+  border-bottom: 2px solid #db0000;
 }
 
-.footer .footer-form label {
+.footer .footer-form .floating-label-input .form__label {
   position: absolute;
-  z-index: 1;
   left: 0;
   bottom: 18px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   color: #1f6de2;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-.footer .footer-form input:focus ~ label {
-  bottom: 40px;
-  font-size: 12px;
+.footer .footer-form .floating-label-input .form__label._error {
+  color: #db0000;
 }
 
-.footer .footer-form input:valid ~ small {
+.footer .footer-form .floating-label-input .error-text {
   display: none;
 }
 
-.footer .footer-form input:invalid ~ small {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #db0000;
+.footer .footer-form .floating-label-input .error-text._error {
+  display: block;
+  position: absolute;
+  padding-top: 5px;
   font-size: 12px;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  padding-top: 7px;
-}
-
-.footer .footer-form input:invalid ~ label {
   color: #db0000;
 }
 
-.footer .footer-form .select {
-  font-size: 16px;
-  color: #1f6de2;
-  margin-top: 17px;
-  width: 95%;
-  background: transparent;
-  cursor: pointer;
-  border-radius: 0;
+.footer .footer-form .floating-label-input .error-icon {
+  display: none;
 }
 
-.footer .footer-form option {
-  color: #181818;
-  font-size: 13px;
+.footer .footer-form .floating-label-input .error-icon._error {
+  display: block;
+}
+
+.footer .footer-form .floating-label-input .error-icon._error::after {
+  position: absolute;
+  content: url(../img/error-icon.svg);
+  height: 5px;
+  right: 10px;
+  top: 25px;
+}
+
+.footer .footer-form .floating-label-input .form__input {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+}
+
+.footer .footer-form .floating-label-input .form__input:focus + label {
+  bottom: 40px;
+  font-size: 14px;
+}
+
+.footer .footer-form .floating-label-input .form__input._active + label {
+  bottom: 40px;
+  font-size: 14px;
 }
 
 .footer .footer-form ._large {
@@ -1377,10 +1394,6 @@ img {
           transform: rotate(0deg);
 }
 
-.extra-page .icon-description._active span:last-child {
-  top: calc(50% - 1px);
-}
-
 body.lock {
   overflow: hidden;
 }
@@ -1445,6 +1458,7 @@ body.lock {
 
 .popup__close::after {
   position: absolute;
+  z-index: 3;
   content: url(../img/x.svg);
   right: 45px;
   top: 45px;
@@ -1481,7 +1495,7 @@ body.lock {
 
 .popup-form__body {
   display: block;
-  width: 580px;
+  max-width: 580px;
 }
 
 .popup-form__container {
@@ -1686,7 +1700,6 @@ body.lock {
 
 .popup-form .checkbox {
   margin-top: 40px;
-  margin-bottom: 10px;
 }
 
 .popup-form .checkbox__error {
@@ -2350,6 +2363,10 @@ h4 {
     margin: 20px 0;
   }
 
+  .popup-form {
+    padding: 50px 50px;
+  }
+
   p {
     font-size: 18px;
   }
@@ -2658,6 +2675,35 @@ h4 {
 
   .extra-page__testimonials_item-quote {
     width: 100%;
+  }
+
+  .popup {
+    padding-top: 60px;
+  }
+
+  .popup__close::after {
+    right: 20px;
+    top: 20px;
+  }
+
+  .popup-form {
+    padding: 40px 20px;
+  }
+
+  .popup-form__title {
+    margin-bottom: 20px;
+  }
+
+  .popup-form__container {
+    display: block;
+  }
+
+  .popup-form__item {
+    width: 100%;
+  }
+
+  .error-message {
+    margin-bottom: 10px;
   }
 
   h1 {
