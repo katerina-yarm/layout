@@ -1,0 +1,67 @@
+@import 'mixins';
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'Gilroy';
+
+$blackText: #3a3a3a;
+$greyText: #898989;
+$lightGrey: #b0b0b0;
+$white: #ffffff;
+$orange: #e89f71;
+$red: #e97171;
+$greeen: #2ec1ac;
+
+$maxWidthContainer: 1240;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+
+body {
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  color: $blackText;
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 20px;
+}
