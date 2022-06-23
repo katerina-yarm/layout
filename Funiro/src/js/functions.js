@@ -1,3 +1,5 @@
+//функция проверяет является ли устройство мобильным, т.е. с тачскрином
+//isMobile.any() != null true
 var isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i)

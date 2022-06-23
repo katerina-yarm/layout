@@ -4,7 +4,7 @@ window.onload = function () {
   function documentActions(e) {
     const targetElement = e.target
     if (window.innerWidth >= 768 && isMobile.any() != null) {
-      if (targetElement.classList.contains('menu__arrow')) {
+      if (targetElement.classList.contains('menu__link')) {
         if (document.querySelectorAll('.menu__item._hover').length > 0) {
           removeClass(document.querySelectorAll('.menu__item._hover'), '_hover')
         }
@@ -17,6 +17,14 @@ window.onload = function () {
         removeClass(document.querySelectorAll('.menu__item._hover'), '_hover')
       }
     }
+    if (targetElement.classList.contains('search-form__icon')) {
+      document.querySelector('.search-form').classList.add('_active')
+    } else if (
+      !targetElement.closest('.search-form') &&
+      document.querySelector('.search-form._active')
+    ) {
+      document.querySelector('.search-form').classList.remove('_active')
+    }
   }
 }
 
@@ -26,3 +34,4 @@ function removeClass(items, className) {
     item.classList.remove(className)
   }
 }
+
