@@ -27,6 +27,7 @@
     "gulp-webp-html": "^1.0.2",
     "gulp-webpcss": "^1.1.1",
     "sass": "^1.52.1",
+    "swiper": "^8.2.4",
     "webp-converter": "^2.2.3"
   }
 }
