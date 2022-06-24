@@ -15,11 +15,12 @@ $greeen: #2ec1ac;
 $maxWidthContainer: 1240;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
-$md3: 767.98;
+$md3: 768.02;
 $md4: 479.98;
 
 @import 'normalize';
 @import 'header';
+@import 'footer';
 
 body {
   font-family: $fontFamily;

@@ -8,3 +8,27 @@
     font-style: #{$style};
   }
 }
+
+//$maxWidthContainer: 1240;
+//$maxWidth: 1920;
+@mixin avaptive-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width:#{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize+px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
+    }
+  } @else if $type==2 {
+    //только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width:#{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
