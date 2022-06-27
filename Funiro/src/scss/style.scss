@@ -12,7 +12,7 @@ $orange: #e89f71;
 $red: #e97171;
 $greeen: #2ec1ac;
 
-$maxWidthContainer: 1240;
+$maxWidthContainer: 1340;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 768.02;
@@ -54,7 +54,7 @@ body {
 }
 
 h1 {
-  @include avaptive-value('font-size', 56, 24, 1);
+  @include avaptive-value('font-size', 56, 22, 1);
   color: $blackText;
   line-height: calc(67 / 56 * 100%);
   font-weight: 700;
@@ -69,7 +69,7 @@ h3 {
 }
 
 h4 {
-  @include avaptive-value('font-size', 28, 20, 1);
+  font-size: 28px;
   color: $blackText;
   font-weight: 600;
   line-height: calc(33 / 28 * 100%);
@@ -80,7 +80,7 @@ h5 {
 }
 
 h6 {
-  @include avaptive-value('font-size', 20, 18, 1);
+  font-size: 20px;
   color: $blackText;
   font-weight: 600;
   line-height: calc(30 / 20 * 100%);

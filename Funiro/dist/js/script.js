@@ -87,6 +87,18 @@ window.onload = function () {
       document.querySelector('.search-form').classList.remove('_active')
     }
   }
+
+  //header
+  const headerElement = document.querySelector('.header')
+  const callback = function (entries, observer) {
+    if (entries[0].isIntersecting) {
+      headerElement.classList.remove('_scroll')
+    } else {
+      headerElement.classList.add('_scroll')
+    }
+  }
+  const headerObserver = new IntersectionObserver(callback)
+  headerObserver.observe(headerElement)
 }
 
 function removeClass(items, className) {
@@ -95,7 +107,6 @@ function removeClass(items, className) {
     item.classList.remove(className)
   }
 }
-
 
 //add <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 // core version + navigation, pagination modules:
@@ -163,7 +174,7 @@ if (sliderScrollItems.length > 0) {
 function sliders_build_callback(params) {}*/
 
 if (document.querySelector('.slider-main__body')) {
-  const swiper = new Swiper('.slider-main', {
+  new Swiper('.slider-main', {
     observer: true,
     observeParents: true,
     slidesPerView: 1,
@@ -171,9 +182,10 @@ if (document.querySelector('.slider-main__body')) {
     watchOverFlow: true,
     speed: 800,
     loop: true,
-    loopAdditionalSlides: 5,
+    loopAdditionalSlides: 3,
     preloadImages: false,
     parallax: true,
+    width: null,
 
     //Dotts
     pagination: {

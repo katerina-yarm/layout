@@ -64,7 +64,7 @@ if (sliderScrollItems.length > 0) {
 function sliders_build_callback(params) {}*/
 
 if (document.querySelector('.slider-main__body')) {
-  const swiper = new Swiper('.slider-main', {
+  new Swiper('.slider-main', {
     observer: true,
     observeParents: true,
     slidesPerView: 1,
@@ -72,9 +72,10 @@ if (document.querySelector('.slider-main__body')) {
     watchOverFlow: true,
     speed: 800,
     loop: true,
-    loopAdditionalSlides: 5,
+    loopAdditionalSlides: 3,
     preloadImages: false,
     parallax: true,
+    width: null,
 
     //Dotts
     pagination: {

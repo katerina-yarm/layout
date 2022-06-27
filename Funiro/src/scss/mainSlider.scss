@@ -1,3 +1,8 @@
+.controls-slider-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .slider-arrows {
   display: grid;
   grid-template-columns: repeat(2, 48px);
@@ -39,6 +44,7 @@
   display: flex;
 }
 .swiper-pagination-bullet {
+  background-color: transparent;
   cursor: pointer;
   flex: 0 0 27px;
   height: 27px;
@@ -54,7 +60,7 @@
     content: '';
     width: 11px;
     height: 11px;
-    background-color: #d8d8d8;
+    background-color: #999898;
     border-radius: 50%;
     transition: background-color 0.3s ease 0s;
   }
@@ -80,22 +86,10 @@
   }
 }
 
-.controls-slider-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &__dotts {
-  }
-  &__arrows {
-  }
-}
-
-.page__main-slider {
-}
 .main-slider {
+  overflow: hidden;
   background-color: #fcf8f3;
   &__container {
-    position: relative;
     @media (min-width: $md2+px) {
       &::before {
         content: '';
@@ -118,14 +112,17 @@
     }
     @media (min-width: $md2+px) {
       display: flex;
+      justify-content: flex-end;
     }
   }
   &__content {
+    align-self: flex-start;
     flex: 0 0 calc(494 / 1240 * 100%);
+    @include avaptive-value('margin-bottom', 80, 15, 1);
   }
   &__slider {
-    flex: 1 1 auto;
     min-width: 0;
+    flex: 1 1 auto;
     @media (min-width: $md2+px) {
       padding: 0 0 0 32px;
     }
@@ -133,14 +130,13 @@
 }
 
 .content-main {
-  position: relative;
-  z-index: 5;
   background: rgba(255, 255, 255, 0.72);
   padding-left: 15px;
   padding-right: 15px;
-  @include avaptive-value('padding-top', 60, 15, 1);
-  @include avaptive-value('padding-bottom', 60, 15, 1);
+  @include avaptive-value('padding-top', 40, 15, 1);
+  @include avaptive-value('padding-bottom', 20, 15, 1);
   @media (min-width: $md3+px) {
+    z-index: 5;
     @include avaptive-value('padding', 60, 15, 1);
     //if browser suppors backdrop-filter
     @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
@@ -163,6 +159,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    letter-spacing: 1.5px;
     @include avaptive-value('height', 78, 45, 1);
     background-color: $orange;
     color: $white;
@@ -177,37 +174,54 @@
 }
 
 .slider-main {
-  width: 934px;
-  height: 553px;
+  display: flex;
+  flex-direction: column;
+  //align-items: flex-end;
   &__controls {
+    align-self: stretch;
     margin: 0 0 20px 0;
   }
   &__body {
     overflow: visible;
+    @media (min-width: $md3+px) {
+      @include avaptive-value('width', 934, 290, 1);
+    }
   }
   &__slide {
     position: relative;
   }
   &__image {
-    /*img {
+    overflow: hidden;
+    img {
       width: 100%;
       height: auto;
-    }*/
-    //padding: 0 0 50% 0;
+      @media (min-width: $md2+px) {
+        width: auto;
+        @include avaptive-value('height', 564, 280, 1);
+      }
+    }
   }
   &__content {
-    position: absolute;
-    min-width: 295px;
-    max-height: 200px;
-    min-height: 150px;
-    @include avaptive-value('right', 40, 0, 1);
-    @include avaptive-value('bottom', 40, 0, 1);
+    @include avaptive-value(' min-width', 350, 295, 1);
+    max-height: 300px;
     overflow: auto;
     color: inherit;
-    @include avaptive-value('padding', 24, 15, 1);
+    background: rgba(255, 255, 255, 0.9);
     @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(31px);
+    }
+    @media (min-width: $md3+px) {
+      position: absolute;
+      @include avaptive-value('bottom', 40, 0, 1);
+      @include avaptive-value('right', 40, 0, 1);
+      @include avaptive-value('padding', 24, 15, 1);
+    }
+    @media (max-width: $md3+px) {
+      display: block;
+      margin-top: 30px;
+      min-height: 120px;
+      background: transparent;
     }
   }
   &__title {
