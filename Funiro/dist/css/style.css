@@ -936,6 +936,52 @@ img {
   font-weight: 900;
 }
 
+.advantages {
+  margin-top: 88px;
+  margin-bottom: 88px;
+}
+
+.advantages__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.advantages__item {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.advantages .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.advantages .item__icon {
+  padding-right: 24px;
+  padding-left: 22px;
+}
+
+.advantages .item__title {
+  color: #3a3a3a;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+.advantages .item__text {
+  color: #898989;
+  font-size: 16px;
+  line-height: 150%;
+  padding-top: 2px;
+}
+
 html,
 body {
   width: 100%;
@@ -1280,6 +1326,42 @@ h6 {
       );
   }
 
+  .advantages {
+    margin-top: calc(
+        25px + 63 * ((100vw - 320px) / 1020)
+      );
+  }
+
+  .advantages {
+    margin-bottom: calc(
+        25px + 63 * ((100vw - 320px) / 1020)
+      );
+  }
+
+  .advantages__item {
+    margin-top: calc(
+        10px + 6 * ((100vw - 320px) / 1020)
+      );
+  }
+
+  .advantages__item {
+    margin-bottom: calc(
+        10px + 6 * ((100vw - 320px) / 1020)
+      );
+  }
+
+  .advantages .item__icon {
+    padding-right: calc(
+        10px + 14 * ((100vw - 320px) / 1020)
+      );
+  }
+
+  .advantages .item__icon {
+    padding-left: calc(
+        10px + 12 * ((100vw - 320px) / 1020)
+      );
+  }
+
   h1 {
     font-size: calc(
         25px + 31 * ((100vw - 320px) / 1020)
@@ -1316,6 +1398,11 @@ h6 {
   .footer__menu {
     grid-column: span 2;
     margin-bottom: 40px;
+  }
+
+  .advantages__items {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2;
   }
 }
 
@@ -1480,6 +1567,11 @@ h6 {
     display: block;
     min-height: 120px;
     background: transparent;
+  }
+
+  .advantages__items {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4;
   }
 }
 

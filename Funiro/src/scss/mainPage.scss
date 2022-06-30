@@ -1,0 +1,43 @@
+.advantages {
+  @include avaptive-value('margin-top', 88, 25, 1);
+  @include avaptive-value('margin-bottom', 88, 25, 1);
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    @media (max-width: $md2+px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2;
+    }
+    @media (max-width: $md4+px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 4;
+    }
+  }
+  &__item {
+    @include avaptive-value('margin-top', 16, 10, 1);
+    @include avaptive-value('margin-bottom', 16, 10, 1);
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    &__icon {
+      @include avaptive-value('padding-right', 24, 10, 1);
+      @include avaptive-value('padding-left', 22, 10, 1);
+    }
+    &__description {
+    }
+    &__title {
+      color: $blackText;
+      font-size: 18px;
+      line-height: calc(27 / 18 * 100%);
+      font-weight: 600;
+    }
+    &__text {
+      color: $greyText;
+      font-size: 16px;
+      line-height: calc(24 / 16 * 100%);
+      padding-top: 2px;
+    }
+  }
+}
