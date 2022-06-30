@@ -11,16 +11,6 @@ if (document.querySelector('.slider-main__body')) {
     preloadImages: false,
     parallax: true,
     width: null,
-    /*breakpoints: {
-      320: {},
-      768: {  },
-      992: {
-        width: 758
-      },
-      1240: {
-        width: 966
-      }
-    },*/
 
     //Dotts
     pagination: {
