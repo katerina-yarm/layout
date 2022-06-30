@@ -87,6 +87,7 @@
 }
 
 .main-slider {
+  position: relative;
   overflow: hidden;
   background-color: #fcf8f3;
   &__container {
@@ -96,7 +97,7 @@
         background-color: #f9f1e7;
         position: absolute;
         top: 0;
-        width: 100vw;
+        width: 100%;
         right: 376px;
         height: 100%;
       }
@@ -116,15 +117,32 @@
     }
   }
   &__content {
-    align-self: flex-start;
-    flex: 0 0 calc(494 / 1240 * 100%);
-    @include avaptive-value('margin-bottom', 80, 15, 1);
+    width: 100%;
+    @media (min-width: $md2+px) {
+      margin-top: 25px;
+      position: absolute;
+      @include avaptive-value('margin-bottom', 70, 15, 1);
+      width: calc(494 / 1340 * 100%);
+      left: 0;
+    }
+  }
+  &__controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    @media (min-width: $md2+px) {
+      position: absolute;
+      padding: 25px 0 0 32px;
+      width: calc(100% - (494 / 1340 * 100%));
+    }
   }
   &__slider {
+    margin-top: 25px;
     min-width: 0;
-    flex: 1 1 auto;
     @media (min-width: $md2+px) {
-      padding: 0 0 0 32px;
+      margin-top: 100px;
+      @include avaptive-value('width', 934, 290, 1);
     }
   }
 }
@@ -135,7 +153,7 @@
   padding-right: 15px;
   @include avaptive-value('padding-top', 40, 15, 1);
   @include avaptive-value('padding-bottom', 20, 15, 1);
-  @media (min-width: $md3+px) {
+  @media (min-width: $md2+px) {
     z-index: 5;
     @include avaptive-value('padding', 60, 15, 1);
     //if browser suppors backdrop-filter
@@ -159,11 +177,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    letter-spacing: 1.5px;
     @include avaptive-value('height', 78, 45, 1);
     background-color: $orange;
     color: $white;
-    @include avaptive-value('font-size', 20, 16, 1);
+    @include avaptive-value('font-size', 20, 18, 1);
     font-weight: 600;
     line-height: calc(30 / 20 * 100%);
     transition: background-color 0.3s ease 0s;
@@ -174,35 +191,29 @@
 }
 
 .slider-main {
-  display: flex;
-  flex-direction: column;
-  //align-items: flex-end;
   &__controls {
-    align-self: stretch;
-    margin: 0 0 20px 0;
   }
   &__body {
-    overflow: visible;
-    @media (min-width: $md3+px) {
-      @include avaptive-value('width', 934, 290, 1);
-    }
   }
   &__slide {
     position: relative;
-  }
-  &__image {
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: auto;
-      @media (min-width: $md2+px) {
-        width: auto;
-        @include avaptive-value('height', 564, 280, 1);
-      }
+    width: 100%;
+    @include avaptive-value('height', 553, 280, 1);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.image-01 {
+      background-image: url(../img/main-slider/01.jpg);
+    }
+    &.image-02 {
+      background-image: url(../img/main-slider/02.jpg);
+    }
+    &.image-03 {
+      background-image: url(../img/main-slider/03.jpg);
     }
   }
   &__content {
-    @include avaptive-value(' min-width', 350, 295, 1);
+    @include avaptive-value('min-width', 350, 295, 1);
     max-height: 300px;
     overflow: auto;
     color: inherit;
@@ -217,15 +228,17 @@
       @include avaptive-value('right', 40, 0, 1);
       @include avaptive-value('padding', 24, 15, 1);
     }
-    @media (max-width: $md3+px) {
+    @media (max-width: $md4+px) {
       display: block;
-      margin-top: 30px;
       min-height: 120px;
       background: transparent;
     }
   }
   &__title {
     padding-bottom: 4px;
+    @media (max-width: $md3+px) {
+      margin-top: 30px;
+    }
   }
   &__text {
     font-size: 16px;
@@ -242,6 +255,9 @@
     &::before {
       font-size: 11px;
       font-weight: 900;
+    }
+    @media (max-width: $md3+px) {
+      margin-bottom: 30px;
     }
   }
 }
