@@ -9,20 +9,23 @@ let path = {
     css: project_folder + '/css/',
     js: project_folder + '/js/',
     img: project_folder + '/img/',
-    fonts: project_folder + '/fonts/'
+    fonts: project_folder + '/fonts/',
+    json: project_folder + '/json/'
   },
   src: {
     html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
     css: source_folder + '/scss/style.scss',
     js: source_folder + '/js/script.js',
     img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
-    fonts: source_folder + '/fonts/*.ttf'
+    fonts: source_folder + '/fonts/*.ttf',
+    json: source_folder + '/json/*.*'
   },
   watch: {
     html: source_folder + '/**/*.html',
     css: source_folder + '/scss/**/*.scss',
     js: source_folder + '/js/**/*.js',
-    img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}'
+    img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
+    json: source_folder + '/json/*.*'
   },
   clean: './' + project_folder + '/'
 }
@@ -44,7 +47,8 @@ let { src, dest } = require('gulp'),
   webpcss = require('gulp-webpcss'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
-  fonter = require('gulp-fonter')
+  fonter = require('gulp-fonter'),
+  plumber = require('gulp-plumber')
 
 function browserSync(params) {
   browsersync.init({
@@ -54,6 +58,10 @@ function browserSync(params) {
     port: 3000,
     notify: false
   })
+}
+
+function json() {
+  return src(path.src.json).pipe(plumber()).pipe(dest(path.build.json))
 }
 
 function html() {
@@ -180,19 +188,21 @@ function watchFiles(params) {
   gulp.watch([path.watch.css], css)
   gulp.watch([path.watch.js], js)
   gulp.watch([path.watch.img], images)
+  gulp.watch([path.watch.json], json)
 }
 
 function clean(params) {
   return del(path.clean)
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle)
+let build = gulp.series(clean, gulp.parallel(js, css, html, json, images, fonts), fontsStyle)
 let watch = gulp.parallel(build, watchFiles, browserSync)
 
 exports.fontsStyle = fontsStyle
 exports.fonts = fonts
 exports.images = images
 exports.js = js
+exports.json = json
 exports.css = css
 exports.html = html
 exports.build = build
