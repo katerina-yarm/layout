@@ -12,7 +12,7 @@ $orange: #e89f71;
 $red: #e97171;
 $green: #2ec1ac;
 
-$maxWidthContainer: 1340;
+$maxWidthContainer: 1240;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 768.02;
@@ -106,5 +106,18 @@ h6 {
       color: $white;
       background-color: $orange;
     }
+  }
+}
+
+._fly-image {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  transition: all 1s ease 0s;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
   }
 }

@@ -184,6 +184,10 @@
     }
     &__button {
       width: 100%;
+      &._hold {
+        opacity: 0.2;
+        cursor: default;
+      }
     }
     &__links {
       width: 100%;
@@ -216,6 +220,10 @@
     height: 48px;
     @media (min-width: $md2+px) {
       width: 245px;
+    }
+    &._hold {
+      opacity: 0.2;
+      cursor: default;
     }
   }
 }
