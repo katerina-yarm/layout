@@ -25,8 +25,6 @@
       @include avaptive-value('padding-right', 24, 10, 1);
       @include avaptive-value('padding-left', 22, 10, 1);
     }
-    &__description {
-    }
     &__title {
       color: $blackText;
       font-size: 18px;
@@ -44,8 +42,6 @@
 
 .products {
   @include avaptive-value('padding-bottom', 44, 25, 1);
-  &__container {
-  }
   &__title {
     text-align: center;
     @include avaptive-value('padding-bottom', 32, 16, 1);
@@ -224,6 +220,190 @@
     &._hold {
       opacity: 0.2;
       cursor: default;
+    }
+  }
+}
+
+.rooms {
+  background: #fcf8f3;
+  @include avaptive-value('padding-top', 44, 30, 1);
+  @include avaptive-value('padding-bottom', 44, 30, 1);
+  overflow: hidden;
+  &__container {
+    @media (min-width: $md2+px) {
+      display: flex;
+    }
+  }
+  &__body {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (min-width: $md2+px) {
+      flex: 0 0 calc(465 / 1240 * 100% + 15px);
+      @include avaptive-value('padding-right', 86, 30, 1);
+      @include avaptive-value('padding-left', 15, 15, 1);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -15px;
+      height: 100%;
+      width: 100%;
+      background-color: #fcf8f3;
+      z-index: 3;
+    }
+  }
+  &__title {
+    position: relative;
+    z-index: 5;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  &__text {
+    position: relative;
+    z-index: 5;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: calc(24 / 16 * 100%);
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__button {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 24px;
+    min-width: 180px;
+  }
+  &__slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    align-self: flex-start;
+    @media (max-width: $md4+px) {
+      margin: 0 -25px;
+    }
+  }
+
+  .slider-rooms {
+    position: relative;
+    &__body {
+      overflow: visible;
+    }
+    &__slide {
+      @include avaptive-value('width', 404, 277, 1);
+      position: relative;
+      overflow: hidden;
+      @include avaptive-value('min-height', 582, 400, 1);
+      &.swiper-slide-active {
+        .slider-rooms__image {
+          @include avaptive-value('width', 404, 277, 1);
+          @include avaptive-value('height', 582, 400, 1);
+        }
+      }
+      &.swiper-slide-active {
+        .swiper-slide {
+          @include avaptive-value('width', 404, 277, 1);
+          @include avaptive-value('height', 582, 400, 1);
+        }
+      }
+      @media (max-width: $md4+px) {
+        width: 100%;
+      }
+    }
+    &__image {
+      transition: height 0.8s ease 0s;
+      height: 400px;
+      @media (min-width: $md3+px) {
+        @include avaptive-value('width', 372, 245, 1);
+        @include avaptive-value('height', 486, 304, 1);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+    &__content {
+      position: absolute;
+      color: inherit;
+      max-width: 240px;
+      @include avaptive-value('left', 24, 15, 1);
+      @include avaptive-value('bottom', 24, 15, 1);
+      @include avaptive-value('padding', 32, 15, 1);
+      background: rgba(255, 255, 255, 0.9);
+      @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(31px);
+      }
+      &::before {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(100%, 0px);
+        width: 48px;
+        height: 48px;
+        background-color: $orange;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &__label {
+    }
+    &__arrows {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(0px, -50%);
+      width: calc(100% - 48px);
+      left: 24px;
+      z-index: 5;
+      justify-content: space-between;
+      @media (min-width: $md1+px) {
+        width: calc(100% + 48px);
+        left: -24px;
+      }
+    }
+    &__dotts {
+      @media (min-width: $md2+px) {
+        position: absolute;
+        z-index: 5;
+        bottom: 30px;
+        width: 100%;
+        left: 430px;
+      }
+      @media (max-width: $md2+px) {
+        justify-content: center;
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .label-slider {
+    display: grid;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+    color: $blackText;
+    grid-template-columns: auto 27px auto;
+    &:not(:last-child) {
+      margin: 0 0 8px 0;
+    }
+    &__number {
+    }
+    &__line {
+      height: 1px;
+      background-color: $blackText;
+    }
+    &__text {
+    }
+    &__title {
     }
   }
 }

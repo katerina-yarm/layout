@@ -277,8 +277,6 @@
 }
 
 .actions-header {
-  &__item {
-  }
   &__item_favorites {
     padding-top: 3px;
     transition: color 0.3s ease 0s;
@@ -333,7 +331,7 @@
     visibility: hidden;
     transition: all 0.3s ease 0s;
     transform: translate(0px, 20px);
-    ._active &{
+    ._active & {
       opacity: 1;
       visibility: visible;
       transform: translate(0px, 0px);
@@ -344,8 +342,6 @@
       left: 0;
       width: 100%;
     }
-  }
-  &__list {
   }
 }
 

@@ -99,6 +99,11 @@ h6 {
   text-align: center;
   transition: all 0.3s ease 0s;
   min-height: 48px;
+  background-color: $orange;
+  color: $white;
+  &:hover {
+    background-color: #e68e58;
+  }
   &_white {
     color: $orange;
     background-color: $white;
