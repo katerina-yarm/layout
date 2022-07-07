@@ -300,14 +300,18 @@
       @include avaptive-value('min-height', 582, 400, 1);
       &.swiper-slide-active {
         .slider-rooms__image {
-          @include avaptive-value('width', 404, 277, 1);
-          @include avaptive-value('height', 582, 400, 1);
+          @media (min-width: $md3+px) {
+            @include avaptive-value('width', 404, 277, 1);
+            @include avaptive-value('height', 582, 400, 1);
+          }
         }
       }
       &.swiper-slide-active {
         .swiper-slide {
-          @include avaptive-value('width', 404, 277, 1);
-          @include avaptive-value('height', 582, 400, 1);
+          @media (min-width: $md3+px) {
+            @include avaptive-value('width', 404, 277, 1);
+            @include avaptive-value('height', 582, 400, 1);
+          }
         }
       }
       @media (max-width: $md4+px) {
@@ -316,16 +320,21 @@
     }
     &__image {
       transition: height 0.8s ease 0s;
-      height: 400px;
+
       @media (min-width: $md3+px) {
+        height: 400px;
         @include avaptive-value('width', 372, 245, 1);
         @include avaptive-value('height', 486, 304, 1);
+      }
+      @media (max-width: $md3+px) {
+        width: 100%;
+        height: 450px;
       }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: top;
+        object-position: bottom;
       }
     }
     &__content {

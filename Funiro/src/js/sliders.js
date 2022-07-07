@@ -88,7 +88,7 @@ if (document.querySelector('.slider-tips__body')) {
       992: {
         slidesPerView: 3,
         spaceBetween: 30
-      },
+      }
     }
   })
 }
