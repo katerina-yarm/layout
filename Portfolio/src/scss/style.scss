@@ -1,0 +1,83 @@
+@import 'mixins';
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'Gilroy';
+
+$black: #3a3a3a;
+$grey: #898989;
+$white: #ffffff;
+
+$maxWidthContainer: 1240;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 768.02;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+@import 'mainPage';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  color: $black;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+    margin: 0 25px;
+  }
+}
+
+h1 {
+  @include avaptive-value('font-size', 50, 25, 1);
+  color: inherit;
+  line-height: calc(67 / 50 * 100%);
+  font-weight: 700;
+}
+
+h2 {
+  @include avaptive-value('font-size', 40, 22, 1);
+  color: inherit;
+  line-height: calc(48 / 40 * 100%);
+  font-weight: 700;
+}
+
+h5 {
+  @include avaptive-value('font-size', 24, 20, 1);
+  color: inherit;
+  line-height: calc(29 / 24 * 100%);
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  min-height: 48px;
+  background-color: $black;
+  color: $white;
+  &:hover {
+    background-color: $grey;
+  }
+}
