@@ -63,8 +63,11 @@
       }
     }
     @media (max-width: $md3+px) {
+      &:first-child {
+        padding-top: 30px;
+      }
       &:not(:last-child) {
-        padding-bottom: 30px;
+        padding-bottom: 35px;
       }
     }
   }
@@ -74,12 +77,12 @@
     color: $black;
     transition: color 0.3s ease 0s;
     @media (max-width: $md3+px) {
-      font-size: 21px;
+      font-size: 22px;
       font-weight: 700;
     }
     @media (any-hover: hover) {
       &:hover {
-        color: $grey;
+        color: $green;
       }
     }
   }
