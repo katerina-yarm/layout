@@ -187,7 +187,7 @@
   }
   &__title {
     font-size: 36px;
-    line-height: 50 / 36 * 100%;
+    line-height: calc(50 / 36 * 100%);
     padding: 14px 0 15px 0;
     @media (max-width: $md4+px) {
       font-size: 26px;
@@ -196,7 +196,7 @@
   &__text {
     font-size: 16px;
     opacity: 0.7;
-    line-height: 28 / 16 * 100%;
+    line-height: calc(28 / 16 * 100%);
     margin-bottom: 25px;
     @media (max-width: $md4+px) {
       font-size: 12px;
@@ -284,7 +284,7 @@
   }
   &__item-title {
     font-size: 20px;
-    line-height: 32 / 20 * 100%;
+    line-height: calc(32 / 20 * 100%);
     margin: 30px 0 10px 0;
     @media (max-width: $md4+px) {
       font-size: 18px;
@@ -294,7 +294,7 @@
   &__item-text {
     font-size: 16px;
     opacity: 0.7;
-    line-height: 28 / 16 * 100%;
+    line-height: calc(28 / 16 * 100%);
     padding-bottom: 9px;
     span {
       display: block;

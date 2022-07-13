@@ -19,6 +19,10 @@ $md4: 479.98;
 @import 'header';
 @import 'mainPage';
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   width: 100%;

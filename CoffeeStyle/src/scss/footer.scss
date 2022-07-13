@@ -22,7 +22,7 @@
     }
     &__content-title {
       font-size: 36px;
-      line-height: 50 / 36 * 100%;
+      line-height: calc(50 / 36 * 100%);
       margin: 15px 0 25px 0;
     }
     &__content-info {
@@ -92,15 +92,16 @@
     @media (max-width: $md3+px) {
       flex-wrap: wrap;
     }
-    @media (max-width: $md4+px) {
-      height: 300px;
+    @media (max-width: $md3+px) {
+      height: 350px;
     }
     &__block-01 {
-      @media (max-width: $md3+px) {
+      @media (max-width: $md2+px) {
         width: 25%;
       }
-      @media (max-width: $md4+px) {
+      @media (max-width: $md3+px) {
         width: 100%;
+        margin-bottom: 30px;
       }
     }
     &__block-01-logo {
@@ -120,8 +121,9 @@
       position: absolute;
       bottom: 0;
       opacity: 0.3;
-      @media (max-width: $md4+px) {
+      @media (max-width: $md3+px) {
         width: 50%;
+        font-size: 12px;
       }
     }
     &__title {
@@ -151,8 +153,9 @@
         opacity: 0.3;
         position: absolute;
         bottom: 0;
-        @media (max-width: $md4+px) {
-          left: 60%;
+        @media (max-width: $md3+px) {
+          font-size: 12px;
+          left: 70%;
           width: 50%;
         }
       }
@@ -162,7 +165,7 @@
       margin: 15px 0 0 0;
       color: rgba(29, 31, 46, 1);
       font-size: 23px;
-      line-height: 36 / 23 * 100%;
+      line-height: calc(36 / 23 * 100%);
       &:hover {
         color: $brown;
       }

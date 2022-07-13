@@ -7,3 +7,4 @@ document.getElementsByClassName('icon-menu')[0].addEventListener('click', functi
     document.getElementsByClassName('menu__body')[0].classList.add('_active')
   }
 })
+menu__link

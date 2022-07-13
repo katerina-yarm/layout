@@ -404,6 +404,10 @@ img {
   height: 48px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   width: 100%;

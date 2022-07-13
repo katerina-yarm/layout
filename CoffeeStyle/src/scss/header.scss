@@ -24,6 +24,7 @@
             transition: transform 0.8s ease 0s;
             display: block;
             position: fixed;
+            z-index: 4;
             width: 33%;
             height: 100%;
             top: 0;
@@ -129,9 +130,9 @@
 .icon-menu {
   display: none;
   @media (max-width: $md2+px) {
-    position: absolute;
     display: block;
-    top: 18px;
+    position: absolute;
+    top: 30px;
     right: 10px;
     width: 30px;
     height: 18px;
@@ -154,6 +155,7 @@
       }
     }
     &._active {
+      position: fixed;
       span {
         transform: scale(0);
         &:first-child {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scss/style.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
     <title>CoffeeStyle</title>
   </head>
   <body>
@@ -20,12 +20,12 @@
             </div>
             <nav class="menu__body">
               <ul class="menu__list">
-                <li><a href="" class="menu__link _h6">Home</a></li>
-                <li><a href="" class="menu__link _h6">Our Products</a></li>
-                <li><a href="" class="menu__link _h6">Blog</a></li>
-                <li><a href="" class="menu__link _h6">About</a></li>
-                <li><a href="" class="menu__link _h6">Contact</a></li>
-                <li><a href="" class="menu__link _h6">Styleguide</a></li>
+                <li><a href="/" class="menu__link _h6">Home</a></li>
+                <li><a href="#products" class="menu__link _h6">Our Products</a></li>
+                <li><a href="#blog" class="menu__link _h6">Blog</a></li>
+                <li><a href="#about" class="menu__link _h6">About</a></li>
+                <li><a href="#contact" class="menu__link _h6">Contact</a></li>
+                <li><a href="#blog" class="menu__link _h6">Styleguide</a></li>
               </ul>
               <div class="cart__button">
                 <span class="cart__image"></span>
@@ -45,10 +45,10 @@
               The most versatile furniture system ever created. Designed to fit your life, made to
               move and grow.
             </p>
-            <div class="banner__button _h6"><a href="">Explore Our Products</a></div>
+            <div class="banner__button _h6"><a href="#products">Explore Our Products</a></div>
           </div>
         </section>
-        <section class="article">
+        <section class="article" id="about">
           <div class="_container">
             <article>
               <h3 class="article__title">
@@ -93,7 +93,7 @@
             </div>
           </div>
         </section>
-        <section class="products">
+        <section class="products" id="products">
           <div class="_container">
             <h6 class="section__title _h6">More Products</h6>
             <div class="products__items">
@@ -218,7 +218,7 @@
                 <p class="promotion__text">
                   The most versatile furniture system ever <br />created. Designed to fit your life.
                 </p>
-                <div class="promotion__button"><a href="">Start Shopping</a></div>
+                <div class="promotion__button"><a href="#products">Start Shopping</a></div>
               </div>
             </div>
           </div>
@@ -226,7 +226,7 @@
         <section class="bottom-banner">
           <picture> <img src="./img/bottom-banner.png" alt="bottom-banner" /> </picture>
         </section>
-        <section class="stories _container">
+        <section class="stories _container" id="blog">
           <h6 class="section__title _h6">Behind the mugs, lifestyle stories</h6>
           <div class="stories__items">
             <article class="stories__item">
@@ -291,19 +291,19 @@
             <nav>
               <ul class="bottom-footer__block-02-navigation _footer-text">
                 <li class="bottom-footer__navigation-link">
-                  <a href="">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li class="bottom-footer__navigation-link">
-                  <a href="">Our Products</a>
+                  <a href="#products">Our Products</a>
                 </li>
                 <li class="bottom-footer__navigation-link">
-                  <a href="">About</a>
+                  <a href="#about">About</a>
                 </li>
                 <li class="bottom-footer__navigation-link">
-                  <a href="">Contact</a>
+                  <a href="#contact">Contact</a>
                 </li>
                 <li class="bottom-footer__navigation-link">
-                  <a href="">Styleguide</a>
+                  <a href="#blog">Blog</a>
                 </li>
               </ul>
             </nav>
@@ -327,7 +327,7 @@
               </ul>
             </nav>
           </div>
-          <div class="bottom-footer__block-04">
+          <div class="bottom-footer__block-04" id="contact">
             <h2 class="bottom-footer__title _h6">Contact Us</h2>
             <p class="bottom-footer__block-04-text _footer-text">We’re Always Happy to Help</p>
             <a class="bottom-footer__block-04-email" href="">us@coffeestyle.io</a>
@@ -336,6 +336,6 @@
         </section>
       </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
