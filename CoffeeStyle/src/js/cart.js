@@ -4,15 +4,16 @@ window.onload = function () {
   function documentActions(e) {
     const targetElement = e.target
     //add products to cart
-    if (targetElement.classList.contains('actions-product__button')) {
+    if (targetElement.classList.contains('item-product__button')) {
       const productId = targetElement.closest('.item-product').dataset.pid
       addToCart(targetElement, productId)
       e.preventDefault()
     }
     //show cart list
     if (
+      targetElement.classList.contains('cart__image') ||
       targetElement.classList.contains('actions-header__icon') ||
-      targetElement.closest('actions-header__icon')
+      targetElement.classList.contains('actions-header__quantity')
     ) {
       if (document.querySelector('.cart-list').children.length > 0) {
         document.querySelector('.cart-header').classList.add('_active')
@@ -20,7 +21,7 @@ window.onload = function () {
       e.preventDefault()
     } else if (
       !targetElement.closest('.cart-header') &&
-      !targetElement.classList.contains('actions-product__button')
+      !targetElement.classList.contains('item-product__button')
     ) {
       document.querySelector('.cart-header').classList.remove('_active')
     }
@@ -99,7 +100,7 @@ function updateCart(productButton, productId, productAdd = true) {
     if (cartQuantity) {
       cartQuantity.innerHTML = ++cartQuantity.innerHTML
     } else {
-      cartIcon.insertAdjacentHTML('beforeend', `<span>1</span>`)
+      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity">1</span>`)
     }
     if (!cartProduct) {
       const product = document.querySelector(`[data-pid="${productId}"]`)

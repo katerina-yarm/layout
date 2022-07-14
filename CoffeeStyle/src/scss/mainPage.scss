@@ -1,54 +1,49 @@
 .page {
-  margin-bottom: 180px;
-  @media (max-width: $md2+px) {
-    margin-bottom: 80px;
-  }
-  @media (max-width: $md4+px) {
-    margin-bottom: 40px;
-  }
+  margin-top: 80px;
+  @include avaptive-value('margin-bottom', 180, 40, 1);
 }
 
 .banner {
   color: $white;
   text-align: center;
   background-color: #050827;
-  margin-bottom: 100px;
-  @media (max-width: $md4+px) {
-    margin-bottom: 50px;
-  }
-
+  @include avaptive-value('margin-bottom', 100, 40, 1);
   &__bg {
-    height: 530px;
+    @include avaptive-value('height', 530, 400, 1);
     background-image: url(../img/main-banner.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: cover;
   }
   &__small-title {
-    padding-top: 160px;
+    @include avaptive-value('padding-top', 160, 80, 1);
   }
   &__title {
-    font-size: 47px;
+    @include avaptive-value('font-size', 47, 37, 1);
     padding: 10px 0;
   }
   &__text {
-    font-size: 17px;
+    @include avaptive-value('font-size', 17, 15, 1);
+    line-height: 25px;
     padding: 0 0 30px 0;
     @media (max-width: $md2+px) {
       margin: 0 30px;
-      line-height: 25px;
     }
   }
   &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 231px;
     height: 33px;
-    padding: 10px 0;
     background-color: $white;
     margin: 0 auto;
     cursor: pointer;
-    a {
-      font-weight: 700;
-      color: $black;
-    }
+    font-weight: 700;
+    color: $black;
+    opacity: 0.7;
     &:hover {
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 }
@@ -58,31 +53,23 @@
   margin: 0 auto;
   text-align: center;
   @media (max-width: $md2+px) {
-    padding: 0 40px;
-    text-align: center;
-  }
-  @media (max-width: $md4+px) {
-    margin: 0 20px;
-    padding: 0 20px;
+    @include avaptive-value('padding-right', 40, 20, 1);
+    @include avaptive-value('padding-left', 40, 20, 1);
   }
   &__title {
-    font-size: 28px;
-    line-height: 40px;
+    @include avaptive-value('font-size', 28, 20, 1);
+    line-height: calc(40 / 28 * 100%);
     color: $black;
-    @media (max-width: $md4+px) {
-      font-size: 25px;
-      line-height: 30px;
-    }
   }
   &__text {
-    padding: 16px 0 21px 0;
+    padding: 25px 0;
     font-size: 16px;
-    line-height: 28px;
+    line-height: calc(28 / 16 * 100%);
     opacity: 0.7;
   }
   &__button {
     margin: 0 auto;
-    width: 133px;
+    width: 200px;
     height: 30px;
     box-shadow: 0 2px 0 0 rgba(162, 95, 75, 0.2);
     text-align: center;
@@ -92,32 +79,41 @@
     }
     a {
       color: $brown;
-      font-size: 15px;
-      line-height: 28px;
+      font-size: 16px;
+      line-height: calc(28 / 16 * 100%);
     }
   }
 }
 
 .featured-mugs {
+  @include avaptive-value('margin-top', 100, 50, 1);
   &__items {
+    @include avaptive-value('margin-top', 100, 50, 1);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    @media (max-width: $md2+px) {
-      justify-content: center;
+    justify-content: center;
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
     }
   }
   &__item {
     text-align: center;
-    padding-bottom: 25px;
-    &:last-child {
-      padding-bottom: 0;
+    padding-right: 25px;
+    &:not(:last-child) {
+      padding-bottom: 25px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
 
 .products {
+  @include avaptive-value('margin-top', 100, 50, 1);
   &__items {
+    @include avaptive-value('margin-top', 100, 50, 1);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -132,75 +128,67 @@
   }
   &__item {
     text-align: center;
-    margin-bottom: 65px;
-    @media (max-width: $md2+px) {
-      margin-bottom: 15px;
-    }
-    @media (max-width: $md4+px) {
+    @include avaptive-value('margin-bottom', 65, 0, 1);
+    @media (max-width: $md3+px) {
       flex: 0 0 80%;
       margin: 0 0 0 0;
     }
   }
   &__item-img {
-    @media (max-width: $md2+px) {
-      margin: 0 20px;
+    img {
+      width: 100%;
+      height: auto;
+      object-position: center;
+      object-fit: cover;
     }
-    @media (max-width: $md4+px) {
-      margin: 0 5px;
+    @media (max-width: $md2+px) {
+      @include avaptive-value('margin-right', 20, 5, 1);
+      @include avaptive-value('margin-left', 20, 5, 1);
     }
   }
   &__item-title {
-    margin: 35px 0 5px 0;
-    font-size: 20px;
-    line-height: 30px;
-    @media (max-width: $md2+px) {
-      margin: 15px 0 5px 0;
-    }
+    @include avaptive-value('font-size', 20, 16, 1);
+    @include avaptive-value('margin-top', 35, 15, 1);
+    line-height: calc(30 / 20 * 100%);
+    margin-bottom: 5px;
   }
   &__item-price {
-    ._sale {
-      font-size: 19px;
-      color: $brown;
-      margin-right: 10px;
+    @include avaptive-value('font-size', 16, 14, 1);
+    .item-product__price {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
     }
-    ._active {
-      font-size: 16px;
-      margin-right: 10px;
+    ._sale {
+      @include avaptive-value('font-size', 20, 16, 1);
+      color: $brown;
     }
     ._deactive {
-      font-size: 16px;
       opacity: 0.4;
       text-decoration: line-through;
-      margin-right: 10px;
-    }
-    *:last-child {
-      margin: 0;
     }
   }
 }
 
 .promotion {
+  @include avaptive-value('margin-top', 60, 50, 1);
   &__content {
+    @include avaptive-value('margin-top', 100, 50, 1);
     @media (max-width: $md2+px) {
       justify-content: center;
     }
   }
   &__title {
-    font-size: 36px;
+    @include avaptive-value('font-size', 36, 26, 1);
     line-height: calc(50 / 36 * 100%);
     padding: 14px 0 15px 0;
-    @media (max-width: $md4+px) {
-      font-size: 26px;
-    }
   }
   &__text {
+    @include avaptive-value('font-size', 16, 12, 1);
     font-size: 16px;
     opacity: 0.7;
     line-height: calc(28 / 16 * 100%);
     margin-bottom: 25px;
-    @media (max-width: $md4+px) {
-      font-size: 12px;
-    }
   }
   &__button {
     width: 173px;
@@ -209,6 +197,7 @@
     text-align: center;
     padding: 10px 0;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
     &:hover {
       background-color: rgba(0, 0, 0, 0.425);
     }
@@ -224,6 +213,10 @@
     grid-template-columns: 30% 25% 45%;
     grid-template-rows: 2;
     grid-gap: 20px;
+    @media (min-width: $md2+px) {
+      @include avaptive-value('margin-right', 100, 0, 1);
+      @include avaptive-value('margin-left', 100, 0, 1);
+    }
     @media (max-width: $md2+px) {
       grid-template-columns: 280px 160px;
       grid-template-rows: 3;
@@ -255,17 +248,21 @@
 
 .bottom-banner {
   max-width: 1440px;
-  margin: 130px auto 100px auto;
-  @media (max-width: $md2+px) {
-    margin: 100px auto 70px auto;
-  }
-  @media (max-width: $md4+px) {
-    margin: 50px auto 50px auto;
+  @include avaptive-value('margin-top', 100, 50, 1);
+  @include avaptive-value('margin-bottom', 100, 50, 1);
+  margin-right: auto;
+  margin-left: auto;
+  img {
+    width: 100%;
+    height: auto;
+    object-position: center;
+    object-fit: cover;
   }
 }
 
 .stories {
   &__items {
+    @include avaptive-value('margin-top', 100, 50, 1);
     display: flex;
     justify-content: space-between;
     @media (max-width: $md2+px) {
@@ -283,30 +280,20 @@
     }
   }
   &__item-title {
-    font-size: 20px;
+    @include avaptive-value('font-size', 20, 18, 1);
     line-height: calc(32 / 20 * 100%);
-    margin: 30px 0 10px 0;
-    @media (max-width: $md4+px) {
-      font-size: 18px;
-      margin: 20px 0 10px 0;
-    }
+    @include avaptive-value('margin-top', 30, 20, 1);
+    margin-bottom: 10px;
   }
   &__item-text {
-    font-size: 16px;
+    @include avaptive-value('font-size', 16, 14, 1);
+    @include avaptive-value('letter-spacing', 2, 1.5, 1);
     opacity: 0.7;
     line-height: calc(28 / 16 * 100%);
     padding-bottom: 9px;
     span {
       display: block;
-      padding-top: 16px;
-      letter-spacing: 2px;
-    }
-    @media (max-width: $md4+px) {
-      font-size: 14px;
-      span {
-        padding-top: 5px;
-        letter-spacing: 1.5px;
-      }
+      @include avaptive-value('padding-top', 16, 5, 1);
     }
   }
 }

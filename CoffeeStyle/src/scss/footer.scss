@@ -1,17 +1,8 @@
 .footer {
-  margin-bottom: 60px;
-  @media (max-width: $md2+px) {
-    margin-bottom: 30px;
-  }
+  @include avaptive-value('margin-bottom', 32, 16, 1);
   .subscribe {
     background-color: $black;
-    margin-bottom: 100px;
-    @media (max-width: $md2+px) {
-      margin-bottom: 50px;
-    }
-    @media (max-width: $md4+px) {
-      margin-bottom: 40px;
-    }
+    @include avaptive-value('margin-bottom', 50, 10, 1);
     &__content {
       color: $white;
       text-align: center;
@@ -21,7 +12,7 @@
       }
     }
     &__content-title {
-      font-size: 36px;
+      @include avaptive-value('font-size', 36, 26, 1);
       line-height: calc(50 / 36 * 100%);
       margin: 15px 0 25px 0;
     }
@@ -33,7 +24,7 @@
       }
     }
     &__content-email {
-      width: 350px;
+      @include avaptive-value('width', 350, 250, 1);
       height: 54px;
       background-color: transparent;
       border: #2f303e solid 1px;
@@ -41,11 +32,11 @@
       padding: 18px 0 18px 18px;
       margin-right: 10px;
       cursor: pointer;
+      transition: all 0.3s ease 0s;
       &:hover {
         background-color: #2f303e;
       }
       @media (max-width: $md4+px) {
-        width: 250px;
         text-align: center;
         padding: 18px 0 18px 0;
         margin: 0 auto 10px auto;
@@ -60,12 +51,13 @@
     &__content-button {
       width: 130px;
       height: 54px;
-      background-color: $white;
+      background-color: #ffffffbe;
       text-align: center;
       padding: 18px 0 18px 0;
       cursor: pointer;
+      transition: all 0.3s ease 0s;
       &:hover {
-        background-color: #ffffff94;
+        background-color: $white;
       }
       @media (max-width: $md4+px) {
         margin: 0 auto;
@@ -80,98 +72,102 @@
       }
     }
   }
-  .bottom-footer {
+
+  ._footer-title {
+    color: #000000;
+    font-weight: 500;
+    @include avaptive-value('font-size', 14, 11, 1);
+    line-height: calc(29 / 14 * 100%);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    @include avaptive-value('padding-top', 80, 30, 1);
+    @include avaptive-value('padding-bottom', 60, 30, 1);
+    @include avaptive-value('column-gap', 70, 0, 1);
+
+    @media (max-width: $md1+px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__main {
+    max-width: 250px;
+    @media (max-width: $md1+px) {
+      grid-column: span 2;
+      @include avaptive-value('margin-bottom', 60, 30, 1);
+    }
+  }
+  &__logo {
     display: flex;
-    justify-content: space-between;
-    height: 200px;
-    position: relative;
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    @include avaptive-value('font-size', 18, 16, 1);
+    font-family: sans-serif;
+    @include avaptive-value('margin-bottom', 16, 10, 1);
+  }
+  &__text {
+    color: $black;
+    opacity: 0.8;
+    @include avaptive-value('font-size', 18, 14, 1);
+    line-height: calc(24 / 16 * 100%);
+  }
+  &__menu {
+    @media (min-width: $md3+px) {
+      display: flex;
+    }
     @media (max-width: $md2+px) {
-      margin: 0 10px 0 0;
+      grid-column: span 2;
     }
+  }
+}
 
-    @media (max-width: $md3+px) {
-      flex-wrap: wrap;
+.menu-footer {
+  &__column {
+    @media (min-width: $md3+px) {
+      flex: 0 1 33.33%;
+    }
+  }
+  &__title {
+    background: transparent;
+    text-align: left;
+    @media (min-width: $md3+px) {
+      cursor: default;
     }
     @media (max-width: $md3+px) {
-      height: 350px;
-    }
-    &__block-01 {
-      @media (max-width: $md2+px) {
-        width: 25%;
-      }
-      @media (max-width: $md3+px) {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-    }
-    &__block-01-logo {
-      width: 111px;
-      height: 24px;
-      background-image: url(../img/logo.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    &__block-01-text {
-      padding: 22px 0 0 0;
-      @media (max-width: $md4+px) {
-        padding: 5px 0 0 0;
-      }
-    }
-    &__block-01-copy {
-      position: absolute;
-      bottom: 0;
-      opacity: 0.3;
-      @media (max-width: $md3+px) {
-        width: 50%;
-        font-size: 12px;
-      }
-    }
-    &__title {
-      margin-bottom: 23px;
-    }
-    &__navigation-link {
-      padding-bottom: 10px;
-      :last-child {
-        padding-bottom: 0;
-      }
-      a {
-        color: $black;
-        &:hover {
-          color: $brown;
-        }
-      }
-    }
-
-    &__block-04 {
-      @media (max-width: $md3+px) {
-        width: 25%;
-      }
-      @media (max-width: $md4+px) {
-        width: 35%;
-      }
-      span {
-        opacity: 0.3;
-        position: absolute;
-        bottom: 0;
-        @media (max-width: $md3+px) {
-          font-size: 12px;
-          left: 70%;
-          width: 50%;
-        }
-      }
-    }
-    &__block-04-email {
-      display: block;
-      margin: 15px 0 0 0;
-      color: rgba(29, 31, 46, 1);
-      font-size: 23px;
-      line-height: calc(36 / 23 * 100%);
+      transition: color 0.3s ease 0s;
       &:hover {
         color: $brown;
       }
-      @media (max-width: $md3+px) {
-        font-size: 16px;
-      }
+    }
+    @include avaptive-value('margin-bottom', 16, 10, 1);
+  }
+  &__list {
+    li {
+      color: $black;
+      opacity: 0.8;
+      @include avaptive-value('font-size', 16, 14, 1);
+      @include avaptive-value('margin-bottom', 16, 10, 1);
     }
   }
+  &__link {
+    display: inline-flex;
+    color: $black;
+    @include avaptive-value('font-size', 16, 14, 1);
+    line-height: calc(24 / 16 * 100%);
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: $brown;
+    }
+  }
+}
+
+.copy {
+  display: flex;
+  justify-content: space-between;
+  color: $black;
+  opacity: 0.5;
+  @include avaptive-value('font-size', 16, 14, 1);
 }
