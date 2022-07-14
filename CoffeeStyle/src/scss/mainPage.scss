@@ -9,22 +9,25 @@
   background-color: #050827;
   @include avaptive-value('margin-bottom', 100, 40, 1);
   &__bg {
-    @include avaptive-value('height', 530, 400, 1);
+    @include avaptive-value('height', 530, 500, 1);
     background-image: url(../img/main-banner.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-image: cover;
   }
   &__small-title {
-    @include avaptive-value('padding-top', 160, 80, 1);
+    @include avaptive-value('padding-top', 160, 110, 1);
   }
   &__title {
     @include avaptive-value('font-size', 47, 37, 1);
-    padding: 10px 0;
+    padding: 20px 0;
+    letter-spacing: 2px;
   }
   &__text {
-    @include avaptive-value('font-size', 17, 15, 1);
-    line-height: 25px;
+    @include avaptive-value('font-size', 17, 14, 1);
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: calc(25 / 17 * 100%);
     padding: 0 0 30px 0;
     @media (max-width: $md2+px) {
       margin: 0 30px;
@@ -62,8 +65,8 @@
     color: $black;
   }
   &__text {
+    @include avaptive-value('font-size', 16, 14, 1);
     padding: 25px 0;
-    font-size: 16px;
     line-height: calc(28 / 16 * 100%);
     opacity: 0.7;
   }
@@ -127,11 +130,15 @@
     }
   }
   &__item {
+    max-width: 300px;
     text-align: center;
     @include avaptive-value('margin-bottom', 65, 0, 1);
     @media (max-width: $md3+px) {
       flex: 0 0 80%;
       margin: 0 0 0 0;
+    }
+    .item-product__button{
+      margin-top: 30px;
     }
   }
   &__item-img {
@@ -147,13 +154,13 @@
     }
   }
   &__item-title {
-    @include avaptive-value('font-size', 20, 16, 1);
+    @include avaptive-value('font-size', 20, 14, 1);
     @include avaptive-value('margin-top', 35, 15, 1);
     line-height: calc(30 / 20 * 100%);
     margin-bottom: 5px;
   }
   &__item-price {
-    @include avaptive-value('font-size', 16, 14, 1);
+    @include avaptive-value('font-size', 16, 12, 1);
     .item-product__price {
       &:not(:last-child) {
         margin-right: 10px;
@@ -284,9 +291,10 @@
     line-height: calc(32 / 20 * 100%);
     @include avaptive-value('margin-top', 30, 20, 1);
     margin-bottom: 10px;
+    letter-spacing: 1.2px;
   }
   &__item-text {
-    @include avaptive-value('font-size', 16, 14, 1);
+    @include avaptive-value('font-size', 16, 12, 1);
     @include avaptive-value('letter-spacing', 2, 1.5, 1);
     opacity: 0.7;
     line-height: calc(28 / 16 * 100%);

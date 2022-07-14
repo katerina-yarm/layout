@@ -1,7 +1,7 @@
 @import 'mixins';
 @import 'fonts';
 
-$fontFamily: 'Karla', sans-serif;
+$fontFamily: 'Gilroy', sans-serif;
 
 $brown: #a25f4b;
 $black: #1d1f2e;
@@ -22,6 +22,8 @@ $md4: 479.98;
 
 html {
   scroll-behavior: smooth;
+  font-family: $fontFamily;
+  letter-spacing: 1.2px;
 }
 
 html,
@@ -52,6 +54,7 @@ body {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
+  line-height: 20px;
 }
 
 .section__title {
@@ -178,19 +181,13 @@ body {
       align-items: center;
       margin-left: 7px;
       width: 20px;
-      height: 18px;
+      height: 20px;
       background-color: $black;
       border-radius: 100%;
       color: $white;
       font-size: 11px;
       font-family: $fontFamily;
-      @media (max-width: $md2+px) {
-        font-size: 14px;
-      }
     }
-  }
-  @media (max-width: $md2+px) {
-    margin-left: 0;
   }
 }
 .cart-list {
@@ -220,6 +217,7 @@ body {
     margin-bottom: 5px;
   }
   &__quantity {
+    padding: 5px 0;
     font-size: 14px;
     margin-bottom: 5px;
   }
