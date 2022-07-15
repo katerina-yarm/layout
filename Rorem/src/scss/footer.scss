@@ -3,6 +3,9 @@
     background-color: $dark-white;
     &__title {
       margin-bottom: 40px;
+      @media (max-width: $md4+px) {
+        margin-bottom: 20px;
+      }
     }
     form {
       display: flex;
@@ -16,18 +19,24 @@
       width: 100%;
       border-bottom: 2px solid $blue;
       margin-bottom: 30px;
+      @media (max-width: $md4+px) {
+        height: 40px;
+      }
       &._error {
         border-bottom: 2px solid $red;
       }
       .form__label {
         position: absolute;
-        left: 15px;
+        left: 0;
         bottom: 18px;
         transition: 0.5s;
         color: $blue;
         font-size: 18px;
         &._error {
           color: $red;
+        }
+        @media (max-width: $md4+px) {
+          font-size: 16px;
         }
       }
       .error-text {
@@ -60,11 +69,22 @@
         font-size: 16px;
         background: transparent;
         &:focus + label {
-          bottom: 40px;
+          bottom: 50px;
           font-size: 14px;
+          @media (max-width: $md4+px) {
+            font-size: 12px;
+            bottom: 40px;
+          }
         }
         &._active + label {
-          bottom: 40px;
+          bottom: 50px;
+          font-size: 14px;
+          @media (max-width: $md4+px) {
+            font-size: 12px;
+            bottom: 40px;
+          }
+        }
+        @media (max-width: $md4+px) {
           font-size: 14px;
         }
       }
@@ -84,7 +104,6 @@
       select {
         display: block;
         width: 100%;
-        padding: 0 15px;
         background: none;
         border: none;
         appearance: none;
@@ -96,6 +115,9 @@
         z-index: 1;
         cursor: pointer;
         bottom: 15px;
+        @media (max-width: $md4+px) {
+          font-size: 14px;
+        }
       }
       option {
         color: $black;
@@ -118,7 +140,7 @@
     &__button {
       margin: 40px 0 0 auto;
       @media (max-width: $md3+px) {
-        margin: 40px auto;
+        margin: 20px auto;
       }
     }
   }

@@ -22,13 +22,13 @@
   &__introduction {
     padding-top: 100px;
     @media (max-width: $md3+px) {
-      padding-top: 60px;
+      padding-top: 40px;
     }
     &_title {
       margin: 130px 0 10px 0;
       text-align: center;
-      @media (max-width: $md3+px) {
-        margin: 80px 0 10px 0;
+      @media (max-width: $md4+px) {
+        margin: 70px 0 10px 0;
       }
     }
     &_description {
@@ -38,72 +38,9 @@
         margin-bottom: 50px;
       }
     }
-    &_galary-item {
-      picture {
-        img {
-          max-width: 650px;
-          width: 100%;
-          height: auto;
-        }
-        ._pricing-export-picture {
-          max-width: 300px;
-          @media (max-width: $md3+px) {
-            max-width: 150px;
-          }
-        }
-      }
-      ._bg-dark-white {
-        position: relative;
-        width: 100%;
-        height: 350px;
-        @media (max-width: $md3+px) {
-          height: 200px;
-        }
-        picture {
-          position: absolute;
-          top: 20%;
-          left: 50%;
-          margin-right: -50%;
-          transform: translate(-50%, -50%);
-          @media (max-width: $md3+px) {
-            top: 25%;
-          }
-        }
-      }
-    }
-  }
-  ._grid {
-    display: grid;
-    grid-template-rows: 2;
-    grid-template-columns: 2;
-    row-gap: 10px;
-    column-gap: 10px;
-    justify-content: center;
-    @media (max-width: $md3+px) {
-      grid-template-rows: 3;
-      grid-template-columns: 1;
-    }
-    ._grid-item-01 {
-      grid-row: 1/2;
-      grid-column: 1/3;
-      @media (max-width: $md3+px) {
-        grid-column: 1/2;
-      }
-    }
-    ._grid-item-02 {
-      grid-row: 2/3;
-      grid-column: 1/2;
-    }
-    ._grid-item-03 {
-      grid-row: 2/3;
-      grid-column: 2/3;
-      @media (max-width: $md3+px) {
-        grid-column: 1/2;
-        grid-row: 3/4;
-      }
-    }
   }
   &__description {
+    margin-bottom: 50px;
     hr {
       height: 2px;
       background-color: $dark-white;
@@ -120,7 +57,7 @@
       align-items: center;
       @media (max-width: $md3+px) {
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
     }
     &_item-icon {
@@ -129,24 +66,31 @@
       padding-top: 7px;
       margin: 60px 150px 90px 0;
       @media (max-width: $md3+px) {
-        margin: 35px 0;
+        margin: 10px 0;
+        font-size: 20px;
       }
     }
     &_item-text {
       p {
         padding-top: 5px;
+        @media (max-width: $md4+px) {
+          font-size: 16px;
+        }
       }
     }
   }
   &__statistics {
     &_content {
       padding: 100px 0;
-      @media (max-width: $md3+px) {
-        padding: 50px 0;
+      @media (max-width: $md2+px) {
+        padding: 30px 0;
       }
     }
     &_content-title {
       margin-bottom: 20px;
+      @media (max-width: $md3+px) {
+        font-size: 20px;
+      }
     }
     &_content-list {
       padding-bottom: 85px;
@@ -159,7 +103,7 @@
       margin-bottom: 5px;
       @media (max-width: $md3+px) {
         display: block;
-        padding: 30px 0 30px 10px;
+        padding: 20px 0 20px 10px;
       }
     }
     &_content-link-number {
@@ -210,6 +154,7 @@
       p {
         @media (max-width: $md3+px) {
           width: 65%;
+          font-size: 16px;
         }
       }
     }
@@ -231,11 +176,11 @@
   }
   &__responsible {
     padding: 185px 0 190px 0;
-    @media (max-width: $md2+px) {
+    @media (max-width: $md1+px) {
       padding: 80px 0;
     }
-    @media (max-width: $md3+px) {
-      padding: 50px 0;
+    @media (max-width: $md2+px) {
+      padding: 10px 0;
     }
     &_content {
       display: flex;
@@ -255,6 +200,7 @@
       }
       @media (max-width: $md3+px) {
         max-width: 700px;
+        font-size: 16px;
       }
     }
     &_content-info {
@@ -264,15 +210,18 @@
         margin-right: 50px;
       }
       @media (max-width: $md3+px) {
-        margin-bottom: 33px;
+        margin-bottom: 20px;
         margin-right: 0;
       }
       p {
         color: $grey;
+        @media (max-width: $md3+px) {
+          font-size: 16px;
+        }
       }
       h4 {
         @media (max-width: $md3+px) {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
       }
     }
