@@ -1,0 +1,128 @@
+@import 'mixins';
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'Gilroy';
+
+$blackText: #3a3a3a;
+$greyText: #898989;
+$lightGrey: #b0b0b0;
+$white: #ffffff;
+$orange: #e89f71;
+$red: #e97171;
+$green: #2ec1ac;
+
+$maxWidthContainer: 1240;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 768.02;
+$md4: 479.98;
+
+@import 'normalize';
+@import 'header';
+@import 'footer';
+@import 'mainSlider';
+@import 'mainPage';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  color: $blackText;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+    margin: 0 25px;
+  }
+}
+
+h1 {
+  @include avaptive-value('font-size', 56, 25, 1);
+  color: $blackText;
+  line-height: calc(67 / 56 * 100%);
+  font-weight: 700;
+}
+
+h2 {
+  @include avaptive-value('font-size', 40, 22, 1);
+  color: $blackText;
+  line-height: calc(48 / 40 * 100%);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+  color: $blackText;
+  font-weight: 600;
+  line-height: calc(33 / 28 * 100%);
+}
+
+h5 {
+  @include avaptive-value('font-size', 24, 20, 1);
+  color: $blackText;
+  line-height: calc(29 / 24 * 100%);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 20px;
+  color: $blackText;
+  font-weight: 600;
+  line-height: calc(30 / 20 * 100%);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  min-height: 48px;
+  background-color: $orange;
+  color: $white;
+  &:hover {
+    background-color: #e68e58;
+  }
+  &_white {
+    color: $orange;
+    background-color: $white;
+    &:hover {
+      color: $white;
+      background-color: $orange;
+    }
+  }
+}
+
+._fly-image {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  transition: all 1s ease 0s;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
