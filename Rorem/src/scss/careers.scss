@@ -1,0 +1,174 @@
+.extra-page {
+  ._padding-top {
+    padding-top: 100px;
+    @media (max-width: $md3+px) {
+      padding-top: 60px;
+    }
+  }
+  &__careers {
+    position: relative;
+    min-height: 700px;
+    &_picture {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-color: $dark-white;
+      position: absolute;
+      height: 590px;
+      width: 50%;
+      top: 80px;
+      right: 0;
+      z-index: -1;
+      overflow: hidden;
+      &._bottom_foto {
+        top: 20px;
+      }
+      @media (max-width: $md2+px) {
+        top: 50px;
+        width: 100%;
+        height: 300px;
+        position: relative;
+      }
+    }
+    ._foto1 {
+      background-image: url(../img/career/04.jpg);
+    }
+    ._icon-pricing-icon-02 {
+      color: $blue;
+    }
+    &_title {
+      padding-top: 150px;
+      padding-bottom: 40px;
+      text-align: center;
+      @media (max-width: $md2+px) {
+        padding-top: 80px;
+        padding-bottom: 0;
+      }
+    }
+    &_text {
+      font-size: 26px;
+      line-height: calc(36 / 26 * 100%);
+      max-width: 580px;
+      margin: 55px 130px 0 130px;
+      @media (max-width: $md2+px) {
+        margin: 65px 0 0 0;
+        max-width: 100%;
+        font-size: 20px;
+        padding-bottom: 50px;
+      }
+      span {
+        display: block;
+        padding-top: 40px;
+        font-size: 18px;
+        line-height: calc(30 / 18 * 100%);
+        @media (max-width: $md2+px) {
+          padding-top: 30px;
+          font-size: 16px;
+        }
+      }
+      small {
+        display: block;
+        padding-bottom: 40px;
+        font-size: 25px;
+      }
+      &._small {
+        font-size: 18px;
+        max-width: 511px;
+        line-height: calc(30 / 18 * 100%);
+        @media (max-width: $md2+px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__positions {
+    &_item {
+      display: flex;
+      padding: 65px 0;
+      @media (max-width: $md3+px) {
+        padding: 35px 0;
+      }
+    }
+    &_item-counter {
+      width: 150px;
+      @media (max-width: $md3+px) {
+        width: 50px;
+      }
+    }
+    &_item-description {
+      position: relative;
+      width: 40px;
+      margin: 0 0 0 auto;
+    }
+    &_item-description_body {
+      opacity: 0;
+      visibility: hidden;
+      margin: 0 auto 0 auto;
+      max-width: 580px;
+      max-height: 0;
+      transition: all 0.6s ease 0s;
+      &._active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+        margin: 0 auto 65px auto;
+        max-width: 580px;
+        font-size: 18px;
+        line-height: calc(40 / 18 * 100%);
+        @media (max-width: $md3+px) {
+          line-height: calc(30 / 18 * 100%);
+        }
+        h4 {
+          margin: 40px 0;
+          @media (max-width: $md3+px) {
+            margin: 20px 0;
+          }
+        }
+        ul {
+          list-style-position: outside;
+          li {
+            margin-left: 15px;
+            list-style-type: disc;
+          }
+        }
+        a {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+  .icon-description {
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    z-index: 2;
+    span {
+      transition: all 0.3s ease 0s;
+      top: calc(50% - 1px);
+      position: absolute;
+      width: 100%;
+      background-color: $blue;
+      height: 2px;
+      &:first-child {
+        transform: rotate(-90deg);
+      }
+      &:last-child {
+        transform: rotate(0deg);
+      }
+    }
+    &._active {
+      height: 12px;
+      width: 12px;
+      span {
+        &:first-child {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}

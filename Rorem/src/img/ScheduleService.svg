@@ -1,0 +1,27 @@
+<svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="80" height="80" transform="translate(4)" fill="#F6F6F6"/>
+<g opacity="0.2" filter="url(#filter0_f_7359_4)">
+<circle cx="44" cy="44" r="39" stroke="url(#paint0_linear_7359_4)" stroke-width="2"/>
+</g>
+<circle cx="44" cy="40" r="39" stroke="url(#paint1_linear_7359_4)" stroke-width="2"/>
+<path d="M38 57H51" stroke="#1F6DE2" stroke-width="2" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M37.998 27.5001C37.998 26.9477 37.5476 26.4924 37.0007 26.5705C33.6081 27.0555 31 29.973 31 33.4998V46.5003C31 50.3663 34.134 53.5003 38 53.5003H51C54.866 53.5003 58 50.3663 58 46.5004V33.4998C58 29.9744 55.394 27.0577 52.0033 26.5711C51.4562 26.4926 51.0054 26.948 51.0054 27.5007C51.0054 28.0526 51.457 28.4898 51.998 28.5994C54.2812 29.0619 56 31.0801 56 33.4998V46.5004C56 49.2618 53.7614 51.5003 51 51.5003H38C35.2386 51.5003 33 49.2618 33 46.5003V33.4998C33 31.0791 34.7202 29.0602 37.0048 28.5988C37.546 28.4895 37.998 28.0522 37.998 27.5001ZM42.4984 27.4998C42.4984 28.052 42.9462 28.4998 43.4984 28.4998H45.5015C46.0538 28.4998 46.5015 28.052 46.5015 27.4998C46.5015 26.9475 46.0538 26.4998 45.5015 26.4998H43.4984C42.9462 26.4998 42.4984 26.9475 42.4984 27.4998Z" fill="#1F6DE2"/>
+<path d="M47.7524 25.5C47.7524 24.9477 48.2002 24.5 48.7524 24.5C49.3047 24.5 49.7524 24.9477 49.7524 25.5V29.4951C49.7524 30.0474 49.3047 30.4951 48.7524 30.4951C48.2002 30.4951 47.7524 30.0474 47.7524 29.4951V25.5Z" fill="#1F6DE2"/>
+<rect x="39.25" y="24.5" width="2" height="6" rx="1" fill="#1F6DE2"/>
+<path d="M40 40.0388L43.5262 43.5032L50 37.5032" stroke="#1F6DE2" stroke-width="2" stroke-linecap="round"/>
+<defs>
+<filter id="filter0_f_7359_4" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_7359_4"/>
+</filter>
+<linearGradient id="paint0_linear_7359_4" x1="4" y1="84" x2="89.8584" y2="73.2902" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1F6DE2"/>
+<stop offset="1" stop-color="#1C77FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_7359_4" x1="4" y1="80" x2="89.8584" y2="69.2902" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1F6DE2"/>
+<stop offset="1" stop-color="#1C77FF"/>
+</linearGradient>
+</defs>
+</svg>

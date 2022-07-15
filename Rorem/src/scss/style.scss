@@ -1,0 +1,178 @@
+@import 'mixins';
+
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'CeraCompactPro';
+
+$linear-blue: linear-gradient(to bottom, #1f6de2, #1c77ff);
+$linear-blue-hover: linear-gradient(to bottom, #0d52b9, #0f5ed4);
+$blue: #1f6de2;
+$black: #181818;
+$dark-grey: #424242;
+$grey: #b3b3b3;
+$light-grey: #e5e5e5;
+$dark-white: #f6f6f6;
+$white: #ffffff;
+$red: #db0000;
+
+$maxWidthContainer: 1180;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 540.98;
+
+@import 'normalize';
+@import 'header';
+@import 'footer';
+@import 'mainPage';
+@import 'extraPages';
+@import 'policyAndTerms';
+@import 'testimonials';
+@import 'careers';
+@import 'requestForm';
+@import 'errorWindow';
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  font-family: $fontFamily;
+}
+
+p {
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: calc(30 / 20 * 100%);
+  color: $dark-grey;
+  @media (max-width: $md3+px) {
+    font-size: 18px;
+  }
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+._wrapper {
+  padding: 50px 150px;
+  @media (max-width: $md2+px) {
+    padding: 25px 100px;
+  }
+  @media (max-width: $md3+px) {
+    padding: 25px 20px;
+  }
+}
+
+._bg-dark-white {
+  background-color: $dark-white;
+}
+._bg-light-grey {
+  background-color: $light-grey;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: calc(65 / 45 * 100%);
+  @media (max-width: $md3+px) {
+    font-size: 35px;
+  }
+  @media (max-width: $md4+px) {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: calc(50 / 30 * 100%);
+  @media (max-width: $md3+px) {
+    font-size: 25px;
+  }
+}
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: calc(28 / 20 * 100%);
+  @media (max-width: $md3+px) {
+    font-size: 18px;
+  }
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: calc(25 / 18 * 100%);
+}
+
+._button-menu {
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  background-image: $linear-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $white;
+  transition: all 1s ease;
+  &:hover,
+  &:focus {
+    background: $linear-blue-hover;
+  }
+  @media (max-width: $md4+px) {
+    width: 130px;
+  }
+}
+
+._button-arrow {
+  display: block;
+  width: 170px;
+  height: 50px;
+  border-radius: 30px;
+  background-image: $linear-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $white;
+  transition: 0.5s;
+  img {
+    padding: 19px 0 0 20px;
+  }
+  &:hover,
+  &:focus {
+    background: $linear-blue-hover;
+  }
+}
+
+._button-light {
+  display: block;
+  width: 160px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: calc(50 / 16 * 100%);
+  color: $blue;
+  transition: all 1s ease;
+  &:hover,
+  &:focus {
+    background: $linear-blue;
+    color: $white;
+  }
+}
