@@ -83,7 +83,7 @@
   ._footer-title {
     color: #000000;
     font-weight: 700;
-    @include avaptive-value('font-size', 14, 11, 1);
+    @include avaptive-value('font-size', 14, 13, 1);
     line-height: calc(29 / 14 * 100%);
   }
 

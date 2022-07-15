@@ -428,6 +428,7 @@ img {
 .bottom-banner img {
   width: 100%;
   height: auto;
+  min-height: 200px;
   -o-object-position: center;
      object-position: center;
   -o-object-fit: cover;
@@ -1214,7 +1215,7 @@ body {
 
   .footer ._footer-title {
     font-size: calc(
-        11px + 3 * ((100vw - 320px) / 820)
+        13px + 1 * ((100vw - 320px) / 820)
       );
   }
 
