@@ -25,7 +25,7 @@
     font-family: $fontFamily2;
     font-weight: 400;
     letter-spacing: 1.5px;
-    line-height: 30 / 14 * 100%;
+    line-height: calc(30 / 14 * 100%);
     @media (max-width: $md3+px) {
       margin-top: 0;
     }
@@ -34,7 +34,7 @@
     margin: 0;
     color: $white;
     font-size: 22px;
-    line-height: 30 / 22 * 100%;
+    line-height: calc(30 / 22 * 100%);
     @media (max-width: $md3+px) {
       font-size: 18px;
     }

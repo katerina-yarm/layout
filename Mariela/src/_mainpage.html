@@ -16,14 +16,14 @@
   </div>
 </section>
 
-<section class="introduction">
+<section id="about" class="introduction">
   <div class="_container">
     <h2 class="introduction__title">I'm a cushion designer</h2>
     <p class="introduction__description">
       Based in San Francisco, California I design trendy and fashion Cushions, since I have memory I
       always had a tendency to design and illustration.
     </p>
-    <button class="introduction__button _button">Learn More</button>
+    <a href="#about" class="introduction__button _button">Learn More</a>
     <div class="introduction__items">
       <div class="introduction__item">
         <picture class="introduction__item-foto">
@@ -31,7 +31,7 @@
         </picture>
         <div class="introduction__item-info">
           <p class="introduction__item-info-title">About me</p>
-          <a class="introduction__item-info-link">Learn more</a>
+          <a href="#about" class="introduction__item-info-link">Learn more</a>
         </div>
       </div>
       <div class="introduction__item">
@@ -40,7 +40,7 @@
         </picture>
         <div class="introduction__item-info">
           <p class="introduction__item-info-title">My products</p>
-          <a class="introduction__item-info-link">Learn more</a>
+          <a href="#products" class="introduction__item-info-link">Learn more</a>
         </div>
       </div>
       <div class="introduction__item">
@@ -49,7 +49,7 @@
         </picture>
         <div class="introduction__item-info">
           <p class="introduction__item-info-title">Contact me</p>
-          <a class="introduction__item-info-link">Learn more</a>
+          <a href="#contact" class="introduction__item-info-link">Learn more</a>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
             I'm a trendy <br />
             Cushion Designer
           </h2>
-          <p class="banner__button"><a>learn more</a></p>
+          <p class="banner__button"><a href="#about">learn more</a></p>
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@
           seize scalable metrics whereas proactive e-services seamlessly empower fully researched
           growth strategies.<br />And interoperable internal or “organic” sources.
         </p>
-        <button class="_button">Learn More</button>
+        <a href="#about" class="biography__description-button _button">Learn More</a>
       </div>
     </div>
     <hr />
@@ -136,57 +136,63 @@
             Spring Cushion <br />
             Collection 2019
           </h2>
-          <p class="banner__button"><a>buy now</a></p>
+          <p class="banner__button"><a href="#products">buy now</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="products">
+<section id="products" class="products">
   <div class="_container">
     <div class="products__items">
-      <div class="products__item-card">
-        <picture class="products__item-foto">
-          <img src="img/section4.1.png" alt="product-01" />
-        </picture>
-        <h2 class="products__item-title">Plated Cushion</h2>
+      <div data-pid="1" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.1.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Plated Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
-      <div class="products__item-card">
-        <picture class="products__item-foto">
-          <img src="img/section4.2.png" alt="product-02" />
-        </picture>
-        <h2 class="products__item-title">Silver Cushion</h2>
+      <div data-pid="2" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.2.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Silver Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
-      <div class="products__item-card">
-        <picture class="products__item-card-foto">
-          <img src="img/section4.3.png" alt="product-03" />
-        </picture>
-        <h2 class="products__item-title">Deep Blue Cushion</h2>
+      <div data-pid="3" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.3.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Deep Blue Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
-      <div class="products__item-card">
-        <picture class="products__item-card-foto">
-          <img src="img/section4.4.png" alt="product-04" />
-        </picture>
-        <h2 class="products__item-title">Pink Cushion</h2>
+      <div data-pid="4" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.4.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Pink Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
-      <div class="products__item-card">
-        <picture class="products__item-card-foto">
-          <img src="img/section4.5.png" alt="product-05" />
-        </picture>
-        <h2 class="products__item-title">Black Cushion</h2>
+      <div data-pid="5" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.5.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Black Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
-      <div class="products__item-card">
-        <picture class="products__item-card-foto">
-          <img src="img/section4.6.png" alt="product-06" />
-        </picture>
-        <h2 class="products__item-title">Green Cushion</h2>
+      <div data-pid="6" class="products__item item-product products__item-card">
+        <div class="products__item-img item-product__image products__item-foto">
+          <img src="img/section4.6.png" alt="product" />
+        </div>
+        <h5 class="products__item-title item-product__title">Green Cushion</h5>
         <p class="products__item-price">$ 19.99 USD</p>
+        <a href="" class="products__item-button _button item-product__button">Add to cart</a>
       </div>
     </div>
   </div>

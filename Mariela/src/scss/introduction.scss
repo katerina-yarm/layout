@@ -15,7 +15,7 @@
   &__description {
     color: $darkText;
     text-align: center;
-    line-height: 37 / 26 * 100%;
+    line-height: calc(37 / 26 * 100%);
     width: 750px;
     font-size: 26px;
     margin: 0 auto;

@@ -1,21 +1,30 @@
-<header class="header _container">
-  <div class="header__logo"></div>
-  <div class="header__content">
-    <div class="header__menu menu">
-      <div class="menu__icon icon-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+<header class="header">
+  <div class="header__container _container">
+    <div class="header__logo">
+      <img src="./img/logo.png" alt="logo" />
+    </div>
+    <div class="header__content">
+      <div class="header__menu menu">
+        <div class="menu__icon icon-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="menu__body">
+          <ul class="menu__list">
+            <li><a class="menu__link" href="\">Home</a></li>
+            <li><a class="menu__link" href="#about">About me</a></li>
+            <li><a class="menu__link" href="#products">Products</a></li>
+            <li><a class="menu__link" href="#contact">Contact me</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="menu__body">
-        <ul class="menu__list">
-          <li><a class="menu__link" href="#">Home</a></li>
-          <li><a class="menu__link" href="#">About me</a></li>
-          <li><a class="menu__link" href="#">Products</a></li>
-          <li><a class="menu__link" href="#">Contact me</a></li>
-        </ul>
-        <div class="menu__button"></div>
-      </nav>
+      <div class="actions-header__item cart-header cart__button">
+        <a href="" class="actions-header__icon menu__button"></a>
+        <div class="cart-header__body">
+          <ul class="cart-header__list cart-list"></ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

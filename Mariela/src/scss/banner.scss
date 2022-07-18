@@ -106,7 +106,7 @@
   &__title {
     margin: 17px 0 30px 0;
     font-size: 45px;
-    line-height: 55 / 45 * 100%;
+    line-height: calc(55 / 45 * 100%);
     @media (max-width: $md4+px) {
       font-size: 35px;
     }
@@ -131,7 +131,7 @@
   .rectangle {
     position: absolute;
     right: 0;
-    top: 820px - 50px;
+    top: calc(820px - 50px);
     height: 50px;
     width: 100px;
     background: linear-gradient(to right, $superDarkViolet 50%, $darkViolet 50%);

@@ -1,30 +1,45 @@
 .header {
+  position: fixed;
+  z-index: 50;
+  background-color: $white;
+  width: 100%;
   height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   @media (max-width: $md3+px) {
     height: 90px;
   }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__logo {
-    margin: 33px 0 0 0;
-    width: 122px;
-    height: 63px;
-    background-image: url(../img/logo.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    @media (max-width: $md2+px) {
+    position: relative;
+    z-index: 6;
+    margin: 30px 0;
+    width: 120px;
+    height: 60px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: $md1+px) {
       margin-left: 20px;
     }
     @media (max-width: $md3+px) {
-      margin: 10px 0 0 20px;
+      margin: 20px 0 0 20px;
+      width: 90px;
+      height: 70px;
     }
+  }
+  &__content {
+    display: flex;
   }
 }
 .menu {
   &__body {
     display: flex;
-    @media (max-width: $md3+px) {
+    @media (max-width: $md2+px) {
       //transform: translate(0px, calc(-100% - 80px));
       transform: translate(calc(100%), 0px);
       transition: transform 0.8s ease 0s;
@@ -57,7 +72,7 @@
   }
   &__list {
     display: flex;
-    @media (max-width: $md3+px) {
+    @media (max-width: $md2+px) {
       display: block;
       text-align: center;
       li {
@@ -69,7 +84,7 @@
   &__link {
     margin-right: 40px;
     color: $lightText;
-    @media (max-width: $md3+px) {
+    @media (max-width: $md2+px) {
       margin-right: 0;
     }
     &:hover {
@@ -86,10 +101,11 @@
     background-repeat: no-repeat;
     cursor: pointer;
     &:hover {
-      background-color: $darkText;
+      // background-color: $darkText;
     }
     @media (max-width: $md3+px) {
-      margin: 40px auto 0 auto;
+    
+      margin-right: 40px;
       width: 55px;
       height: 55px;
     }
@@ -98,11 +114,11 @@
 //Burger
 .icon-menu {
   display: none;
-  @media (max-width: $md3+px) {
+  @media (max-width: $md2+px) {
     position: absolute;
     display: block;
-    top: 18px;
-    right: 10px;
+    top: 50px;
+    right: 20px;
     width: 30px;
     height: 18px;
     cursor: pointer;
@@ -137,5 +153,9 @@
         }
       }
     }
+  }
+  @media (max-width: $md3+px) {
+    top: 10px;
+    right: 20px;
   }
 }
