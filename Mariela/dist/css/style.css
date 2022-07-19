@@ -352,7 +352,7 @@ img {
 
 .introduction__item-info {
   height: 113px;
-  padding-top: 23px;
+  padding-top: 10px;
   margin: 0 0 0 22px;
   color: #ffffff;
 }
@@ -362,8 +362,9 @@ img {
 }
 
 .introduction__item-info-link {
+  display: block;
   font-size: 17px;
-  margin: 9px 0 0 0;
+  margin: 0 0 10px 0;
   cursor: pointer;
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
@@ -1295,14 +1296,11 @@ body .wrapper {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin: 0 0 25px 0;
   }
 
   .introduction__item {
     margin-bottom: 20px;
-  }
-
-  .introduction__item:last-child {
-    margin-bottom: 0;
   }
 
   .biography hr {
@@ -1512,7 +1510,6 @@ body .wrapper {
   }
 
   .introduction__item {
-    margin-bottom: 0;
     height: 400px;
   }
 
