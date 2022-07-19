@@ -248,6 +248,12 @@
     color: $lightText;
     font-size: 18px;
     font-style: italic;
+    @media (max-width: $md3+px) {
+      font-size: 16px;
+    }
+    @media (max-width: $md4+px) {
+      font-size: 14px;
+    }
   }
   &__button {
     background-color: $darkPinc;

@@ -45,5 +45,8 @@
   }
   &__item-button {
     margin: 10px auto 0 auto;
+    @media (max-width: $md4+px) {
+      margin: 10px auto;
+    }
   }
 }
