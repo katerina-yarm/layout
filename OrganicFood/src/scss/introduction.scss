@@ -58,7 +58,7 @@
   &__item-text {
     margin: 15px 0 20px 15px;
     font-size: 14px;
-    line-height: 20 / 14 * 100%;
+    line-height: calc(20 / 14 * 100%);
   }
   &__item-title {
     margin: 10px 0;

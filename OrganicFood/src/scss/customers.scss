@@ -1,4 +1,5 @@
 .customers {
+  position: relative;
   margin-top: 96px;
   padding-bottom: 150px;
   @media (max-width: $md2+px) {
@@ -8,6 +9,9 @@
   @media (max-width: $md3+px) {
     margin-top: 50px;
     padding-bottom: 50px;
+  }
+  @media (min-width: $md3+px) {
+    height: 600px;
   }
   &__content {
     display: flex;
@@ -25,8 +29,12 @@
   }
   &__info {
     max-width: 55%;
-    margin: 0 40px 0 0;
+    margin: 100px 40px 0 0;
+    @media (max-width: $md2+px) {
+      margin: 70px 40px 0 0;
+    }
     @media (max-width: $md3+px) {
+      margin: 50px 40px 0 0;
       max-width: 100%;
     }
     @media (max-width: $md4+px) {
@@ -43,8 +51,14 @@
       margin: 0 0 20px 20px;
       text-align: center;
     }
+    @media (min-width: $md3+px) {
+      position: absolute;
+      z-index: 4;
+    }
   }
   &__description {
+    height: 200px;
+    overflow-y: auto;
     margin: 30px 0 40px 0;
     @media (max-width: $md3+px) {
       font-size: 16px;
@@ -55,6 +69,9 @@
     font-size: 30px;
     @media (max-width: $md3+px) {
       margin-bottom: 30px;
+    }
+    @media (max-width: $md4+px) {
+      margin-bottom: 40px;
     }
   }
   &__buttons {
@@ -70,13 +87,25 @@
       @media (max-width: 280px) {
         margin-right: 5px;
       }
+      @media (max-width: $md4+px) {
+        margin-bottom: 20px;
+      }
     }
   }
-  &__direction {
+  .slider-arrows {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
     display: flex;
     margin-right: 20%;
     @media (max-width: $md2+px) {
       margin-right: 0;
+    }
+    @media (min-width: $md3+px) {
+      left: 40%;
+    }
+    @media (max-width: $md3+px) {
+      right: 20px;
     }
   }
   &__icon {
@@ -109,16 +138,11 @@
     }
   }
   &__img {
-    margin-top: -100px;
-    @media (max-width: $md2+px) {
-      margin-top: -20px;
-    }
     @media (max-width: $md3+px) {
       margin: 0 auto;
     }
   }
   ._customer {
-    position: relative;
     img {
       background-color: $lightGreen;
       border-radius: 100%;
@@ -129,4 +153,16 @@
       }
     }
   }
+}
+
+.customers-slider__wrapper {
+  padding-top: 80px;
+  width: 100%;
+  height: auto;
+  @media (max-width: $md3+px) {
+    padding-top: 0;
+  }
+}
+.swiper {
+  position: relative;
 }

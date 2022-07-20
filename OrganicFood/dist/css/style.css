@@ -618,6 +618,7 @@ img {
 }
 
 .customers {
+  position: relative;
   margin-top: 96px;
   padding-bottom: 150px;
 }
@@ -633,7 +634,7 @@ img {
 
 .customers__info {
   max-width: 55%;
-  margin: 0 40px 0 0;
+  margin: 100px 40px 0 0;
 }
 
 .customers__title {
@@ -641,6 +642,8 @@ img {
 }
 
 .customers__description {
+  height: 200px;
+  overflow-y: auto;
   margin: 30px 0 40px 0;
 }
 
@@ -671,7 +674,10 @@ img {
   margin-right: 10px;
 }
 
-.customers__direction {
+.customers .slider-arrows {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -712,19 +718,21 @@ img {
   background-color: seagreen;
 }
 
-.customers__img {
-  margin-top: -100px;
-}
-
-.customers ._customer {
-  position: relative;
-}
-
 .customers ._customer img {
   background-color: #f3fbf8;
   border-radius: 100%;
   width: 100%;
   height: auto;
+}
+
+.customers-slider__wrapper {
+  padding-top: 80px;
+  width: 100%;
+  height: auto;
+}
+
+.swiper {
+  position: relative;
 }
 
 .footer .footer-download {
@@ -928,6 +936,21 @@ body .wrapper {
   background-color: seagreen;
 }
 
+@media (min-width: 767.98px) {
+  .customers {
+    height: 600px;
+  }
+
+  .customers__title {
+    position: absolute;
+    z-index: 4;
+  }
+
+  .customers .slider-arrows {
+    left: 40%;
+  }
+}
+
 @media (max-width: 991.98px) {
   .header__content {
     margin: 0 20px;
@@ -1001,12 +1024,12 @@ body .wrapper {
     padding-bottom: 80px;
   }
 
-  .customers__direction {
-    margin-right: 0;
+  .customers__info {
+    margin: 70px 40px 0 0;
   }
 
-  .customers__img {
-    margin-top: -20px;
+  .customers .slider-arrows {
+    margin-right: 0;
   }
 
   .footer .footer-download__images {
@@ -1305,6 +1328,7 @@ body .wrapper {
   }
 
   .customers__info {
+    margin: 50px 40px 0 0;
     max-width: 100%;
   }
 
@@ -1322,12 +1346,20 @@ body .wrapper {
     margin-bottom: 30px;
   }
 
+  .customers .slider-arrows {
+    right: 20px;
+  }
+
   .customers__img {
     margin: 0 auto;
   }
 
   .customers ._customer img {
     width: 280px;
+  }
+
+  .customers-slider__wrapper {
+    padding-top: 0;
   }
 
   .footer .footer-download {
@@ -1528,6 +1560,14 @@ body .wrapper {
   .customers__title {
     margin: 0 0 20px 20px;
     text-align: center;
+  }
+
+  .customers__username {
+    margin-bottom: 40px;
+  }
+
+  .customers__raiting div {
+    margin-bottom: 20px;
   }
 
   .footer .footer-download {

@@ -126,7 +126,7 @@
     color: white;
     padding: 10px 23px;
     font-size: 18px;
-    line-height: 20 / 18 * 100%;
+    line-height: calc(20 / 18 * 100%);
     transition: background-color 0.3 ease;
     @media (max-width: $md2+px) {
       padding: 10px 15px;
