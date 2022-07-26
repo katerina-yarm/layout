@@ -1,0 +1,48 @@
+.footer {
+  @include avaptive-value('padding-bottom', 60, 30, 1);
+  @include avaptive-value('padding-top', 60, 30, 1);
+  &__container {
+    @media (min-width: $md4+px) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    color: #645c55;
+    font-size: 14px;
+    line-height: calc(20 / 14 * 100%);
+  }
+  &__logo {
+    display: block;
+    color: $black;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  &__powered {
+    a {
+      color: #645c55;
+      &:hover {
+        color: $brown;
+      }
+    }
+  }
+  &__copy {
+  }
+  &__contact {
+    width: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $md4+px) {
+        margin-top: 20px;
+      }
+  }
+  &__link {
+    color: $black;
+    &:hover {
+      color: $brown;
+    }
+  }
+}

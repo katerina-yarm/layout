@@ -331,7 +331,6 @@ if (document.querySelector('.slider-firm__body')) {
     observeParents: true,
     slidesPerView: 1,
     loop: true,
-    loopAdditionalSlides: 3,
     preloadImages: false,
     slidesPerView: 'auto'
   })
