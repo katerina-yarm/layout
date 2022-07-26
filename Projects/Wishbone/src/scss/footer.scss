@@ -23,6 +23,7 @@
   &__powered {
     a {
       color: #645c55;
+      transition: color 0.3s ease 0s;
       &:hover {
         color: $brown;
       }
@@ -36,11 +37,12 @@
     align-items: center;
     justify-content: space-between;
     @media (max-width: $md4+px) {
-        margin-top: 20px;
-      }
+      margin-top: 20px;
+    }
   }
   &__link {
     color: $black;
+    transition: color 0.3s ease 0s;
     &:hover {
       color: $brown;
     }
