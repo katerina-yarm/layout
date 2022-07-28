@@ -3,6 +3,7 @@ window.onload = function () {
 
   function documentActions(e) {
     const targetElement = e.target
+    console.log(targetElement)
     if (window.innerWidth >= 768 && isMobile.any() != null) {
       if (targetElement.classList.contains('menu__link')) {
         if (document.querySelectorAll('.menu__item._hover').length > 0) {
@@ -33,6 +34,7 @@ window.onload = function () {
     //add products to cart
     if (targetElement.classList.contains('actions-product__button')) {
       const productId = targetElement.closest('.item-product').dataset.pid
+      console.log(targetElement, productId)
       addToCart(targetElement, productId)
       e.preventDefault()
     }

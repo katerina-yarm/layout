@@ -56,63 +56,22 @@ function ibg() {
 
 ibg()
 
-const iconMenu = document.getElementsByClassName('icon-menu')[0]
-const menuBody = document.getElementsByClassName('menu__body')[0]
-
-iconMenu.addEventListener('click', addClass)
-
-function addClass() {
-  if (iconMenu.classList.contains('_active')) {
-    iconMenu.classList.remove('_active')
-    menuBody.classList.remove('_active')
-  } else {
-    iconMenu.classList.add('_active')
-    menuBody.classList.add('_active')
-  }
-}
-
 window.onload = function () {
   document.addEventListener('click', documentActions)
 
   function documentActions(e) {
     const targetElement = e.target
-    if (window.innerWidth >= 768 && isMobile.any() != null) {
-      if (targetElement.classList.contains('menu__link')) {
-        if (document.querySelectorAll('.menu__item._hover').length > 0) {
-          removeClass(document.querySelectorAll('.menu__item._hover'), '_hover')
-        }
-        targetElement.closest('.menu__item').classList.add('_hover')
-      }
-      if (
-        !targetElement.closest('.menu__item') &&
-        document.querySelectorAll('.menu__item._hover').length > 0
-      ) {
-        removeClass(document.querySelectorAll('.menu__item._hover'), '_hover')
-      }
-    }
-    if (targetElement.classList.contains('search-form__icon')) {
-      document.querySelector('.search-form').classList.add('_active')
-    } else if (
-      !targetElement.closest('.search-form') &&
-      document.querySelector('.search-form._active')
-    ) {
-      document.querySelector('.search-form').classList.remove('_active')
-    }
-    //products button 'Show More'
-    if (targetElement.classList.contains('products__button')) {
-      getProducts(targetElement)
-      e.preventDefault()
-    }
     //add products to cart
-    if (targetElement.classList.contains('actions-product__button')) {
+    if (targetElement.classList.contains('item-product__button')) {
       const productId = targetElement.closest('.item-product').dataset.pid
       addToCart(targetElement, productId)
       e.preventDefault()
     }
     //show cart list
     if (
+      targetElement.classList.contains('cart__image') ||
       targetElement.classList.contains('actions-header__icon') ||
-      targetElement.closest('actions-header__icon')
+      targetElement.classList.contains('actions-header__quantity')
     ) {
       if (document.querySelector('.cart-list').children.length > 0) {
         document.querySelector('.cart-header').classList.add('_active')
@@ -120,7 +79,7 @@ window.onload = function () {
       e.preventDefault()
     } else if (
       !targetElement.closest('.cart-header') &&
-      !targetElement.classList.contains('actions-product__button')
+      !targetElement.classList.contains('item-product__button')
     ) {
       document.querySelector('.cart-header').classList.remove('_active')
     }
@@ -131,18 +90,6 @@ window.onload = function () {
       e.preventDefault()
     }
   }
-
-  //header
-  const headerElement = document.querySelector('.header')
-  const callback = function (entries, observer) {
-    if (entries[0].isIntersecting) {
-      headerElement.classList.remove('_scroll')
-    } else {
-      headerElement.classList.add('_scroll')
-    }
-  }
-  const headerObserver = new IntersectionObserver(callback)
-  headerObserver.observe(headerElement)
 }
 
 function removeClass(items, className) {
@@ -150,80 +97,6 @@ function removeClass(items, className) {
     const item = items[i]
     item.classList.remove(className)
   }
-}
-
-//load more products
-async function getProducts(button) {
-  if (!button.classList.contains('_hold')) {
-    button.classList.add('_hold')
-    const file = 'json/products.json'
-    console.log(file)
-    let response = await fetch(file, { method: 'GET' })
-    if (response.ok) {
-      let result = await response.json()
-      loadProducts(result)
-      button.classList.remove('_hold')
-      button.remove()
-    } else {
-      alert('Error')
-    }
-  }
-}
-
-function loadProducts(data) {
-  const productsItems = document.querySelector('.products__items')
-  let html = ''
-  data.products.forEach((item) => {
-    const productId = item.id
-    const productUrl = item.url
-    const productImage = item.image
-    const productTitle = item.title
-    const productText = item.text
-    const productPrice = item.price
-    const productOldPrice = item.priceOld
-    const productShareUrl = item.shareUrl
-    const productLikeUrl = item.likeUrl
-    const productLabels = item.labels
-
-    html += `<article data-pid="${productId}" class="products__item item-product">`
-    if (productLabels) {
-      html += `<div class="item-product__labels">`
-
-      productLabels.forEach((label) => {
-        html += `<div class="item-product__label item-product__label_${label.type}">${label.value}</div>`
-      })
-      html += `</div>`
-    }
-
-    html += `<a href="${productUrl}" class="item-product__image">
-                <img src="img/products/${productImage}" alt="product" />
-             </a>
-    <div class="item-product__body">
-      <div class="item-product__content">
-        <h5 class="item-product__title">${productTitle}</h5>
-        <p class="item-product__text">${productText}</p>
-      </div>
-      <div class="item-product__prices">
-        <div class="item-product__price">${productPrice}</div>`
-
-    if (productOldPrice) {
-      html += `<div class="item-product__price item-product__price_old">${productOldPrice}</div>`
-    }
-
-    html += `</div>
-      <div class="item-product__actions actions-product">
-        <div class="actions-product__body">
-          <a href="" class="actions-product__button btn btn_white">Add to cart</a>
-          <div class="actions-product__links">
-            <a href="${productShareUrl}" class="actions-product__link _icon-share">Share</a>
-            <a href="${productLikeUrl}" class="actions-product__link _icon-favorite">Like</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>`
-  })
-  productsItems.insertAdjacentHTML('beforeend', html)
 }
 
 //add to cart
@@ -280,48 +153,83 @@ function updateCart(productButton, productId, productAdd = true) {
   const cartQuantity = cartIcon.querySelector('span')
   const cartProduct = document.querySelector(`[data-cart-pid="${productId}"]`)
   const cartList = document.querySelector('.cart-list')
+  const cartBody = document.querySelector('.cart-header__body')
+  const cartButton = document.querySelector('.cart-header__button')
+  const cartHeader = document.querySelector('.cart-header__title')
+  const cartListItem = document.querySelectorAll('.cart-list__item')
 
   if (productAdd) {
-    if (cartQuantity) {
+    /*if (cartQuantity) {
       cartQuantity.innerHTML = ++cartQuantity.innerHTML
     } else {
-      cartIcon.insertAdjacentHTML('beforeend', `<span>1</span>`)
-    }
+      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity"></span>`)
+    }*/
     if (!cartProduct) {
+      const cartHeaderContent = `
+      <div class="cart-header__title">Корзина</div>
+      `
+      if (!cartHeader) {
+        cartBody.insertAdjacentHTML('afterbegin', cartHeaderContent)
+      }
+
       const product = document.querySelector(`[data-pid="${productId}"]`)
       const cartProductImage = product.querySelector('.item-product__image').innerHTML
       const cartProductTitle = product.querySelector('.item-product__title').innerHTML
+      const cartProductPrice = product.querySelector('.item-product__price').innerHTML
       const cartProductContent = `
       <a href='' class='cart-list__image'>${cartProductImage}</a>
       <div class='cart-list__body'>
       <a href='' class='cart-list__title'>${cartProductTitle}</a>
-      <div  class='cart-list__quantity'>Quantity: <span>1</span></div>
-      <a href='' class='cart-list__delete'>Delete</a>
+      <div class='cart-list__info'>
+      <div class='cart-list__position'>
+      <a href='' class='cart-list__add _icon-add'></a>
+      <div  class='cart-list__quantity'><span>10</span></div>
+      <a href='' class='cart-list__delete _icon-remove'></a>
+      </div>
+      <div class='cart-list__price'>${cartProductPrice}</div>
+      </div>
       </div>
       `
       cartList.insertAdjacentHTML(
         'beforeend',
         `<li data-cart-pid='${productId}' class='cart-list__item'>${cartProductContent}</li>`
       )
+
+      const cartFooterContent = `
+      <a type="button" href="" class="cart-header__button btn">Оформить заказ</a>
+      `
+      if (!cartButton) {
+        cartBody.insertAdjacentHTML('beforeend', cartFooterContent)
+      }
     } else {
       const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span')
-      cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML
+      const cartProductPrice = cartProduct.querySelector('.cart-list__price')
+      const price = parseFloat(cartProductPrice.innerHTML) / parseInt(cartProductQuantity.innerHTML)
+      cartProductQuantity.innerHTML = 10 + parseInt(cartProductQuantity.innerHTML)
+      cartProductPrice.innerHTML = price * parseInt(cartProductQuantity.innerHTML)
     }
     productButton.classList.remove('_hold')
   } else {
     const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span')
-    cartProductQuantity.innerHTML = --cartProductQuantity.innerHTML
-    if (!parseInt(cartProductQuantity.innerHTML)) {
+    const cartProductPrice = cartProduct.querySelector('.cart-list__price')
+    const price = parseFloat(cartProductPrice.innerHTML) / parseInt(cartProductQuantity.innerHTML)
+    cartProductQuantity.innerHTML = parseInt(cartProductQuantity.innerHTML) - 10
+    cartProductPrice.innerHTML = price * parseInt(cartProductQuantity.innerHTML)
+    if (parseInt(cartProductQuantity.innerHTML) <= 0) {
       cartProduct.remove()
+      if (cartListItem.length <= 1) {
+        cartButton.remove()
+        cartHeader.remove()
+      }
     }
-
+    /*
     const cartQuantityValue = --cartQuantity.innerHTML
     if (cartQuantityValue > 0) {
       cartQuantity.innerHTML = cartQuantityValue
     } else {
       cartQuantity.remove()
       cart.classList.remove('_active')
-    }
+    }*/
   }
 }
 
