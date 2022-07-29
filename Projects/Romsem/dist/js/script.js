@@ -69,8 +69,8 @@ window.onload = function () {
     }
     //show cart list
     if (
-      targetElement.classList.contains('cart__image') ||
-      targetElement.classList.contains('actions-header__icon') ||
+      targetElement.classList.contains('bottom-footer__item-img') ||
+      targetElement.classList.contains('icon__cart') ||
       targetElement.classList.contains('actions-header__quantity')
     ) {
       if (document.querySelector('.cart-list').children.length > 0) {
@@ -89,6 +89,12 @@ window.onload = function () {
       updateCart(targetElement, productId, false)
       e.preventDefault()
     }
+    //add position to cart list
+    if (targetElement.classList.contains('cart-list__add')) {
+      const productId = targetElement.closest('.cart-list__item').dataset.cartPid
+      updateCart(targetElement, productId, true)
+      e.preventDefault()
+    }
   }
 }
 
@@ -105,7 +111,7 @@ function addToCart(productButton, productId) {
     productButton.classList.add('_hold')
     productButton.classList.add('_fly')
 
-    const cart = document.querySelector('.actions-header__icon')
+    const cart = document.querySelector('.icon__cart')
     const product = document.querySelector(`[data-pid="${productId}"]`)
     const productImage = product.querySelector('.item-product__image')
 
@@ -149,7 +155,7 @@ function addToCart(productButton, productId) {
 
 function updateCart(productButton, productId, productAdd = true) {
   const cart = document.querySelector('.cart-header')
-  const cartIcon = cart.querySelector('.actions-header__icon')
+  const cartIcon = document.querySelector('.icon__cart')
   const cartQuantity = cartIcon.querySelector('span')
   const cartProduct = document.querySelector(`[data-cart-pid="${productId}"]`)
   const cartList = document.querySelector('.cart-list')
@@ -157,21 +163,15 @@ function updateCart(productButton, productId, productAdd = true) {
   const cartButton = document.querySelector('.cart-header__button')
   const cartHeader = document.querySelector('.cart-header__title')
   const cartListItem = document.querySelectorAll('.cart-list__item')
+  const cartEmpty = document.querySelectorAll('.cart-header__empty')[0]
 
   if (productAdd) {
-    /*if (cartQuantity) {
-      cartQuantity.innerHTML = ++cartQuantity.innerHTML
+    if (cartQuantity) {
+      cartQuantity.innerHTML = parseInt(cartQuantity.innerHTML) + 10
     } else {
-      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity"></span>`)
-    }*/
+      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity">10</span>`)
+    }
     if (!cartProduct) {
-      const cartHeaderContent = `
-      <div class="cart-header__title">Корзина</div>
-      `
-      if (!cartHeader) {
-        cartBody.insertAdjacentHTML('afterbegin', cartHeaderContent)
-      }
-
       const product = document.querySelector(`[data-pid="${productId}"]`)
       const cartProductImage = product.querySelector('.item-product__image').innerHTML
       const cartProductTitle = product.querySelector('.item-product__title').innerHTML
@@ -190,17 +190,27 @@ function updateCart(productButton, productId, productAdd = true) {
       </div>
       </div>
       `
+      const cartHeaderContent = `
+      <div class="cart-header__title">Корзина</div>
+      `
+      const cartFooterContent = `
+      <a type="button" href="" class="cart-header__button btn">Оформить заказ</a>
+      `
+
       cartList.insertAdjacentHTML(
         'beforeend',
         `<li data-cart-pid='${productId}' class='cart-list__item'>${cartProductContent}</li>`
       )
 
-      const cartFooterContent = `
-      <a type="button" href="" class="cart-header__button btn">Оформить заказ</a>
-      `
+      if (!cartHeader) {
+        cartBody.insertAdjacentHTML('afterbegin', cartHeaderContent)
+      }
+
       if (!cartButton) {
         cartBody.insertAdjacentHTML('beforeend', cartFooterContent)
       }
+      console.log(cartEmpty)
+      cartEmpty.classList.add('_remove')
     } else {
       const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span')
       const cartProductPrice = cartProduct.querySelector('.cart-list__price')
@@ -220,16 +230,17 @@ function updateCart(productButton, productId, productAdd = true) {
       if (cartListItem.length <= 1) {
         cartButton.remove()
         cartHeader.remove()
+        cartEmpty.classList.remove('_remove')
       }
     }
-    /*
-    const cartQuantityValue = --cartQuantity.innerHTML
+
+    const cartQuantityValue = parseInt(cartQuantity.innerHTML) - 10
     if (cartQuantityValue > 0) {
       cartQuantity.innerHTML = cartQuantityValue
     } else {
       cartQuantity.remove()
-      cart.classList.remove('_active')
-    }*/
+      /*cart.classList.remove('_active')*/
+    }
   }
 }
 

@@ -26,6 +26,7 @@ $phoneSmall: 479.98;
 @import 'menu';
 @import 'header';
 @import 'cart';
+@import 'footer';
 
 html {
   scroll-behavior: smooth;
@@ -51,6 +52,7 @@ body {
 }
 
 .page {
+  background-color: $lightGrey;
   flex: 1 1 auto;
 }
 
@@ -66,10 +68,11 @@ body {
 }
 
 .body__container {
+  min-height: 100%;
   display: grid;
-  grid-template-columns: 180px 1fr 230px;
-  gap: 20px;
-  @media (max-width: $tablet+px) {
+  grid-template-columns: 220px 1fr 220px;
+  gap: 10px;
+  @media (max-width: $pc+px) {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -83,7 +86,6 @@ body {
 }
 
 .btn {
-  height: 32px;
   background-color: $red;
   color: $white;
   display: flex;

@@ -1,8 +1,10 @@
 .cart-header {
-  position: fixed;
-  padding: 60px 0;
-  width: 230px;
-  height: 100%;
+  @media (min-width: $pc+px) {
+    position: fixed;
+    padding: 60px 0;
+    width: 230px;
+    height: 100%;
+  }
   &__body {
     min-height: 100%;
     display: flex;
@@ -10,6 +12,27 @@
     overflow: hidden;
     width: 100%;
     background-color: rgba(255, 255, 255);
+    @media (max-width: $pc+px) {
+      position: absolute;
+      top: 80px;
+      min-height: 50%;
+      right: 0;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      transform: translate(-100%, -100%);
+      background-color: $lightGrey;
+      padding: 15px;
+      ._active & {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0px, 0px);
+      }
+      @media (max-width: $phone+px) {
+        top: 65px;
+      }
+    }
   }
   &__title {
     min-width: 100%;
@@ -27,9 +50,7 @@
   &__button {
     min-width: 100%;
     margin-bottom: 12px;
-  }
-  @media (max-width: $tablet+px) {
-    display: none;
+    height: 48px;
   }
 }
 
@@ -38,7 +59,11 @@
   overflow: auto;
   &__item {
     display: flex;
-    margin-bottom: 25px;
+    padding: 10px;
+    @include avaptive-value('margin-bottom', 25, 10, 1);
+    @media (max-width: $pc+px) {
+      background-color: $white;
+    }
   }
   &__image {
     flex: 0 0 70px;
@@ -66,6 +91,11 @@
   }
   &__info {
     width: 100%;
+    @media (max-width: $pc+px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &__position {
     width: 70px;
@@ -123,13 +153,14 @@
 }
 
 .empty {
+  display: block;
   background-color: $lightGrey;
   display: flex;
   flex-direction: column;
   align-items: center;
   &__title {
     color: $black;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     line-height: calc(30 / 24 * 100%);
     padding: 10px;
@@ -152,5 +183,45 @@
     &:hover {
       background-color: $red;
     }
+  }
+  &__map {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 28px;
+    width: 100%;
+    iframe {
+      filter: grayscale(1);
+      @media (max-width: $pc+px) {
+        width: 100%;
+      }
+    }
+  }
+  &__location-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    &::before {
+      color: $white;
+      font-size: 40px;
+    }
+  }
+  &__order-btn {
+    margin-bottom: 12px;
+    width: 100%;
+    height: 48px;
+    @media (min-width: $pc+px) {
+      display: none;
+    }
+  }
+  &._remove {
+    display: none;
   }
 }

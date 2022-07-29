@@ -1,4 +1,22 @@
 .menu {
+  @media (max-width: $pc+px) {
+    transform: translate(calc(100%), 0px);
+    transition: transform 0.8s ease 0s;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    overflow: auto;
+    padding: 100px 10px 30px 10px;
+    background-color: $white;
+    opacity: 0.9;
+    z-index: 5;
+    &._active {
+      transform: translate(0px, 0%);
+    }
+  }
   &__container {
     margin: rem(30) 0;
   }
@@ -20,6 +38,8 @@
     background-color: $grey;
     width: 100%;
     height: 0.5px;
+  }
+  &__body {
   }
   &__list {
     display: flex;
@@ -59,8 +79,5 @@
     @include avaptive-value('font-size', 11, 10, 1);
     letter-spacing: em(0.7, 11);
     text-transform: uppercase;
-  }
-  @media (max-width: $tablet+px) {
-    display: none;
   }
 }

@@ -2,15 +2,20 @@
   padding: 0 15px;
   background-color: $lightGrey;
   width: 100%;
-  max-height: 95px;
+  height: 95px;
   border-bottom: $grey 0.5px solid;
-  @media (max-width: $phone+px) {
-    max-height: 75px;
+  @media (max-width: $tablet+px) {
+    height: 80px;
     background-color: $white;
   }
+  @media (max-width: $phone+px) {
+    height: 75px;
+  }
   &__container {
+    height: 100%;
   }
   &__body {
+    height: 100%;
     display: flex;
     align-items: center;
     @media (max-width: $phone+px) {
@@ -32,6 +37,7 @@
     display: flex;
     align-items: center;
     padding: 5px 5px 5px 0;
+    overflow: hidden;
     @media (min-width: $phone+px) {
       border-right: $grey 0.5px solid;
       width: 230px;
