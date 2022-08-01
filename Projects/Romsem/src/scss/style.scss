@@ -2,7 +2,7 @@
 @import 'fonts';
 @import 'icons';
 
-$fontFamily: 'DinPro';
+$fontFamily: 'DIN Pro';
 $fontSize: rem(18);
 
 $black: #111111;
@@ -17,7 +17,7 @@ $maxWidthContainer: 1410;
 $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
-$pc: $containerWidth; //for PC, laptops and tablets in a horizontal position
+$pc: $maxWidthContainer; //for PC, laptops and tablets in a horizontal position
 $tablet: 991.98; //for tablets and some phones in a horizontal position
 $phone: 767.98;
 $phoneSmall: 479.98;
@@ -27,6 +27,7 @@ $phoneSmall: 479.98;
 @import 'header';
 @import 'cart';
 @import 'footer';
+@import 'mainPage';
 
 html {
   scroll-behavior: smooth;
@@ -60,9 +61,6 @@ body {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
   @media (max-width: $pc+px) {
-    margin: 0 15px;
-  }
-  @media (max-width: $tablet+px) {
     margin: 0;
   }
 }
@@ -86,6 +84,7 @@ body {
 }
 
 .btn {
+  cursor: pointer;
   background-color: $red;
   color: $white;
   display: flex;
