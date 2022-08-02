@@ -109,9 +109,9 @@ function updateCart(productButton, productId, productAdd = true) {
 
   if (productAdd) {
     if (cartQuantity) {
-      cartQuantity.innerHTML = parseInt(cartQuantity.innerHTML) + 10
+      cartQuantity.innerHTML = ++cartQuantity.innerHTML
     } else {
-      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity">10</span>`)
+      cartIcon.insertAdjacentHTML('beforeend', `<span class="actions-header__quantity">1</span>`)
     }
     if (!cartProduct) {
       const product = document.querySelector(`[data-pid="${productId}"]`)
@@ -125,7 +125,7 @@ function updateCart(productButton, productId, productAdd = true) {
       <div class='cart-list__info'>
       <div class='cart-list__position'>
       <a href='' class='cart-list__add _icon-add'></a>
-      <div  class='cart-list__quantity'><span>10</span></div>
+      <div  class='cart-list__quantity'><span>1</span></div>
       <a href='' class='cart-list__delete _icon-remove'></a>
       </div>
       <div class='cart-list__price'>${cartProductPrice}</div>
@@ -156,17 +156,18 @@ function updateCart(productButton, productId, productAdd = true) {
     } else {
       const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span')
       const cartProductPrice = cartProduct.querySelector('.cart-list__price')
-      const price = parseFloat(cartProductPrice.innerHTML) / parseInt(cartProductQuantity.innerHTML)
-      cartProductQuantity.innerHTML = 10 + parseInt(cartProductQuantity.innerHTML)
-      cartProductPrice.innerHTML = price * parseInt(cartProductQuantity.innerHTML)
+      const price =
+        parseFloat(cartProductPrice.innerHTML) / parseFloat(cartProductQuantity.innerHTML)
+      cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML
+      cartProductPrice.innerHTML = `${price * parseFloat(cartProductQuantity.innerHTML)}$`
     }
     productButton.classList.remove('_hold')
   } else {
     const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span')
     const cartProductPrice = cartProduct.querySelector('.cart-list__price')
-    const price = parseFloat(cartProductPrice.innerHTML) / parseInt(cartProductQuantity.innerHTML)
-    cartProductQuantity.innerHTML = parseInt(cartProductQuantity.innerHTML) - 10
-    cartProductPrice.innerHTML = price * parseInt(cartProductQuantity.innerHTML)
+    const price = parseFloat(cartProductPrice.innerHTML) / parseFloat(cartProductQuantity.innerHTML)
+    cartProductQuantity.innerHTML = --cartProductQuantity.innerHTML
+    cartProductPrice.innerHTML = `${price * parseFloat(cartProductQuantity.innerHTML)}$`
     if (parseInt(cartProductQuantity.innerHTML) <= 0) {
       cartProduct.remove()
       if (cartListItem.length <= 1) {
@@ -176,7 +177,7 @@ function updateCart(productButton, productId, productAdd = true) {
       }
     }
 
-    const cartQuantityValue = parseInt(cartQuantity.innerHTML) - 10
+    const cartQuantityValue = --cartQuantity.innerHTML
     if (cartQuantityValue > 0) {
       cartQuantity.innerHTML = cartQuantityValue
     } else {

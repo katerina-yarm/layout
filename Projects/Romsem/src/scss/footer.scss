@@ -9,7 +9,7 @@
 }
 
 .top-footer {
-  @include avaptive-value('font-size', 18, 16, 1);
+  @include avaptive-value('font-size', 16, 14, 1);
   padding: 0 em(20, 18);
   background-color: $lightGrey;
   &__container {

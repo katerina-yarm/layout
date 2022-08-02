@@ -55,7 +55,7 @@
     margin-top: em(30, 24);
     color: $black;
     transition: color 0.3s ease 0s;
-    @include avaptive-value('font-size', 24, 20, 1);
+    @include avaptive-value('font-size', 22, 20, 1);
     line-height: calc(30 / 24 * 100%);
     &:hover {
       color: $orange;
@@ -76,7 +76,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include avaptive-value('font-size', 11, 10, 1);
+    @include avaptive-value('font-size', 10, 8, 1);
     letter-spacing: em(0.7, 11);
     text-transform: uppercase;
   }

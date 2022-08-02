@@ -7,14 +7,14 @@
   &__container {
     margin: 0 30px;
     @media (max-width: $pc+px) {
-      @include avaptive-value('margin', 30, 10, 1);
+      @include avaptive-value('margin', 30, 5, 1);
     }
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    @include avaptive-value('row-gap', 30, 10, 1);
-    @include avaptive-value('column-gap', 30, 10, 1);
+    @include avaptive-value('row-gap', 30, 5, 1);
+    @include avaptive-value('column-gap', 30, 5, 1);
     @media (max-width: $phoneSmall+px) {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
