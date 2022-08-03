@@ -37,6 +37,16 @@ window.onload = function () {
       updateCart(targetElement, productId, true)
       e.preventDefault()
     }
+
+    //for introduction button
+    if (
+      targetElement.classList.contains('introduction__close-button') &&
+      targetElement.classList.contains('_active')
+    ) {
+      document.querySelector('.open-content').classList.add('_active')
+    } else {
+      document.querySelector('.open-content').classList.remove('_active')
+    }
   }
 }
 

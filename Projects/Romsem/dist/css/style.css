@@ -225,12 +225,12 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 1.25em;
+  margin-top: 1.5em;
   color: #111111;
   -webkit-transition: color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 125%;
 }
 
@@ -244,10 +244,10 @@ img {
 
 .menu__label {
   position: absolute;
-  top: 2.2727272727em;
-  right: 0.9090909091em;
-  width: 4.5454545455em;
-  height: 1.3636363636em;
+  top: 2.5em;
+  right: 1em;
+  width: 5em;
+  height: 1.5em;
   border-radius: 30px;
   background-color: #f46d40;
   color: #ffffff;
@@ -261,7 +261,7 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 10px;
-  letter-spacing: 0.0636363636em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -1195,6 +1195,90 @@ img {
           transform: rotate(180deg);
 }
 
+.introduction {
+  margin: 0 30px;
+}
+
+.introduction__body {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.introduction__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 125%;
+  margin-bottom: 0.4166666667em;
+}
+
+.introduction__open-content {
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.introduction__close-content {
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.introduction__close-content p {
+  margin-bottom: 0.8333333333em;
+}
+
+.introduction__close-button {
+  cursor: pointer;
+  color: #f46d40;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 1.6666666667em;
+}
+
+.introduction__close-button-arrow {
+  color: #f46d40;
+  background-color: transparent;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.introduction__close-button._active {
+  margin-top: 0;
+  visibility: hidden;
+}
+
+.open-content {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a4acad), to(#f2f2f2));
+  background-image: -o-linear-gradient(top, #a4acad, #f2f2f2);
+  background-image: linear-gradient(180deg, #a4acad, #f2f2f2);
+}
+
+.open-content._active {
+  color: #a4acad;
+}
+
+.open-content__list-title {
+  margin-top: 1.1111111111em;
+}
+
+.open-content__list {
+  margin-top: 1.1111111111em;
+  margin-left: 1.1111111111em;
+}
+
+.open-content__list-item {
+  list-style: disc;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1425,7 +1509,7 @@ body {
 
   .menu__link {
     font-size: calc(
-        20px + 2 * ((100vw - 320px) / 1090)
+        18px + 2 * ((100vw - 320px) / 1090)
       );
   }
 
@@ -1628,7 +1712,7 @@ body {
 
   .menu-list .item-element {
     font-size: calc(
-        18px + 6 * ((100vw - 320px) / 1090)
+        16px + 8 * ((100vw - 320px) / 1090)
       );
   }
 
@@ -1726,6 +1810,46 @@ body {
       );
   }
 
+  .introduction {
+    margin: 30px;
+  }
+
+  .introduction__body {
+    margin-top: calc(
+        20px + 80 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction__body {
+    margin-bottom: calc(
+        20px + 40 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction__title {
+    font-size: calc(
+        20px + 4 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction__open-content {
+    font-size: calc(
+        14px + 4 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction__close-content {
+    font-size: calc(
+        14px + 4 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction__close-button {
+    font-size: calc(
+        16px + 2 * ((100vw - 320px) / 1090)
+      );
+  }
+
   ._container {
     margin: 0;
   }
@@ -1750,6 +1874,12 @@ body {
 
 @media (max-width: 1410px) and (max-width: 1410px) {
   .menu-list__container {
+    margin: calc(
+        5px + 25 * ((100vw - 320px) / 1090)
+      );
+  }
+
+  .introduction {
     margin: calc(
         5px + 25 * ((100vw - 320px) / 1090)
       );

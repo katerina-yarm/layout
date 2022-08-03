@@ -32,7 +32,7 @@
     position: relative;
     color: $white;
     font-weight: 500;
-    @include avaptive-value('font-size', 24, 18, 1);
+    @include avaptive-value('font-size', 24, 16, 1);
     line-height: calc(30 / 24 * 100%);
 
     &:hover {

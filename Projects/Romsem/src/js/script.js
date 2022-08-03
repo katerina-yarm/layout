@@ -3,4 +3,3 @@
 @@include('cart.js')
 @@include('sliders.js')
 @@include('spoller.js')
-@@include('gallery.js')
