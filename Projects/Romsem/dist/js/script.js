@@ -105,6 +105,23 @@ window.onload = function () {
     } else {
       document.querySelector('.open-content').classList.remove('_active')
     }
+
+    //menu buttons
+    if (targetElement.classList.contains('menu__link')) {
+      window.location.href = './products.html'
+      let file = ''
+      if (targetElement.classList.contains('sets')) {
+        file = 'json/sets.json'
+      } else if (targetElement.classList.contains('pizza')) {
+        file = 'json/pizza.json'
+      } else if (targetElement.classList.contains('rolls')) {
+        file = 'json/rolls.json'
+      }
+
+      getProducts(targetElement, file)
+      e.preventDefault()
+      getProducts(targetElement, file)
+    }
   }
 }
 
@@ -253,6 +270,61 @@ function updateCart(productButton, productId, productAdd = true) {
       /*cart.classList.remove('_active')*/
     }
   }
+}
+
+//load more products
+async function getProducts(button, files) {
+  if (!button.classList.contains('_hold')) {
+    button.classList.add('_hold')
+    const file = files
+    let response = await fetch(file, { method: 'GET' })
+    if (response.ok) {
+      let result = await response.json()
+      loadProducts(result)
+      button.classList.remove('_hold')
+    } else {
+      alert('Error')
+    }
+  }
+}
+
+function loadProducts(data) {
+  const productsItems = document.querySelector('.product-list__items')
+  const productsTitle = document.querySelector('.product-list__title')
+  let html = ''
+
+  const title = data.title.title
+  const icon = data.title.icon
+  let blockTitle = `<img src="${icon}" class="product-list__icon" alt="product-list__icon" />
+  ${title}`
+  productsTitle.innerHTML = ''
+  productsTitle.insertAdjacentHTML('afterbegin', blockTitle)
+
+  productsItems.innerHTML = ''
+  data.products.forEach((item) => {
+    const productId = item.id
+    const productImage = item.image
+    const productTitle = item.title
+    const productText = item.text
+    const productPrice = item.price
+
+    html += `<div data-pid=${productId} class="product-list__item item-product products">
+        <div class="products__image item-product__image">
+          <img src="img/products/${productImage}" alt="sets" />
+        </div>
+        <div class="">
+          <div class="products__top">
+            <h5 class="products__title item-product__title">${productTitle}</h5>
+            <p class="products__description item-product__description">${productText}</p>
+          </div>
+          <div class="products__bottom">
+            <p class="products__price item-product__price">${productPrice}$</p>
+            <a href="" class="products__button item-product__button btn"> Хочу! </a>
+          </div>
+        </div>
+      </div>`
+  })
+  productsItems.insertAdjacentHTML('beforeend', html)
 }
 
 if (document.querySelector('.main-slider__body')) {

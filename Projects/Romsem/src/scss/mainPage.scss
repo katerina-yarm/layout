@@ -80,20 +80,39 @@
 }
 
 .products {
-  @media (max-width: $tablet+px) {
+  @media (max-width: $phone+px) {
     display: flex;
+    flex-direction: column;
   }
   &__image {
-    width: 100%;
-    height: 180px;
-    padding: 20px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @media (min-width: $phone+px) {
+      width: 100%;
+      height: 180px;
+    }
+    @media (max-width: $phone+px) {
+      @include avaptive-value('padding-top', 30, 10, 1);
+      @include avaptive-value('padding-bottom', 20, 10, 1);
+      width: 40%;
+      min-width: 100px;
+      min-height: 84px;
+    }
   }
 
   &__top {
-    @include avaptive-value('padding-top', 30, 10, 1);
+    flex: 1 1 auto;
     @include avaptive-value('padding-right', 20, 10, 1);
     @include avaptive-value('padding-left', 20, 10, 1);
     @include avaptive-value('padding-bottom', 20, 10, 1);
+    @media (min-width: $phone+px) {
+      @include avaptive-value('padding-top', 100, 40, 1);
+    }
+    @media (max-width: $phone+px) {
+      @include avaptive-value('padding-top', 30, 10, 1);
+    }
   }
 
   &__title {
@@ -115,7 +134,7 @@
     @include avaptive-value('padding-right', 15, 10, 1);
     @include avaptive-value('padding-left', 30, 10, 1);
     @include avaptive-value('padding-bottom', 15, 10, 1);
-    @media (min-width: $tablet+px) {
+    @media (min-width: $phone+px) {
       border-top: solid $grey 0.5px;
     }
   }
@@ -128,6 +147,10 @@
   &__button {
     @include avaptive-value('width', 143, 95, 1);
     @include avaptive-value('height', 40, 26, 1);
+    @media (max-width: $phone+px) {
+      width: 100%;
+      margin-left: 10px;
+    }
   }
 }
 

@@ -1,0 +1,36 @@
+{
+  "title": {
+    "title": "Сеты",
+    "icon": "./img/content-icons/sets.svg"
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Футаго сет",
+      "text": "1260 грамм 38 кусочков",
+      "image": "sets/01.jpg",
+      "price": "19,5"
+    },
+    {
+      "id": 2,
+      "title": "Якудза сет",
+      "text": "1160 грамм 36 кусочков",
+      "image": "sets/02.jpg",
+      "price": "22,8"
+    },
+    {
+      "id": 3,
+      "title": "Салмон сет",
+      "text": "1050 грамм 40 кусочков",
+      "image": "sets/03.jpg",
+      "price": "22,2"
+    },
+    {
+      "id": 5,
+      "title": "Топовый сет",
+      "text": "1160 грамм 32 кусочка",
+      "image": "sets/05.jpg",
+      "price": "18,5"
+    }
+  ]
+}

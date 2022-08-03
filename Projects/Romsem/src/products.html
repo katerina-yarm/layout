@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('_head.html',{title:"Romsem"})
+  <body class="body">
+    <div class="body__container _container">
+      <div class="body__menu menu">@@include('_menu.html')</div>
+      <div class="body__content">
+        <div class="wrapper">
+          @@include('_header.html')
+          <main class="page">@@include('_products.html') @@include('_introduction.html')</main>
+          @@include('_footer.html')
+        </div>
+      </div>
+
+      <div class="body__cart">@@include('_cart.html')</div>
+    </div>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>
