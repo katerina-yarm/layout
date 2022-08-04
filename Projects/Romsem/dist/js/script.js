@@ -108,19 +108,27 @@ window.onload = function () {
 
     //menu buttons
     if (targetElement.classList.contains('menu__link')) {
-      window.location.href = './products.html'
-      let file = ''
-      if (targetElement.classList.contains('sets')) {
-        file = 'json/sets.json'
-      } else if (targetElement.classList.contains('pizza')) {
-        file = 'json/pizza.json'
-      } else if (targetElement.classList.contains('rolls')) {
-        file = 'json/rolls.json'
+      const page = document.querySelector('.page')
+      if (!page.classList.contains('menu-page')) {
+        //page.innerHTML = ''
+        page.classList.add('menu-page')
+        let menuPage = `
+        <section class="product-list">
+          <div class="product-list__container">
+            <h2 class="product-list__title">
+            </h2>
+            <div class="product-list__items">
+            </div>
+          </div>
+        </section>`
+        page.insertAdjacentHTML('afterbegin', menuPage)
       }
+
+      const file = targetElement.dataset.file
+      console.log(file)
 
       getProducts(targetElement, file)
       e.preventDefault()
-      getProducts(targetElement, file)
     }
   }
 }
