@@ -107,8 +107,9 @@ window.onload = function () {
     }
 
     //menu buttons
-    if (targetElement.classList.contains('menu__link')) {
+    if (targetElement.classList.contains('link')) {
       const page = document.querySelector('.page')
+      console.log(page)
       if (!page.classList.contains('menu-page')) {
         //page.innerHTML = ''
         page.classList.add('menu-page')
