@@ -210,30 +210,25 @@ body {
 }
 
 .layers__base {
-  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
-          transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
-}
-
-.layers__back {
-  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
-          transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
 }
 
 .layers__middle {
-  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 3.5), 0);
-          transform: translate3d(0, calc(var(--scrollTop) / 3.5), 0);
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
 }
 
 .layers__front {
-  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
-          transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 40), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 40), 0);
 }
 
 .layer {
   height: 100%;
   width: 100%;
   position: absolute;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
