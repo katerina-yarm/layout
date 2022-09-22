@@ -1,0 +1,90 @@
+@import 'mixins';
+//&display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,500,700&display=swap);
+@import 'fonts';
+@import 'icons';
+
+$fontFamily: 'DM Sans';
+
+$black: #3a3a3a;
+$white: #ffffff;
+
+$maxWidthContainer: 1240;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+@import 'normalize';
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  background-color: #010101;
+  color: $white;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+.header {
+  position: relative;
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  &__base {
+    transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  }
+  &__back {
+    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+  }
+  &__middle {
+    transform: translate3d(0, calc(var(--scrollTop) / 3.5), 0);
+  }
+  &__front {
+    transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+  }
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__content {
+    max-width: 50vw;
+  }
+}
