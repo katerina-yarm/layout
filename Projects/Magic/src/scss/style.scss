@@ -1,9 +1,11 @@
 @import 'mixins';
 @import 'fonts';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap');
 
 $fontFamily: 'Raleway', sans-serif;
 $text: #f8fcfd;
 $index: calc(1vw + 1vh);
+$transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
 
 @import 'normalize';
 
@@ -31,6 +33,10 @@ body {
   flex: 1 1 auto;
 }
 
+.content {
+  will-change: transform;
+}
+
 .header {
   position: relative;
   &::after {
@@ -38,12 +44,12 @@ body {
     position: absolute;
     z-index: 100;
     width: 100%;
-    height: calc($index * 7);
+    height: calc($index * 30);
     background-image: url(../img/between.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    bottom: calc($index * -5);
+    bottom: calc($index * -19);
     right: 0;
   }
 }
@@ -58,14 +64,17 @@ body {
   position: relative;
   &__base {
     transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
+    transition: $transition;
     z-index: 0;
   }
   &__middle {
-    transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
+    transform: translate3d(0, calc(var(--scrollTop) / 7.5), 0);
+    transition: $transition;
     z-index: 2;
   }
   &__front {
-    transform: translate3d(0, calc(var(--scrollTop) / 40), 0);
+    transform: translate3d(0, calc(var(--scrollTop) / 50), 0);
+    transition: $transition;
     z-index: 2;
   }
 }
@@ -77,16 +86,16 @@ body {
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  will-change: transform;
   &__header {
     z-index: 1;
     transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+    transition: $transition;
     will-change: transform;
     text-transform: uppercase;
     font-weight: 800;
     color: $text;
-    text-shadow: 0 0 15px #5eafc5;
-    margin-top: calc($index * 3);
+    text-shadow: 0 0 15px #aad5e2;
+    margin-top: calc($index * -10);
   }
   &__caption {
     font-size: calc($index / 1.175);
@@ -99,6 +108,7 @@ body {
 }
 
 .main-page {
+  margin-top: calc($index * 4);
   min-height: 100vh;
   background-position: center;
   background-size: cover;
@@ -119,12 +129,14 @@ body {
       font-size: calc($index * 1.8);
       letter-spacing: calc($index / 7.5);
       transform: translate3d(0, calc(var(--scrollTop) / -8.5), 0);
+      transition: $transition;
       will-change: transform;
     }
     &__paragraph {
       font-size: calc($index * 0.9);
       margin-top: calc($index / 1.25);
       transform: translate3d(0, calc(var(--scrollTop) / -8.5), 0);
+      transition: $transition;
       will-change: transform;
     }
   }

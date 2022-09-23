@@ -3,9 +3,11 @@
   @@include('_head.html',{title:"Magic"})
   <body>
     <div class="wrapper">
-      @@include('_header.html')
-      <main class="page">@@include('_mainpage.html')</main>
-      @@include('_footer.html')
+      <div class="content">
+        @@include('_header.html')
+        <main class="page">@@include('_mainpage.html')</main>
+        @@include('_footer.html')
+      </div>
     </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.min.js"></script>
