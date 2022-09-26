@@ -4,12 +4,12 @@
 
 $fontFamily: 'Gilroy';
 
-$black: #161310;
-$grey: #636161;
+$black: #161310d7;
+$grey: #726f6df8;
 $background: #b5b3b2;
 $white: #ffffff;
-$green: #168080;
-$text: #e8ceb7;
+$green: #1c5b5c;
+$text: #afa5a0e5;
 
 $maxWidthContainer: 1240;
 $md1: $maxWidthContainer + 12;
@@ -33,7 +33,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: calc(24 / 16 * 100%);
-  background-color: $white;
+  background-color: $grey;
   color: $black;
 }
 .wrapper {
@@ -86,8 +86,12 @@ h3 {
   transition: all 0.3s ease 0s;
   min-height: 48px;
   background-color: $green;
-  color: $white;
+  color: $text;
   &:hover {
     opacity: 0.8;
   }
+}
+
+a {
+  color: $green;
 }
