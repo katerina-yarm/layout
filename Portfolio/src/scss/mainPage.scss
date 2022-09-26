@@ -1,6 +1,6 @@
 .main-banner {
   position: relative;
-  @include avaptive-value('height', 630, 400, 1);
+  height: 100vh;
   &__image {
     width: 100%;
     height: 100%;
@@ -9,19 +9,24 @@
     background-repeat: no-repeat;
     background-position: center center;
     filter: brightness(40%);
+    will-change: background-image;
   }
   &__content {
+    padding: 0 25px;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    @include avaptive-value('max-height', 200, 150, 1);
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
   }
   &__text {
     margin: 0 auto;
-    color: $white;
+    color: $text;
     opacity: 0.8;
     text-align: center;
     @include avaptive-value('font-size', 18, 14, 1);
@@ -29,7 +34,7 @@
   }
   &__title {
     text-align: center;
-    color: $white;
+    color: $text;
     opacity: 0.8;
     text-transform: uppercase;
     letter-spacing: 1.5px;
