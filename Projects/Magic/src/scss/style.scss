@@ -63,16 +63,19 @@ body {
   overflow: hidden;
   position: relative;
   &__base {
+    background-image: url(../img/peakpx.jpg);
     transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
     transition: $transition;
     z-index: 0;
   }
   &__middle {
+    background-image: url(../img/layer_middle.png);
     transform: translate3d(0, calc(var(--scrollTop) / 6.5), 0);
     transition: $transition;
     z-index: 2;
   }
   &__front {
+    background-image: url(../img/layer_front.png);
     transform: translate3d(0, calc(var(--scrollTop) / 70), 0);
     transition: $transition;
     z-index: 2;
@@ -94,7 +97,6 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     color: $text;
-    // text-shadow: 0 0 5px #d9eaf0;
     margin-top: calc($index * -16);
   }
   &__caption {
@@ -109,6 +111,7 @@ body {
 
 .main-page {
   margin-top: calc($index * 2);
+  background-image: url(../img/under.png);
   min-height: 100vh;
   background-position: center;
   background-size: cover;
