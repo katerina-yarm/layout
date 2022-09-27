@@ -8,7 +8,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    filter: brightness(40%);
+    filter: brightness(55%);
     will-change: background-image;
   }
   &__content {
@@ -44,18 +44,18 @@
 }
 
 .portfolio {
-  @include avaptive-value('padding-top', 44, 25, 1);
+  @include avaptive-value('padding-top', 80, 30, 1);
   @include avaptive-value('padding-bottom', 44, 25, 1);
   &__container {
   }
   &__title {
     text-align: center;
-    @include avaptive-value('padding-bottom', 32, 16, 1);
+    @include avaptive-value('padding-bottom', 80, 30, 1);
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-    row-gap: 32px;
+    row-gap: 50px;
     column-gap: 32px;
   }
   &__item {
@@ -71,7 +71,7 @@
         height: auto;
         object-fit: cover;
         object-position: center;
-        filter: brightness(60%);
+        filter: brightness(70%);
       }
     }
     &__body {
@@ -88,7 +88,7 @@
     &__title {
       padding-bottom: 20px;
       min-height: 130px;
-      color: $text;
+      color: $black;
       letter-spacing: 1.1px;
     }
     &__description {
@@ -98,7 +98,7 @@
       line-height: calc(24 / 16 * 100%);
       @include avaptive-value('margin-top', 15, 10, 1);
       padding: 16px 0;
-      min-height: 150px;
+      min-height: 170px;
     }
     &__features {
     }

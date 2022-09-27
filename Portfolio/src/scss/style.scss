@@ -5,11 +5,11 @@
 $fontFamily: 'Gilroy';
 
 $black: #161310d7;
-$grey: #726f6df8;
+$grey: #a19b96;
 $background: #b5b3b2;
 $white: #ffffff;
 $green: #1c5b5c;
-$text: #afa5a0e5;
+$text: #dac1a2;
 
 $maxWidthContainer: 1240;
 $md1: $maxWidthContainer + 12;
@@ -33,6 +33,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: calc(24 / 16 * 100%);
+  letter-spacing: 1.1px;
   background-color: $grey;
   color: $black;
 }
