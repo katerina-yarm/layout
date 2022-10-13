@@ -97,8 +97,11 @@
       font-weight: 400;
       line-height: calc(24 / 16 * 100%);
       @include avaptive-value('margin-top', 15, 10, 1);
+      @include avaptive-value('margin-bottom', 15, 10, 1);
       padding: 16px 0;
-      min-height: 170px;
+      min-height: 165px;
+      max-height: 165px;
+      overflow: auto;
     }
     &__features {
     }
@@ -138,10 +141,12 @@
         padding-bottom: 10px;
       }
     }
-    &__button {
+    &__button-block {
       @include avaptive-value('margin-top', 16, 16, 1);
+    }
+    &__button {
       border: $green 1px solid;
-      width: 100%;
+      width: 48%;
       height: 48px;
     }
   }

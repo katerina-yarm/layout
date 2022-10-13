@@ -366,8 +366,11 @@ img {
   font-weight: 400;
   line-height: 150%;
   margin-top: 15px;
+  margin-bottom: 15px;
   padding: 16px 0;
-  min-height: 170px;
+  min-height: 165px;
+  max-height: 165px;
+  overflow: auto;
 }
 
 .portfolio .item-portfolio__features-title {
@@ -423,10 +426,13 @@ img {
   padding-bottom: 10px;
 }
 
-.portfolio .item-portfolio__button {
+.portfolio .item-portfolio__button-block {
   margin-top: 16px;
+}
+
+.portfolio .item-portfolio__button {
   border: #1c5b5c 1px solid;
-  width: 100%;
+  width: 48%;
   height: 48px;
 }
 
@@ -590,13 +596,19 @@ a {
       );
   }
 
+  .portfolio .item-portfolio__description {
+    margin-bottom: calc(
+        10px + 5 * ((100vw - 320px) / 920)
+      );
+  }
+
   .portfolio .item-portfolio__features-title {
     font-size: calc(
         16px + 2 * ((100vw - 320px) / 920)
       );
   }
 
-  .portfolio .item-portfolio__button {
+  .portfolio .item-portfolio__button-block {
     margin-top: calc(
         16px + 0 * ((100vw - 320px) / 920)
       );
