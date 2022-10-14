@@ -1,3 +1,49 @@
+.swiper-pagination-bullets {
+  display: flex;
+}
+.swiper-pagination-bullet {
+  background-color: transparent;
+  cursor: pointer;
+  flex: 0 0 21px;
+  height: 21px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 0;
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+  &::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    background-color: #575656;
+    border-radius: 50%;
+    transition: background-color 0.3s ease 0s;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid $green;
+    transition: all 0.3s ease 0s;
+    transform: scale(0);
+  }
+}
+.swiper-pagination-bullet-active {
+  &::after {
+    background-color: $green;
+  }
+  &::before {
+    transform: scale(1);
+  }
+}
+
 .main-banner {
   position: relative;
   height: 100vh;
@@ -46,8 +92,6 @@
 .portfolio {
   @include avaptive-value('padding-top', 80, 30, 1);
   @include avaptive-value('padding-bottom', 44, 25, 1);
-  &__container {
-  }
   &__title {
     text-align: center;
     @include avaptive-value('padding-bottom', 80, 30, 1);
@@ -62,16 +106,24 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #f4f5f7;
   }
   .item-portfolio {
-    &__image {
+    &__slider {
       img {
         width: 100%;
         height: auto;
         object-fit: cover;
         object-position: center;
-        filter: brightness(70%);
+        border: solid 1px #c5c3c3;
+      }
+      ._tablet {
+        width: 70%;
+      }
+      ._mobile {
+        width: 40%;
+      }
+      &-body {
+        margin-bottom: 40px;
       }
     }
     &__body {
@@ -79,7 +131,7 @@
       padding: 16px 5px 5px 5px;
       display: flex;
       flex-direction: column;
-      background-color: $grey;
+      background-color: $white;
       box-shadow: 0px 10px 10px rgba(61, 61, 61, 0.1);
     }
     &__content {
@@ -87,7 +139,7 @@
     }
     &__title {
       padding-bottom: 20px;
-      min-height: 130px;
+      min-height: 135px;
       color: $black;
       letter-spacing: 1.1px;
     }

@@ -15,6 +15,28 @@ testWebP(function (support) {
   }
 })
 
+if (document.querySelector('.portfolio-slider__body')) {
+  new Swiper('.portfolio-slider', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    watchOverFlow: true,
+    centeredSlides: true,
+    speed: 800,
+    loop: true,
+    loopAdditionalSlides: 5,
+    preloadImages: false,
+    parallax: true,
+
+    //Dotts
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  })
+}
+
 document.getElementsByClassName('icon-menu')[0].addEventListener('click', function addClass() {
   if (document.getElementsByClassName('icon-menu')[0].classList.contains('_active')) {
     document.getElementsByClassName('icon-menu')[0].classList.remove('_active')
@@ -218,4 +240,5 @@ if (spollersArray.length > 0) {
     }
   }
 }
+
 
