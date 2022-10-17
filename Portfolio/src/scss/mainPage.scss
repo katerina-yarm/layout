@@ -54,7 +54,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    filter: drop-shadow(0px 1px 10px);
+    filter: brightness(80%);
     transform: translate3d(0, calc(var(--scrollTop) / 8.5), 0);
     transition: $transition;
     will-change: transform;
@@ -77,7 +77,7 @@
   }
   &__text {
     margin: 0 auto;
-    color: $text;
+    color: $white;
     text-transform: uppercase;
     text-align: center;
     @include avaptive-value('font-size', 16, 12, 1);
@@ -85,7 +85,7 @@
   }
   &__title {
     text-align: center;
-    color: $text;
+    color: $white;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     @include avaptive-value('margin-top', 30, 20, 1);
@@ -95,8 +95,8 @@
 
 ._header {
   text-align: center;
-  @include avaptive-value('padding-bottom', 100, 50, 1);
-  @include avaptive-value('padding-top', 100, 50, 1);
+  @include avaptive-value('padding-bottom', 50, 30, 1);
+  @include avaptive-value('padding-top', 50, 30, 1);
   &::after {
     content: '';
     display: block;
@@ -131,10 +131,10 @@
   &__body-foto {
     img {
       border-radius: 100%;
-      width: 250px;
+      width: 275px;
       height: auto;
       overflow: hidden;
-      filter: brightness(120%);
+      filter: brightness(110%);
     }
   }
   &__body-info {
@@ -144,10 +144,20 @@
       margin-left: 0;
       margin-top: 30px;
     }
-    span {
-      display: block;
-      padding-bottom: 10px;
-      color: $text;
+  }
+  ._info {
+    &__text {
+      &-main {
+        display: block;
+        padding-bottom: 10px;
+        color: $text;
+      }
+    }
+    &__button {
+      margin-top: 30px;
+      .btn {
+        width: 275px;
+      }
     }
   }
 }

@@ -64,40 +64,32 @@
   display: block;
 }
 
-._icon-arrow-down:before {
+._icon-google:before {
   content: "\e900";
 }
 
-._icon-arrow-link:before {
-  content: "\e901";
-}
-
-._icon-cart:before {
-  content: "\e902";
-}
-
-._icon-favorite:before {
-  content: "\e903";
-}
-
-._icon-location:before {
-  content: "\e904";
-}
-
 ._icon-phone:before {
-  content: "\e905";
+  content: "\e942";
 }
 
-._icon-search:before {
-  content: "\e906";
+._icon-envelop:before {
+  content: "\e945";
 }
 
-._icon-send:before {
-  content: "\e907";
+._icon-mail2:before {
+  content: "\ea84";
 }
 
-._icon-share:before {
-  content: "\e908";
+._icon-github:before {
+  content: "\eab0";
+}
+
+._icon-skype:before {
+  content: "\eac5";
+}
+
+._icon-linkedin2:before {
+  content: "\eaca";
 }
 
 * {
@@ -308,8 +300,8 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-filter: drop-shadow(0px 1px 10px);
-          filter: drop-shadow(0px 1px 10px);
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
   -webkit-transform: translate3d(0, calc(var(--scrollTop) / 8.5), 0);
           transform: translate3d(0, calc(var(--scrollTop) / 8.5), 0);
   -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
@@ -353,7 +345,7 @@ img {
 
 .main-banner__text {
   margin: 0 auto;
-  color: #ac987f;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
   font-size: 16px;
@@ -362,7 +354,7 @@ img {
 
 .main-banner__title {
   text-align: center;
-  color: #ac987f;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-top: 30px;
@@ -371,8 +363,8 @@ img {
 
 ._header {
   text-align: center;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 ._header::after {
@@ -420,11 +412,11 @@ img {
 
 .about__body-foto img {
   border-radius: 100%;
-  width: 250px;
+  width: 275px;
   height: auto;
   overflow: hidden;
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 .about__body-info {
@@ -432,10 +424,18 @@ img {
   margin-left: 50px;
 }
 
-.about__body-info span {
+.about ._info__text-main {
   display: block;
   padding-bottom: 10px;
   color: #ac987f;
+}
+
+.about ._info__button {
+  margin-top: 30px;
+}
+
+.about ._info__button .btn {
+  width: 275px;
 }
 
 .portfolio {
@@ -597,6 +597,49 @@ img {
   height: 48px;
 }
 
+.footer {
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  transition: -webkit-transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  -o-transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1), -webkit-transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  will-change: transform;
+}
+
+.footer__container {
+  padding-bottom: 50px;
+}
+
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__link {
+  color: #ac987f;
+  font-size: 20px;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.footer__link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer__link:hover {
+  color: #1c5b5c;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -615,7 +658,6 @@ body {
 }
 
 .wrapper {
-  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -625,16 +667,11 @@ body {
           flex-direction: column;
 }
 
-.page {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
 ._container {
   max-width: 1240px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 100px;
 }
 
 h1 {
@@ -735,13 +772,13 @@ a {
 
   ._header {
     padding-bottom: calc(
-        50px + 50 * ((100vw - 320px) / 920)
+        30px + 20 * ((100vw - 320px) / 920)
       );
   }
 
   ._header {
     padding-top: calc(
-        50px + 50 * ((100vw - 320px) / 920)
+        30px + 20 * ((100vw - 320px) / 920)
       );
   }
 
