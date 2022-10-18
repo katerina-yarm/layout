@@ -5,12 +5,11 @@
 $fontFamily: 'Gilroy';
 
 $black: #161310d7;
-$grey: #a19b96;
-$background: #b5b3b2;
-$white: #ffffff;
+$white: #fffefe;
 $green: #1c5b5c;
 $text: #ac987f;
 $transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+$index: calc(1vw + 1vh);
 
 $maxWidthContainer: 1240;
 $md1: $maxWidthContainer + 12;
