@@ -117,7 +117,7 @@
 }
 
 .about {
-  transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
+  transform: translate3d(0, calc(var(--scrollTop) / 23.5), 0);
   transition: $transition;
   will-change: transform;
   &__body {
@@ -131,7 +131,7 @@
   &__body-foto {
     img {
       border-radius: 100%;
-      width: 275px;
+      width: 250px;
       height: auto;
       overflow: hidden;
       filter: brightness(110%);
@@ -157,15 +157,18 @@
       margin-top: 30px;
       .btn {
         width: 275px;
+        @media (max-width: $md3+px) {
+          width: 100%;
+        }
       }
     }
   }
 }
 
 .portfolio {
-  transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
-  transition: $transition;
-  will-change: transform;
+ // transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
+ // transition: $transition;
+  //will-change: transform;
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));

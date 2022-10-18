@@ -1,7 +1,7 @@
 .footer {
-  transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
-  transition: $transition;
-  will-change: transform;
+  //transform: translate3d(0, calc(var(--scrollTop) / 13.5), 0);
+  //transition: $transition;
+  //will-change: transform;
   &__container {
     padding-bottom: 50px;
   }
